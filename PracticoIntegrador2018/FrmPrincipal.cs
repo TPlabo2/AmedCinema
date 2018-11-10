@@ -16,6 +16,7 @@ namespace PracticoIntegrador2018
         AccesoDatos acceso = new AccesoDatos(@"");//Falta colocar cadena
         List<Actores> actores = new List<Actores>();
         List<Pelicula> peliculas = new List<Pelicula>();
+        int variableprueb;
 
         public Form1()
         {
