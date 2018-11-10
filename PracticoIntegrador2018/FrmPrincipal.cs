@@ -12,12 +12,11 @@ namespace PracticoIntegrador2018
 {
     public partial class Form1 : Form
     {
-
         AccesoDatos acceso = new AccesoDatos(@"");//Falta colocar cadena
         List<Actores> actores = new List<Actores>();
         List<Pelicula> peliculas = new List<Pelicula>();
 
-        int variableprueba2;
+        int variable3;
 
         public Form1()
         {
