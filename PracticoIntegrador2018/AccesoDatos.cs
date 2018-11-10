@@ -106,7 +106,7 @@ namespace PracticoIntegrador2018
             da.Fill(tabla);
             grid.DataSource = da;
 
-            desconectar();
+            
         }
 
     }

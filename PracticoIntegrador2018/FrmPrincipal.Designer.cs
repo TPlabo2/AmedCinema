@@ -76,6 +76,7 @@
             this.btnConsulta1.TabIndex = 1;
             this.btnConsulta1.Text = "Consulta 1";
             this.btnConsulta1.UseVisualStyleBackColor = true;
+            this.btnConsulta1.Click += new System.EventHandler(this.btnConsulta1_Click_1);
             // 
             // btnConsulta2
             // 
