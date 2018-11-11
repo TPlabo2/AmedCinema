@@ -16,8 +16,6 @@ namespace PracticoIntegrador2018
         List<Actores> actores = new List<Actores>();
         List<Pelicula> peliculas = new List<Pelicula>();
 
-        int variable3;
-
         public Form1()
         {
             InitializeComponent();
