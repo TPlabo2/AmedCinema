@@ -106,8 +106,8 @@ namespace PracticoIntegrador2018
             da = new SqlDataAdapter(consulta, conexion);
             da.Fill(tabla);
             grid.DataSource = da;
-
             
+            desconectar();
         }
 
     }

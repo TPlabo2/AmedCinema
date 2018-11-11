@@ -12,7 +12,7 @@ namespace PracticoIntegrador2018
 {
     public partial class Form1 : Form
     {
-        AccesoDatos acceso = new AccesoDatos(@"");//Falta colocar cadena
+        AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");//Falta colocar cadena
         List<Actores> actores = new List<Actores>();
         List<Pelicula> peliculas = new List<Pelicula>();
 
@@ -50,9 +50,9 @@ namespace PracticoIntegrador2018
                            "rango de edad", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             string consulta = "Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
-                            "'[C-H]%' and edad between 30 and 50 UNION Select id_director, Nombre, " +
-                            "Nacionalidad from Directores where nombre not like '[J-Q]%' and edad " +
-                            "between 50 and 60 Order By 3 desc";
+                            "'[C-H]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
+                            "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
+                            "between '2000/1/1' and '2018/1/1' Order By 3 desc";
             acceso.putInGrid(dgrvConsultas, consulta);
         }
     }
