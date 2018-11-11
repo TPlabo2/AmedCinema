@@ -363,10 +363,12 @@
             // 
             // dgrvConsultas
             // 
+            this.dgrvConsultas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrvConsultas.Location = new System.Drawing.Point(466, 108);
             this.dgrvConsultas.Name = "dgrvConsultas";
-            this.dgrvConsultas.Size = new System.Drawing.Size(720, 417);
+            this.dgrvConsultas.RowHeadersVisible = false;
+            this.dgrvConsultas.Size = new System.Drawing.Size(674, 417);
             this.dgrvConsultas.TabIndex = 39;
             // 
             // Form1
@@ -375,7 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1211, 681);
+            this.ClientSize = new System.Drawing.Size(1175, 681);
             this.Controls.Add(this.dgrvConsultas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnABM);

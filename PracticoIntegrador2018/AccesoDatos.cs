@@ -101,11 +101,11 @@ namespace PracticoIntegrador2018
         {
             conectar();
 
-            tabla = new DataTable();
-
-            da = new SqlDataAdapter(consulta, conexion);
+            
+            this.comando = new SqlCommand(consulta, conexion);
+            da.SelectCommand = comando;
             da.Fill(tabla);
-            grid.DataSource = da;
+            grid.DataSource = tabla;
             
             desconectar();
         }
