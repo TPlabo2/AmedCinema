@@ -118,6 +118,7 @@
             this.pnlPelicula.Name = "pnlPelicula";
             this.pnlPelicula.Size = new System.Drawing.Size(784, 335);
             this.pnlPelicula.TabIndex = 0;
+            this.pnlPelicula.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPelicula_Paint);
             // 
             // txtIdPelicula
             // 
