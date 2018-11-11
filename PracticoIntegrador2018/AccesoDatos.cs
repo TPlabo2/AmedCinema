@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
@@ -11,10 +12,10 @@ namespace PracticoIntegrador2018
 {
     class AccesoDatos
     {
-        OleDbConnection conexion;
-        OleDbCommand comando;
-        OleDbDataReader lector;
-        OleDbDataAdapter da;
+        SqlConnection conexion;
+        SqlCommand comando;
+        SqlDataReader lector;
+        SqlDataAdapter da;
         DataTable tabla;
         string cadena;
 
@@ -22,15 +23,15 @@ namespace PracticoIntegrador2018
         {
             this.cadena = cadena;
             this.lector = null;
-            this.conexion = new OleDbConnection();
-            this.comando = new OleDbCommand();
+            this.conexion = new SqlConnection();
+            this.comando = new SqlCommand();
             this.tabla = new DataTable();
-            this.da = new OleDbDataAdapter();
+            this.da = new SqlDataAdapter();
         }
 
         public DataTable pTabla { get => tabla; set => tabla = value; }
         public string pCadena { get => cadena; set => cadena = value; }
-        public OleDbDataReader pLector { get => lector; set => lector = value; }
+        public SqlDataReader pLector { get => lector; set => lector = value; }
 
         public void conectar()
         {
@@ -102,7 +103,7 @@ namespace PracticoIntegrador2018
 
             tabla = new DataTable();
 
-            da = new OleDbDataAdapter(consulta, conexion);
+            da = new SqlDataAdapter(consulta, conexion);
             da.Fill(tabla);
             grid.DataSource = da;
 
