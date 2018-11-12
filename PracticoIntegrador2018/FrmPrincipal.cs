@@ -14,13 +14,14 @@ namespace PracticoIntegrador2018
     {
         AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");//Falta colocar cadena
         string consulta;
+        string consultaParametrizada;
  
 
         //Enumeracion para verificar que consulta se debe ejecutar
         public enum Consultero {
             C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,none
         }
-        //se instancia la enumeracion
+        //se instancia la enumeracion en none
         Consultero consultero = Consultero.none;
         //----------------------------------------------------------------------------------------
         public Form1()
@@ -61,48 +62,122 @@ namespace PracticoIntegrador2018
                             "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
                             "between '2000/1/1' and '2018/1/1' Order By 3 desc";
             consultero = Consultero.C1;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta1.Checked == true)
+            {
+                consultaParametrizada =  "Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
+                            "'["+txtConsulta1.Text+"-"+txtConsulta1C2.Text+"]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
+                            "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
+                            "between '2000/1/1' and '2018/1/1' Order By 3 desc";
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+
+            }
+
         }
         //----------------------------------------------------------------------------------------
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            switch (consultero)
+            if (radioBtnVacios())//Metodo que comprueba que ningun btn este seleccionado
             {
-                case Consultero.C1:
-                                acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C2:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C3:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C4:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C5:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C6:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C7:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C8:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C9:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.C10:
-                    acceso.putInGrid(dgrvConsultas, consulta);
-                    break;
-                case Consultero.none:
-                    MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    break;
-                default:
-                    MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    break;
+
+                switch (consultero)
+                {
+                    case Consultero.C1:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C2:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C3:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C4:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C5:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C6:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C7:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C8:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C9:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.C10:
+                        acceso.putInGrid(dgrvConsultas, consulta);
+                        break;
+                    case Consultero.none:
+                        MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        break;
+                    default:
+                        MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        break;
+                }
+            }
+            else
+            {
+                switch (consultero)
+                {
+                    case Consultero.C1:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.C2:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.C3:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.C4:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.C5:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.C6:
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;                          
+                    case Consultero.C7:                 
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;                         
+                    case Consultero.C8:                 
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;                          
+                    case Consultero.C9:                
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;                         
+                    case Consultero.C10:                
+                        acceso.putInGrid(dgrvConsultas, consultaParametrizada);
+                        break;
+                    case Consultero.none:
+                        MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        break;
+                    default:
+                        MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        break;
+                }
+            }
+
+            consultero = Consultero.none;
+        }
+        //----------------------------------------------------------------------------------------
+        private bool radioBtnVacios()
+        {
+            if (rbtnConsulta1.Checked == false && rbtnConsulta2.Checked == false && rbtnConsulta3.Checked == false && rbtnConsulta4.Checked == false && rbtnConsulta5.Checked == false
+                && rbtnConsulta6.Checked == false && rbtnConsulta7.Checked == false && rbtnConsulta8.Checked == false && rbtnConsulta9.Checked == false && rbtnConsulta10.Checked == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

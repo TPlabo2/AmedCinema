@@ -34,11 +34,11 @@ namespace PracticoIntegrador2018
             cargarCombo(cboIdioma, "Idiomas");
             cargarCombo(cboClasificacion, "ClasificacionesPelicula");
             cargarCombo(cboSubtitulos, "subtitulos");
-            cargarCombo(cboDirector, "Directores");
+            //cargarCombo(cboDirector, "Directores");
             cargarCombo(cboPais, "Paises");
             //----------------------------------------------------------
-            datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
-            datos.putInGrid(dgvActores, "Select * from Actores");
+            //datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
+            //datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
 
@@ -81,31 +81,31 @@ namespace PracticoIntegrador2018
                 peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
                 peli.Clasificacion = Convert.ToInt32(cboClasificacion.SelectedValue);
                 peli.Subtitulos = Convert.ToInt32(cboSubtitulos.SelectedValue);
-                peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
+                //peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
 
 
 
 
-                string agregar = "Insert into Pelicula (    " +
-                                                               // "id_pelicula," +
-                                                               "nombre," +
-                                                               "duracion," +
-                                                               "id_genero," +
-                                                               "id_idioma," +
-                                                               "id_clasificacion," +
-                                                               "id_subtitulos," +
-                                                               "id_director)" +
-                                                " values ( " +
+                //string agregar = "Insert into Pelicula (    " +
+                //                                               // "id_pelicula," +
+                //                                               "nombre," +
+                //                                               "duracion," +
+                //                                               "id_genero," +
+                //                                               "id_idioma," +
+                //                                               "id_clasificacion," +
+                //                                               "id_subtitulos," +
+                //                                               "id_director)" +
+                //                                " values ( " +
                                                           //+ txtIdPeli.Text +","+ 
-                                                          " ' " + txtNombrePelicula.Text +
-                                                          "','" + txtDuracion.Text + "',"
-                                                            + cboGenero.SelectedValue + ","
-                                                            + cboIdioma.SelectedValue + ","
-                                                            + cboClasificacion.SelectedValue + ","
-                                                            + cboSubtitulos.SelectedValue + ","
-                                                            + cboDirector.SelectedValue + ")";
+                                                          //" ' " + txtNombrePelicula.Text +
+                                                          //"','" + txtDuracion.Text + "',"
+                                                            //+ cboGenero.SelectedValue + ","
+                                                            //+ cboIdioma.SelectedValue + ","
+                                                            //+ cboClasificacion.SelectedValue + ","
+                                                            //+ cboSubtitulos.SelectedValue + ","
+                                                            //+ cboDirector.SelectedValue + ")";
 
-                datos.actualizarBD(agregar);
+                //datos.actualizarBD(agregar);
                 limpiarTxtPelis();
                 bloqueoPelis(true);
 
@@ -117,7 +117,7 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("ERROR al guardar la pelicula!!  \n " + x.Message);
             }
 
-            datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
+            //datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
 
         }
         private void btnGuardarActor_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace PracticoIntegrador2018
                 ac.Apellido = Convert.ToString(txtApellidoActor);
                 ac.Pais = Convert.ToInt32(cboPais.SelectedValue);
                 ac.FechaN = Convert.ToDateTime(dtpEdad.Text);
-                ac.Reseña = Convert.ToString(txtReseña.Text);
+                //ac.Reseña = Convert.ToString(txtReseña.Text);
 
                 string agregar = "INSERT INTO ACTORES("
                                  //"           id_actor,"
@@ -140,7 +140,7 @@ namespace PracticoIntegrador2018
                                              "'" + txtNombreActor.Text + "',"
                                              + cboPais.SelectedValue + ",'"
                                              + dtpEdad.Text + "','"
-                                              + txtReseña.Text + "','"
+                                             // + txtReseña.Text + "','"
                                              + txtApellidoActor.Text + "')";
                 MessageBox.Show(agregar);
 
@@ -154,7 +154,7 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("Error al cargar actor" + x.Message);
             }
 
-            datos.putInGrid(dgvActores, "Select * from Actores");
+            //datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
         private void bloqueoPelis(bool x)
@@ -166,7 +166,7 @@ namespace PracticoIntegrador2018
             cboIdioma.Enabled = x;
             cboClasificacion.Enabled = x;
             cboSubtitulos.Enabled = x;
-            cboDirector.Enabled = x;
+            //cboDirector.Enabled = x;
 
         }
         private void bloqueoActores(bool x)
@@ -176,7 +176,7 @@ namespace PracticoIntegrador2018
             txtApellidoActor.Enabled = x;
             cboPais.Enabled = x;
             dtpEdad.Enabled = x;
-            txtReseña.Enabled = x;
+            //txtReseña.Enabled = x;
 
 
         }
@@ -189,7 +189,7 @@ namespace PracticoIntegrador2018
             cboIdioma.SelectedIndex = -1;
             cboClasificacion.SelectedIndex = -1;
             cboSubtitulos.SelectedIndex = -1;
-            cboDirector.SelectedIndex = -1;
+            //cboDirector.SelectedIndex = -1;
 
         }
         private void limpiarTxtActores()
@@ -199,7 +199,7 @@ namespace PracticoIntegrador2018
             txtApellidoActor.Text = "";
             cboPais.SelectedIndex = -1;
             dtpEdad.Text = "01/01/1990";
-            txtReseña.Text = "";
+            //txtReseña.Text = "";
         }
 
 
@@ -215,17 +215,17 @@ namespace PracticoIntegrador2018
 
         private void dgvPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            pos = dgvPeliculas.CurrentRow.Index;
-            DataGridViewRow fila = this.dgvPeliculas.Rows[e.RowIndex];
+            //pos = dgvPeliculas.CurrentRow.Index;
+            //DataGridViewRow fila = this.dgvPeliculas.Rows[e.RowIndex];
             MessageBox.Show(pos.ToString());
-            txtIdPelicula.Text = fila.Cells["id_Pelicula"].Value.ToString();
-            txtNombreActor.Text = fila.Cells["nombre"].Value.ToString();
-            txtDuracion.Text = fila.Cells["duracion"].Value.ToString();
-            cboGenero.SelectedIndex = Convert.ToInt32(fila.Cells["id_genero"].Value.ToString());
-            cboIdioma.SelectedIndex = Convert.ToInt32(fila.Cells["id_idioma"].Value.ToString());
-            cboClasificacion.SelectedIndex = Convert.ToInt32(fila.Cells["id_clasificacion"].Value.ToString());
-            cboSubtitulos.SelectedIndex = Convert.ToInt32(fila.Cells["id_subtitulos"].Value.ToString());
-            cboDirector.SelectedIndex = Convert.ToInt32(fila.Cells["id_director"].Value.ToString());
+            //txtIdPelicula.Text = fila.Cells["id_Pelicula"].Value.ToString();
+            //txtNombreActor.Text = fila.Cells["nombre"].Value.ToString();
+            //txtDuracion.Text = fila.Cells["duracion"].Value.ToString();
+            //cboGenero.SelectedIndex = Convert.ToInt32(fila.Cells["id_genero"].Value.ToString());
+            //cboIdioma.SelectedIndex = Convert.ToInt32(fila.Cells["id_idioma"].Value.ToString());
+            //cboClasificacion.SelectedIndex = Convert.ToInt32(fila.Cells["id_clasificacion"].Value.ToString());
+            //cboSubtitulos.SelectedIndex = Convert.ToInt32(fila.Cells["id_subtitulos"].Value.ToString());
+            //cboDirector.SelectedIndex = Convert.ToInt32(fila.Cells["id_director"].Value.ToString());
 
         }
 
