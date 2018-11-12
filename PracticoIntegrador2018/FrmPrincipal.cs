@@ -197,12 +197,39 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta2.Checked == true)
             {
-               consultaParametrizada = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '"+dtpckConsulta2+"' " +
-                                       "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
-                                       "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2"
+                consultaParametrizada = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '" + dtpckConsulta2 + "' " +
+                                        "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
+                                        "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
+        }
+
+        //----------------------------------------------------------------------------------------
+        private void btnConsulta6_Click(object sender, EventArgs e) //SE PARAMETRIZA LOS TRES AÑOS DE PERTENENCIA
+        {
+            MessageBox.Show("Select year(c.fecha)'Fecha', sum(cantidad)'Cantidad total', avg(precio)'Precio Promedio', sum(precio*cantidad)'Importe total' From comprobante c join detalle_comprobantes d " +
+                "on c.id_comprobante = d.id_comprobante Where year(fecha) in (2013, 2016, 2017) Group by year(c.fecha) having sum(precio * cantidad) < 2500 order by 4 desc",
+                                "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            consulta = "Select year(c.fecha)'Fecha', sum(cantidad)'Cantidad total', avg(precio)'Precio Promedio', sum(precio * cantidad)'Importe total' From comprobante c join detalle_comprobantes d " +
+                "on c.id_comprobante = d.id_comprobante Where year(fecha) in (2013, 2016, 2017) Group by year(c.fecha) having sum(precio * cantidad) < 2500 order by 4 desc";
+
+            consultero = Consultero.C6;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta6.Checked == true)
+            {
+                consultaParametrizada = "Select year(c.fecha)'Fecha', sum(cantidad)'Cantidad total', avg(precio)'Precio Promedio', sum(precio * cantidad)'Importe total' From comprobante c join detalle_comprobantes d " +
+                "on c.id_comprobante = d.id_comprobante Where year(fecha) in (" + txtC1c1.Text + ", " + txtC1c2.Text + ", " + txtC1c3.Text + ") Group by year(c.fecha) having sum(precio * cantidad) < 2500 order by 4 desc";
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
