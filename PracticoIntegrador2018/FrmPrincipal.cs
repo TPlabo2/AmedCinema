@@ -15,6 +15,8 @@ namespace PracticoIntegrador2018
         AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");//Falta colocar cadena
         string consulta;
 
+        int variablePruebaSanti; 
+
         //Enumeracion para verificar que consulta se debe ejecutar
         public enum Consultero {
             C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,none
