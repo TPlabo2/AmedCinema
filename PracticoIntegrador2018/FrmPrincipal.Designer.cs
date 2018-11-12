@@ -49,7 +49,6 @@
             this.txtConsulta5 = new System.Windows.Forms.TextBox();
             this.txtConsulta4 = new System.Windows.Forms.TextBox();
             this.txtConsulta3 = new System.Windows.Forms.TextBox();
-            this.txtConsulta2 = new System.Windows.Forms.TextBox();
             this.txtConsulta10 = new System.Windows.Forms.TextBox();
             this.txtConsulta10c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta1C2 = new System.Windows.Forms.TextBox();
@@ -60,7 +59,6 @@
             this.txtConsulta5c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta4c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta3c2 = new System.Windows.Forms.TextBox();
-            this.txtConsulta2C2 = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnABM = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,6 +73,7 @@
             this.rbtnConsulta8 = new System.Windows.Forms.RadioButton();
             this.rbtnConsulta9 = new System.Windows.Forms.RadioButton();
             this.rbtnConsulta10 = new System.Windows.Forms.RadioButton();
+            this.dtpckConsulta2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +95,7 @@
             this.btnConsulta2.TabIndex = 2;
             this.btnConsulta2.Text = "Consulta 2";
             this.btnConsulta2.UseVisualStyleBackColor = true;
+            this.btnConsulta2.Click += new System.EventHandler(this.btnConsulta2_Click);
             // 
             // btnConsulta3
             // 
@@ -256,13 +256,6 @@
             this.txtConsulta3.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta3.TabIndex = 23;
             // 
-            // txtConsulta2
-            // 
-            this.txtConsulta2.Location = new System.Drawing.Point(141, 167);
-            this.txtConsulta2.Name = "txtConsulta2";
-            this.txtConsulta2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta2.TabIndex = 24;
-            // 
             // txtConsulta10
             // 
             this.txtConsulta10.Location = new System.Drawing.Point(141, 656);
@@ -332,13 +325,6 @@
             this.txtConsulta3c2.Name = "txtConsulta3c2";
             this.txtConsulta3c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta3c2.TabIndex = 33;
-            // 
-            // txtConsulta2C2
-            // 
-            this.txtConsulta2C2.Location = new System.Drawing.Point(298, 166);
-            this.txtConsulta2C2.Name = "txtConsulta2C2";
-            this.txtConsulta2C2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta2C2.TabIndex = 34;
             // 
             // btnSalir
             // 
@@ -491,6 +477,13 @@
             this.rbtnConsulta10.Text = "Parametrizar10";
             this.rbtnConsulta10.UseVisualStyleBackColor = true;
             // 
+            // dtpckConsulta2
+            // 
+            this.dtpckConsulta2.Location = new System.Drawing.Point(141, 160);
+            this.dtpckConsulta2.Name = "dtpckConsulta2";
+            this.dtpckConsulta2.Size = new System.Drawing.Size(200, 20);
+            this.dtpckConsulta2.TabIndex = 50;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,6 +491,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1175, 789);
+            this.Controls.Add(this.dtpckConsulta2);
             this.Controls.Add(this.rbtnConsulta10);
             this.Controls.Add(this.rbtnConsulta9);
             this.Controls.Add(this.rbtnConsulta8);
@@ -513,7 +507,6 @@
             this.Controls.Add(this.btnABM);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtConsulta10c2);
-            this.Controls.Add(this.txtConsulta2C2);
             this.Controls.Add(this.txtConsulta3c2);
             this.Controls.Add(this.txtConsulta4c2);
             this.Controls.Add(this.txtConsulta5c2);
@@ -523,7 +516,6 @@
             this.Controls.Add(this.txtConsulta9c2);
             this.Controls.Add(this.txtConsulta1C2);
             this.Controls.Add(this.txtConsulta10);
-            this.Controls.Add(this.txtConsulta2);
             this.Controls.Add(this.txtConsulta3);
             this.Controls.Add(this.txtConsulta4);
             this.Controls.Add(this.txtConsulta5);
@@ -581,7 +573,6 @@
         private System.Windows.Forms.TextBox txtConsulta5;
         private System.Windows.Forms.TextBox txtConsulta4;
         private System.Windows.Forms.TextBox txtConsulta3;
-        private System.Windows.Forms.TextBox txtConsulta2;
         private System.Windows.Forms.TextBox txtConsulta10;
         private System.Windows.Forms.TextBox txtConsulta10c2;
         private System.Windows.Forms.TextBox txtConsulta1C2;
@@ -592,7 +583,6 @@
         private System.Windows.Forms.TextBox txtConsulta5c2;
         private System.Windows.Forms.TextBox txtConsulta4c2;
         private System.Windows.Forms.TextBox txtConsulta3c2;
-        private System.Windows.Forms.TextBox txtConsulta2C2;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnABM;
         private System.Windows.Forms.Label label3;
@@ -607,6 +597,7 @@
         private System.Windows.Forms.RadioButton rbtnConsulta8;
         private System.Windows.Forms.RadioButton rbtnConsulta9;
         private System.Windows.Forms.RadioButton rbtnConsulta10;
+        private System.Windows.Forms.DateTimePicker dtpckConsulta2;
     }
 }
 

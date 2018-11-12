@@ -49,7 +49,7 @@ namespace PracticoIntegrador2018
 
         }
         //----------------------------------------------------------------------------------------
-        private void btnConsulta1_Click_1(object sender, EventArgs e)
+        private void btnConsulta1_Click_1(object sender, EventArgs e)//SE PARAMETRIZAN LOS NOMBRES DEL PRIMER SELECT
         {
             MessageBox.Show("Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
                            "'[C-H]%' and edad between 30 and 50 UNION Select id_director, Nombre, " +
@@ -178,6 +178,30 @@ namespace PracticoIntegrador2018
             else
             {
                 return false;
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void btnConsulta2_Click(object sender, EventArgs e)//SE PARAMETRIZA LA FEHCA DE NACIMIENTO DE LA PRIMER CONSULTA
+        {
+            MessageBox.Show("Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '1990/1/1' " +
+                            "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
+                            "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2",
+                            "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            consulta = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '1990/1/1' " +
+                        "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
+                        "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2";
+
+            consultero = Consultero.C2;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta2.Checked == true)
+            {
+               consultaParametrizada = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '"+dtpckConsulta2+"' " +
+                                       "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
+                                       "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2"
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
         }
     }
