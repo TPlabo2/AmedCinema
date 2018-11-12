@@ -28,11 +28,11 @@ namespace PracticoIntegrador2018
             this.tabla = new DataTable();
             this.da = new SqlDataAdapter();
         }
-
+        //----------------------------------------------------------------------------------------
         public DataTable pTabla { get => tabla; set => tabla = value; }
         public string pCadena { get => cadena; set => cadena = value; }
         public SqlDataReader pLector { get => lector; set => lector = value; }
-
+        //----------------------------------------------------------------------------------------
         public void conectar()
         {
             this.conexion.ConnectionString = cadena;
@@ -41,7 +41,7 @@ namespace PracticoIntegrador2018
             this.comando.CommandType = CommandType.Text;
 
         }
-
+        //----------------------------------------------------------------------------------------
         public void desconectar()
         {
             if (ConnectionState.Open == conexion.State)
@@ -54,7 +54,7 @@ namespace PracticoIntegrador2018
                 System.Windows.Forms.MessageBox.Show("La conexion ya se encuentra desconectada");
             }
         }
-
+        //----------------------------------------------------------------------------------------
         public DataTable consultarTabla(string nombretabla)
         {
             conectar();
@@ -66,7 +66,7 @@ namespace PracticoIntegrador2018
 
             return tabla;
         }
-
+        //----------------------------------------------------------------------------------------
         public DataTable consultarBD(string consulta)
         {
             conectar();
@@ -78,7 +78,7 @@ namespace PracticoIntegrador2018
 
             return tabla;
         }
-
+        //----------------------------------------------------------------------------------------
         public void leerTabla(string nombretabla)
         {
             conectar();
@@ -86,7 +86,7 @@ namespace PracticoIntegrador2018
             comando.CommandText = "SELECT * FROM " + nombretabla;
             lector = comando.ExecuteReader();
         }
-
+        //----------------------------------------------------------------------------------------
         public void actualizarBD(string consulta)
         {
             conectar();
@@ -96,7 +96,7 @@ namespace PracticoIntegrador2018
 
             desconectar();
         }
-
+        //----------------------------------------------------------------------------------------
         public void putInGrid(DataGridView grid, string consulta)
         {
             conectar();
