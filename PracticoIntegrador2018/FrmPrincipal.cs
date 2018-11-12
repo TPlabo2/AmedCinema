@@ -31,7 +31,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //cargarCombo(cboConsulta2, "paises");
         }
         //----------------------------------------------------------------------------------------
         private void btnSalir_Click(object sender, EventArgs e)
@@ -40,6 +40,17 @@ namespace PracticoIntegrador2018
             {
                 Close();
             }
+        }
+        //----------------------------------------------------------------------------------------
+        private void cargarCombo(ComboBox combo, string nombreTabla)
+        {
+            DataTable tabla = new DataTable();
+            tabla = acceso.consultarTabla(nombreTabla);
+            combo.DataSource = tabla;
+            combo.ValueMember = tabla.Columns[0].ColumnName;
+            combo.DisplayMember = tabla.Columns[1].ColumnName;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.SelectedIndex = -1;
         }
         //----------------------------------------------------------------------------------------
         private void btnABM_Click(object sender, EventArgs e)
@@ -74,7 +85,7 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
 
             }
-
+            dgrvConsultas.DataSource = null;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -181,15 +192,15 @@ namespace PracticoIntegrador2018
             }
         }
         //----------------------------------------------------------------------------------------
-        private void btnConsulta2_Click(object sender, EventArgs e)//SE PARAMETRIZA LA FEHCA DE NACIMIENTO DE LA PRIMER CONSULTA
+        private void btnConsulta2_Click(object sender, EventArgs e)//SE PARAMETRIZA LA NACIONALIDAD DE LA PRIMER CONSULTA
         {
-            MessageBox.Show("Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '1990/1/1' " +
-                            "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
-                            "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2",
+            MessageBox.Show("Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+                            "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
+                            "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2",
                             "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            consulta = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '1990/1/1' " +
-                        "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
-                        "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2";
+            consulta = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+                            "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
+                            "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
 
             consultero = Consultero.C2;
 
@@ -197,12 +208,14 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta2.Checked == true)
             {
-               consultaParametrizada = "Select id_actor, nombre, id_pais From actores a join paises p on p.id_pais = a.id_pais Where p.nombre in (‘Argentina’) and a.nombre not like ‘[A - F]%’ and fecha_nacimiento > '"+dtpckConsulta2+"' " +
-                                       "UNION Select id_pelicula, nombre, idioma From peliculas p join idiomas i on p.id_idioma = i.id_idioma join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion " +
-                                       "join genero g  on g.id_genero = p.id_genero Where idioma in (‘Ingles’) and clasificacion like ‘+16’  and genero like ‘Terror’ or ‘Accion’ Order by 2"
+                consultaParametrizada = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('"+txtConsulta2.Text+"') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+                            "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
+                            "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
+
+            dgrvConsultas.DataSource = null;
         }
     }
 }

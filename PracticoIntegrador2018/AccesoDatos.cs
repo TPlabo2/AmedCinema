@@ -63,7 +63,7 @@ namespace PracticoIntegrador2018
             tabla.Load(comando.ExecuteReader());
 
             desconectar();
-
+            
             return tabla;
         }
         //----------------------------------------------------------------------------------------
