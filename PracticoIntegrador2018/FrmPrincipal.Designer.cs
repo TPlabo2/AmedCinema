@@ -144,6 +144,7 @@
             this.btnConsulta7.TabIndex = 7;
             this.btnConsulta7.Text = "Consulta 7";
             this.btnConsulta7.UseVisualStyleBackColor = true;
+            this.btnConsulta7.Click += new System.EventHandler(this.btnConsulta7_Click);
             // 
             // btnConsulta8
             // 

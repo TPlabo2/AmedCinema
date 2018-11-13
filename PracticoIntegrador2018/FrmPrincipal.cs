@@ -269,5 +269,28 @@ namespace PracticoIntegrador2018
 
             dgrvConsultas.DataSource = null;
         }
+
+        private void btnConsulta7_Click(object sender, EventArgs e)//SE PARAMETRIZA EL VALOR DE COMPARACIÓN
+        {
+            {
+                MessageBox.Show("Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
+                    "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)");
+
+                consulta = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
+                    "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
+
+                consultero = Consultero.C6;
+
+                //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+                if (rbtnConsulta7.Checked == true)
+                {
+                    consultaParametrizada = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where " + txtConsulta7.Text + " < " +
+                    "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
+
+                    //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                }
+            }
+        }
     }
 }
