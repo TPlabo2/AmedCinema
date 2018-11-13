@@ -12,6 +12,7 @@ namespace PracticoIntegrador2018
 {
     public partial class FrmABM : Form
     {
+        string nombreAct,nombrePeli;
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
@@ -111,6 +112,9 @@ namespace PracticoIntegrador2018
             bloqueoPelis(true);
             txtIdPeli.Enabled = true;
             limpiarTxtPelis();
+            btnBorrarPeli.Enabled = false;
+            btnNuevoPeli.Enabled = false;
+            btnModificarPeli.Enabled = false;
         }
         //------------------------------------------------------------------------------------
         private void btnGuardarPeli_Click(object sender, EventArgs e)
@@ -171,6 +175,9 @@ namespace PracticoIntegrador2018
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
             limpiarTxtPelis();
             bloqueoPelis(false);
+            btnBorrarPeli.Enabled = true;
+            btnNuevoPeli.Enabled = true;
+            btnModificarPeli.Enabled = true;
         }
 
         //----------DE DATA GRID A TXT BOX--------------------
@@ -184,6 +191,7 @@ namespace PracticoIntegrador2018
                 idPeli = Convert.ToInt32(fila.Cells["id_Pelicula"].Value.ToString());
                 //----------------------------------------------------
                 txtNombrePelicula.Text = fila.Cells["nombre"].Value.ToString();
+                nombrePeli= fila.Cells["nombre"].Value.ToString();
                 dtpDura.Text = fila.Cells["duracion"].Value.ToString();
                 cboGenero.SelectedIndex = Convert.ToInt32(fila.Cells["id_genero"].Value.ToString()) - 1;
                 cboIdioma.SelectedIndex = Convert.ToInt32(fila.Cells["id_idioma"].Value.ToString()) - 1;
@@ -236,7 +244,7 @@ namespace PracticoIntegrador2018
         //------------ELIMINAR PELICULA------------------
         private void btnBorrarPeli_Click(object sender, EventArgs e)
         {
-            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar la pelicula con el id = [" + idPeli + "] ?", "BORRANDO PELICULA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar la pelicula  [" + nombrePeli + "] ?", "BORRANDO PELICULA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             string eliminarP = "Delete pelicula where id_pelicula =" + idPeli;
             if (idPeli > 0)
             {
@@ -319,6 +327,9 @@ namespace PracticoIntegrador2018
         {
             limpiarTxtActores();
             bloqueoActores(true);
+            btnNuevoAct.Enabled = false;
+            btnModificarAct.Enabled = false;
+            btnBorrarAct.Enabled = false;
         }
         //------------------------------------------------------------------------------------
         private void btnGuardarAct_Click(object sender, EventArgs e)
@@ -354,6 +365,7 @@ namespace PracticoIntegrador2018
 
                 MessageBox.Show("Error al cargar actor" + x.Message);
             }
+            datos.putInGrid(dgvActores, "Select * from Actores");
             limpiarTxtActores();
             bloqueoActores(false);
             btnNuevoAct.Enabled = true;
@@ -362,7 +374,10 @@ namespace PracticoIntegrador2018
             btnBorrarAct.Enabled = true;
             btnModAct.Visible = false;
             dgvActores.Enabled = true;
-            datos.putInGrid(dgvActores, "Select * from Actores");
+            btnNuevoAct.Enabled = true;
+            btnModificarAct.Enabled = true;
+            btnBorrarAct.Enabled = true;
+            
         }
         //---------------------------------------------------------------------------------------------------------
         //NOTA CAMBIAR LA BASE DE DATOS NACIONALIDADES DE STRING A INT O NO ANDA EL GRID 
@@ -375,6 +390,7 @@ namespace PracticoIntegrador2018
                 txtIdActor.Text = fila.Cells["id_actor"].Value.ToString();
                 idActor = Convert.ToInt32(fila.Cells["id_actor"].Value.ToString());
                 txtNombreActor.Text = fila.Cells["nombre"].Value.ToString();
+                nombreAct= fila.Cells["nombre"].Value.ToString();
                 txtApellidoActor.Text = fila.Cells["apellido"].Value.ToString();
                 //cambiado a txt al no poder usar int para buscar en combobox
                 txtNacionalidad.Text = fila.Cells["nacionalidad"].Value.ToString();
@@ -447,7 +463,7 @@ namespace PracticoIntegrador2018
         private void btnBorrarAct_Click(object sender, EventArgs e)
         {
 
-            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar al actor con el id = [" + idActor + "] ?", "BORRANDO ACTOR", MessageBoxButtons.YesNo);
+            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar al actor   [" + nombreAct + "] ?", "BORRANDO ACTOR", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
 
             string eliminarA = "Delete actores where id_actor =" + idActor;
 
