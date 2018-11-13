@@ -434,6 +434,101 @@ namespace PracticoIntegrador2018
 
         }
 
+        private bool ValidarActor()
+        {
+            if (txtIdActor.Text == "")
+            {
+                MessageBox.Show("El id es obligatorio");
+                txtIdActor.Focus();
+                return false;
+            }
+            else if (txtNombreActor.Text == "")
+            {
+                MessageBox.Show("El nombre es obligatorio");
+                txtNombreActor.Focus();
+                return false;
+            }
+            else if (txtApellidoActor.Text == "")
+            {
+                MessageBox.Show("El apellido es obligatorio");
+                txtApellidoActor.Focus();
+                return false;
+            }
+            else if (txtNacionalidad.Text == "")
+            {
+                MessageBox.Show("La nacionalidad es obligatoria");
+                txtNacionalidad.Focus();
+                return false;
+            }
+            else if (txtReseña.Text == "")
+            {
+                MessageBox.Show("La reseñ es obligatoria");
+                txtReseña.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        private bool ValidarPelicula()
+        {
+            if (txtIdPeli.Text == "")
+            {
+                MessageBox.Show("El id es obligatorio");
+                txtIdPeli.Focus();
+                return false;
+            }
+            else if (txtNombrePelicula.Text == "")
+            {
+                MessageBox.Show("El nombre es obligatorio");
+                txtNombrePelicula.Focus();
+                return false;
+            }
+            else if (cboGenero.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un genero");
+                cboGenero.Focus();
+                return false;
+            }
+            else if (cboIdioma.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un idioma");
+                cboIdioma.Focus();
+                return false;
+            }
+            else if (cboClasificacion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un clasificacion");
+                cboClasificacion.Focus();
+                return false;
+            }
+            else if (cboSubtitulos.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione subtitulos");
+                cboSubtitulos.Focus();
+                return false;
+            }
+            else if (cboDirector.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un director");
+                cboDirector.Focus();
+                return false;
+            }
+            else if (cboPaisP.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un pais");
+                cboPaisP.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
 
     }
 }
