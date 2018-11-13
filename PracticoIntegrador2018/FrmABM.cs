@@ -15,7 +15,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=GameX;Initial Catalog=Cine;Persist Security Info=True;User ID=Emma;Password=1234");
         public FrmABM()
         {
 
@@ -236,10 +236,41 @@ namespace PracticoIntegrador2018
         //------------ELIMINAR PELICULA------------------
         private void btnBorrarPeli_Click(object sender, EventArgs e)
         {
+            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar la pelicula con el id = [" + idPeli + "] ?", "BORRANDO PELICULA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             string eliminarP = "Delete pelicula where id_pelicula =" + idPeli;
+            if (idPeli > 0)
+            {
+                if (comprobar == DialogResult.Yes)
+                {
+                    try
+                    {
 
-            datos.actualizarBD(eliminarP);
+
+                        datos.actualizarBD(eliminarP);
+                        MessageBox.Show("LA PELICULA FUE BORRADA EXITOSAMENTE!!");
+
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show("Exeption al borrar pelicula" + x.Message);
+                    }
+                }
+                else if (comprobar == DialogResult.No)
+                {
+                    MessageBox.Show("La pelicula safo de ser borrada!!! =D");
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Ninguna pelocula fue seleccionada");
+
+
+                }
+            }
+
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            limpiarTxtPelis();
         }
 
         //-------------ACEPTAR LA MODIFICACION(BOTON FANTASMA :O)-----------------
@@ -412,6 +443,45 @@ namespace PracticoIntegrador2018
         {
 
         }
+
+        private void btnBorrarAct_Click(object sender, EventArgs e)
+        {
+
+            DialogResult comprobar = MessageBox.Show("Seguro que desea borrar al actor con el id = [" + idActor + "] ?", "BORRANDO ACTOR", MessageBoxButtons.YesNo);
+
+            string eliminarA = "Delete actores where id_actor =" + idActor;
+
+
+            if (idActor > 0)
+            {
+                if (comprobar == DialogResult.Yes)
+                {
+                    try
+                    {
+
+                        datos.actualizarBD(eliminarA);
+                        MessageBox.Show("El actor fue eliminado correctamente");
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show("ERROR AL MODIFICAR AL ACTOR" + x.Message);
+
+                    }
+                }
+                else if (comprobar == DialogResult.No)
+                {
+                    MessageBox.Show("El Actor No fue borrado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ningun actor fue seleccionado");
+            }
+
+            datos.putInGrid(dgvActores, "Select * from Actores");
+            limpiarTxtActores();
+        }
+
         //---------------------------------------------------------------------------------------------------------
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
