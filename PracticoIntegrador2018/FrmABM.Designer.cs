@@ -310,7 +310,7 @@
             this.lblPeliculas.Size = new System.Drawing.Size(109, 22);
             this.lblPeliculas.TabIndex = 40;
             this.lblPeliculas.Text = "PELÍCULAS";
-            this.lblPeliculas.Click += new System.EventHandler(this.lblPeliculas_Click);
+            //this.lblPeliculas.Click += new System.EventHandler(this.lblPeliculas_Click);
             // 
             // pnlActores
             // 
