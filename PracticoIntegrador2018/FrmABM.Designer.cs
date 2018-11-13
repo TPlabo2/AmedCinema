@@ -28,21 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnlPelicula = new System.Windows.Forms.Panel();
-            this.dtpDura = new System.Windows.Forms.DateTimePicker();
-            this.dgvPeliculas = new System.Windows.Forms.DataGridView();
-            this.txtIdPeli = new System.Windows.Forms.TextBox();
+            this.txtIdPelicula = new System.Windows.Forms.TextBox();
             this.lblIdPelicula = new System.Windows.Forms.Label();
-            this.btnGuardarPelicula = new System.Windows.Forms.Button();
-            this.btnEliminarPelicula = new System.Windows.Forms.Button();
-            this.btnModificarPelicula = new System.Windows.Forms.Button();
-            this.btnNuevoPelicula = new System.Windows.Forms.Button();
             this.cboDirector = new System.Windows.Forms.ComboBox();
             this.cboSubtitulos = new System.Windows.Forms.ComboBox();
             this.cboClasificacion = new System.Windows.Forms.ComboBox();
             this.cboIdioma = new System.Windows.Forms.ComboBox();
             this.cboGenero = new System.Windows.Forms.ComboBox();
+            this.txtDuracion = new System.Windows.Forms.TextBox();
             this.txtNombrePelicula = new System.Windows.Forms.TextBox();
             this.lblDirector = new System.Windows.Forms.Label();
             this.lblSubtitulos = new System.Windows.Forms.Label();
@@ -52,58 +46,51 @@
             this.lblDuracion = new System.Windows.Forms.Label();
             this.lblNombrePelicula = new System.Windows.Forms.Label();
             this.lblPeliculas = new System.Windows.Forms.Label();
-            this.pnlActores = new System.Windows.Forms.Panel();
-            this.dgvActores = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvPeliculas = new System.Windows.Forms.DataGridView();
+            this.lblApellidoActor = new System.Windows.Forms.Label();
+            this.txtApellidoActor = new System.Windows.Forms.TextBox();
+            this.lblPais = new System.Windows.Forms.Label();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.cboPais = new System.Windows.Forms.ComboBox();
+            this.dtpEdad = new System.Windows.Forms.DateTimePicker();
+            this.lblReseña = new System.Windows.Forms.Label();
+            this.lblNombreActor = new System.Windows.Forms.Label();
+            this.txtNombreActor = new System.Windows.Forms.TextBox();
+            this.lblIdActores = new System.Windows.Forms.Label();
+            this.txtIdActor = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblActor = new System.Windows.Forms.Label();
-            this.txtIdActor = new System.Windows.Forms.TextBox();
-            this.lblIdActores = new System.Windows.Forms.Label();
-            this.txtNombreActor = new System.Windows.Forms.TextBox();
-            this.lblNombreActor = new System.Windows.Forms.Label();
+            this.dgvActores = new System.Windows.Forms.DataGridView();
+            this.txtReseña = new System.Windows.Forms.TextBox();
+            this.pnlActores = new System.Windows.Forms.Panel();
+            this.btnGuardarPelicula = new System.Windows.Forms.Button();
+            this.btnEliminarPelicula = new System.Windows.Forms.Button();
+            this.btnModificarPelicula = new System.Windows.Forms.Button();
+            this.btnNuevoPelicula = new System.Windows.Forms.Button();
             this.btnGuardarActor = new System.Windows.Forms.Button();
             this.btnEliminarActor = new System.Windows.Forms.Button();
             this.btnModificarActor = new System.Windows.Forms.Button();
             this.btnNuevoActor = new System.Windows.Forms.Button();
-            this.lblReseña = new System.Windows.Forms.Label();
-            this.dtpEdad = new System.Windows.Forms.DateTimePicker();
-            this.cboPais = new System.Windows.Forms.ComboBox();
-            this.lblEdad = new System.Windows.Forms.Label();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.txtApellidoActor = new System.Windows.Forms.TextBox();
-            this.lblApellidoActor = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-//            this.cineMioDataSet = new PracticoIntegrador2018.CineMioDataSet();
-            this.peliculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-  //          this.peliculaTableAdapter = new PracticoIntegrador2018.CineMioDataSetTableAdapters.PeliculaTableAdapter();
-            this.actoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-    //        this.actoresTableAdapter = new PracticoIntegrador2018.CineMioDataSetTableAdapters.ActoresTableAdapter();
-            this.txtReseña = new System.Windows.Forms.TextBox();
             this.pnlPelicula.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
-            this.pnlActores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActores)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.cineMioDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActores)).BeginInit();
+            this.pnlActores.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPelicula
             // 
-            this.pnlPelicula.Controls.Add(this.dtpDura);
             this.pnlPelicula.Controls.Add(this.dgvPeliculas);
-            this.pnlPelicula.Controls.Add(this.txtIdPeli);
+            this.pnlPelicula.Controls.Add(this.txtIdPelicula);
             this.pnlPelicula.Controls.Add(this.lblIdPelicula);
-            this.pnlPelicula.Controls.Add(this.btnGuardarPelicula);
-            this.pnlPelicula.Controls.Add(this.btnEliminarPelicula);
-            this.pnlPelicula.Controls.Add(this.btnModificarPelicula);
-            this.pnlPelicula.Controls.Add(this.btnNuevoPelicula);
             this.pnlPelicula.Controls.Add(this.cboDirector);
             this.pnlPelicula.Controls.Add(this.cboSubtitulos);
             this.pnlPelicula.Controls.Add(this.cboClasificacion);
             this.pnlPelicula.Controls.Add(this.cboIdioma);
             this.pnlPelicula.Controls.Add(this.cboGenero);
+            this.pnlPelicula.Controls.Add(this.txtDuracion);
             this.pnlPelicula.Controls.Add(this.txtNombrePelicula);
             this.pnlPelicula.Controls.Add(this.lblDirector);
             this.pnlPelicula.Controls.Add(this.lblSubtitulos);
@@ -116,33 +103,17 @@
             this.pnlPelicula.Location = new System.Drawing.Point(10, 14);
             this.pnlPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPelicula.Name = "pnlPelicula";
-            this.pnlPelicula.Size = new System.Drawing.Size(1176, 515);
+            this.pnlPelicula.Size = new System.Drawing.Size(1176, 462);
             this.pnlPelicula.TabIndex = 0;
+            this.pnlPelicula.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPelicula_Paint);
             // 
-            // dtpDura
+            // txtIdPelicula
             // 
-            this.dtpDura.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpDura.Location = new System.Drawing.Point(165, 175);
-            this.dtpDura.Name = "dtpDura";
-            this.dtpDura.Size = new System.Drawing.Size(100, 26);
-            this.dtpDura.TabIndex = 45;
-            // 
-            // dgvPeliculas
-            // 
-            this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeliculas.Location = new System.Drawing.Point(440, 71);
-            this.dgvPeliculas.Name = "dgvPeliculas";
-            this.dgvPeliculas.RowTemplate.Height = 28;
-            this.dgvPeliculas.Size = new System.Drawing.Size(733, 372);
-            this.dgvPeliculas.TabIndex = 44;
-            // 
-            // txtIdPeli
-            // 
-            this.txtIdPeli.Location = new System.Drawing.Point(165, 72);
-            this.txtIdPeli.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdPeli.Name = "txtIdPeli";
-            this.txtIdPeli.Size = new System.Drawing.Size(180, 26);
-            this.txtIdPeli.TabIndex = 43;
+            this.txtIdPelicula.Location = new System.Drawing.Point(165, 72);
+            this.txtIdPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdPelicula.Name = "txtIdPelicula";
+            this.txtIdPelicula.Size = new System.Drawing.Size(180, 26);
+            this.txtIdPelicula.TabIndex = 43;
             // 
             // lblIdPelicula
             // 
@@ -153,50 +124,6 @@
             this.lblIdPelicula.Size = new System.Drawing.Size(84, 20);
             this.lblIdPelicula.TabIndex = 42;
             this.lblIdPelicula.Text = "id_Película";
-            // 
-            // btnGuardarPelicula
-            // 
-            this.btnGuardarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarPelicula.Location = new System.Drawing.Point(644, 451);
-            this.btnGuardarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnGuardarPelicula.Name = "btnGuardarPelicula";
-            this.btnGuardarPelicula.Size = new System.Drawing.Size(112, 35);
-            this.btnGuardarPelicula.TabIndex = 41;
-            this.btnGuardarPelicula.Text = "Guardar";
-            this.btnGuardarPelicula.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarPelicula
-            // 
-            this.btnEliminarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarPelicula.Location = new System.Drawing.Point(950, 451);
-            this.btnEliminarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEliminarPelicula.Name = "btnEliminarPelicula";
-            this.btnEliminarPelicula.Size = new System.Drawing.Size(112, 35);
-            this.btnEliminarPelicula.TabIndex = 39;
-            this.btnEliminarPelicula.Text = "Eliminar";
-            this.btnEliminarPelicula.UseVisualStyleBackColor = true;
-            // 
-            // btnModificarPelicula
-            // 
-            this.btnModificarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarPelicula.Location = new System.Drawing.Point(802, 451);
-            this.btnModificarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModificarPelicula.Name = "btnModificarPelicula";
-            this.btnModificarPelicula.Size = new System.Drawing.Size(112, 35);
-            this.btnModificarPelicula.TabIndex = 38;
-            this.btnModificarPelicula.Text = "Modificar";
-            this.btnModificarPelicula.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevoPelicula
-            // 
-            this.btnNuevoPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoPelicula.Location = new System.Drawing.Point(494, 451);
-            this.btnNuevoPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnNuevoPelicula.Name = "btnNuevoPelicula";
-            this.btnNuevoPelicula.Size = new System.Drawing.Size(112, 35);
-            this.btnNuevoPelicula.TabIndex = 37;
-            this.btnNuevoPelicula.Text = "Nuevo";
-            this.btnNuevoPelicula.UseVisualStyleBackColor = true;
             // 
             // cboDirector
             // 
@@ -252,6 +179,14 @@
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(180, 28);
             this.cboGenero.TabIndex = 31;
+            // 
+            // txtDuracion
+            // 
+            this.txtDuracion.Location = new System.Drawing.Point(165, 177);
+            this.txtDuracion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.Size = new System.Drawing.Size(80, 26);
+            this.txtDuracion.TabIndex = 29;
             // 
             // txtNombrePelicula
             // 
@@ -345,40 +280,129 @@
             this.lblPeliculas.TabIndex = 40;
             this.lblPeliculas.Text = "PELÍCULAS";
             // 
-            // pnlActores
+            // panel1
             // 
-            this.pnlActores.Controls.Add(this.txtReseña);
-            this.pnlActores.Controls.Add(this.dgvActores);
-            this.pnlActores.Controls.Add(this.panel2);
-            this.pnlActores.Controls.Add(this.txtIdActor);
-            this.pnlActores.Controls.Add(this.lblIdActores);
-            this.pnlActores.Controls.Add(this.txtNombreActor);
-            this.pnlActores.Controls.Add(this.lblNombreActor);
-            this.pnlActores.Controls.Add(this.btnGuardarActor);
-            this.pnlActores.Controls.Add(this.btnEliminarActor);
-            this.pnlActores.Controls.Add(this.btnModificarActor);
-            this.pnlActores.Controls.Add(this.btnNuevoActor);
-            this.pnlActores.Controls.Add(this.lblReseña);
-            this.pnlActores.Controls.Add(this.dtpEdad);
-            this.pnlActores.Controls.Add(this.cboPais);
-            this.pnlActores.Controls.Add(this.lblEdad);
-            this.pnlActores.Controls.Add(this.lblPais);
-            this.pnlActores.Controls.Add(this.txtApellidoActor);
-            this.pnlActores.Controls.Add(this.lblApellidoActor);
-            this.pnlActores.Location = new System.Drawing.Point(10, 558);
-            this.pnlActores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlActores.Name = "pnlActores";
-            this.pnlActores.Size = new System.Drawing.Size(1176, 543);
-            this.pnlActores.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.Tomato;
+            this.panel1.Controls.Add(this.lblPeliculas);
+            this.panel1.Location = new System.Drawing.Point(10, 37);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1176, 40);
+            this.panel1.TabIndex = 44;
             // 
-            // dgvActores
+            // dgvPeliculas
             // 
-            this.dgvActores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActores.Location = new System.Drawing.Point(419, 82);
-            this.dgvActores.Name = "dgvActores";
-            this.dgvActores.RowTemplate.Height = 28;
-            this.dgvActores.Size = new System.Drawing.Size(733, 372);
-            this.dgvActores.TabIndex = 45;
+            this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeliculas.Location = new System.Drawing.Point(383, 77);
+            this.dgvPeliculas.Name = "dgvPeliculas";
+            this.dgvPeliculas.RowTemplate.Height = 28;
+            this.dgvPeliculas.Size = new System.Drawing.Size(790, 366);
+            this.dgvPeliculas.TabIndex = 44;
+            // 
+            // lblApellidoActor
+            // 
+            this.lblApellidoActor.AutoSize = true;
+            this.lblApellidoActor.Location = new System.Drawing.Point(72, 206);
+            this.lblApellidoActor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoActor.Name = "lblApellidoActor";
+            this.lblApellidoActor.Size = new System.Drawing.Size(65, 20);
+            this.lblApellidoActor.TabIndex = 42;
+            this.lblApellidoActor.Text = "Apellido";
+            // 
+            // txtApellidoActor
+            // 
+            this.txtApellidoActor.Location = new System.Drawing.Point(164, 202);
+            this.txtApellidoActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidoActor.Name = "txtApellidoActor";
+            this.txtApellidoActor.Size = new System.Drawing.Size(180, 26);
+            this.txtApellidoActor.TabIndex = 43;
+            // 
+            // lblPais
+            // 
+            this.lblPais.AutoSize = true;
+            this.lblPais.Location = new System.Drawing.Point(99, 262);
+            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(39, 20);
+            this.lblPais.TabIndex = 44;
+            this.lblPais.Text = "País";
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(94, 322);
+            this.lblEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(47, 20);
+            this.lblEdad.TabIndex = 45;
+            this.lblEdad.Text = "Edad";
+            // 
+            // cboPais
+            // 
+            this.cboPais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPais.FormattingEnabled = true;
+            this.cboPais.Location = new System.Drawing.Point(165, 257);
+            this.cboPais.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboPais.Name = "cboPais";
+            this.cboPais.Size = new System.Drawing.Size(180, 28);
+            this.cboPais.TabIndex = 47;
+            // 
+            // dtpEdad
+            // 
+            this.dtpEdad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpEdad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEdad.Location = new System.Drawing.Point(165, 312);
+            this.dtpEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpEdad.Name = "dtpEdad";
+            this.dtpEdad.Size = new System.Drawing.Size(180, 26);
+            this.dtpEdad.TabIndex = 48;
+            // 
+            // lblReseña
+            // 
+            this.lblReseña.AutoSize = true;
+            this.lblReseña.Location = new System.Drawing.Point(76, 374);
+            this.lblReseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReseña.Name = "lblReseña";
+            this.lblReseña.Size = new System.Drawing.Size(65, 20);
+            this.lblReseña.TabIndex = 50;
+            this.lblReseña.Text = "Reseña";
+            // 
+            // lblNombreActor
+            // 
+            this.lblNombreActor.AutoSize = true;
+            this.lblNombreActor.Location = new System.Drawing.Point(74, 143);
+            this.lblNombreActor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreActor.Name = "lblNombreActor";
+            this.lblNombreActor.Size = new System.Drawing.Size(65, 20);
+            this.lblNombreActor.TabIndex = 52;
+            this.lblNombreActor.Text = "Nombre";
+            // 
+            // txtNombreActor
+            // 
+            this.txtNombreActor.Location = new System.Drawing.Point(165, 138);
+            this.txtNombreActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreActor.Name = "txtNombreActor";
+            this.txtNombreActor.Size = new System.Drawing.Size(180, 26);
+            this.txtNombreActor.TabIndex = 53;
+            // 
+            // lblIdActores
+            // 
+            this.lblIdActores.AutoSize = true;
+            this.lblIdActores.Location = new System.Drawing.Point(72, 86);
+            this.lblIdActores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIdActores.Name = "lblIdActores";
+            this.lblIdActores.Size = new System.Drawing.Size(68, 20);
+            this.lblIdActores.TabIndex = 54;
+            this.lblIdActores.Text = "id_Actor";
+            // 
+            // txtIdActor
+            // 
+            this.txtIdActor.Location = new System.Drawing.Point(164, 82);
+            this.txtIdActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdActor.Name = "txtIdActor";
+            this.txtIdActor.Size = new System.Drawing.Size(180, 26);
+            this.txtIdActor.TabIndex = 55;
             // 
             // panel2
             // 
@@ -403,201 +427,146 @@
             this.lblActor.TabIndex = 41;
             this.lblActor.Text = "ACTORES";
             // 
-            // txtIdActor
+            // dgvActores
             // 
-            this.txtIdActor.Location = new System.Drawing.Point(164, 82);
-            this.txtIdActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdActor.Name = "txtIdActor";
-            this.txtIdActor.Size = new System.Drawing.Size(180, 26);
-            this.txtIdActor.TabIndex = 55;
+            this.dgvActores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActores.Location = new System.Drawing.Point(383, 66);
+            this.dgvActores.Name = "dgvActores";
+            this.dgvActores.RowTemplate.Height = 28;
+            this.dgvActores.Size = new System.Drawing.Size(790, 366);
+            this.dgvActores.TabIndex = 45;
             // 
-            // lblIdActores
+            // txtReseña
             // 
-            this.lblIdActores.AutoSize = true;
-            this.lblIdActores.Location = new System.Drawing.Point(72, 86);
-            this.lblIdActores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblIdActores.Name = "lblIdActores";
-            this.lblIdActores.Size = new System.Drawing.Size(68, 20);
-            this.lblIdActores.TabIndex = 54;
-            this.lblIdActores.Text = "id_Actor";
+            this.txtReseña.Location = new System.Drawing.Point(165, 374);
+            this.txtReseña.Multiline = true;
+            this.txtReseña.Name = "txtReseña";
+            this.txtReseña.Size = new System.Drawing.Size(180, 58);
+            this.txtReseña.TabIndex = 56;
             // 
-            // txtNombreActor
+            // pnlActores
             // 
-            this.txtNombreActor.Location = new System.Drawing.Point(165, 138);
-            this.txtNombreActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombreActor.Name = "txtNombreActor";
-            this.txtNombreActor.Size = new System.Drawing.Size(180, 26);
-            this.txtNombreActor.TabIndex = 53;
+            this.pnlActores.Controls.Add(this.txtReseña);
+            this.pnlActores.Controls.Add(this.dgvActores);
+            this.pnlActores.Controls.Add(this.panel2);
+            this.pnlActores.Controls.Add(this.txtIdActor);
+            this.pnlActores.Controls.Add(this.lblIdActores);
+            this.pnlActores.Controls.Add(this.txtNombreActor);
+            this.pnlActores.Controls.Add(this.lblNombreActor);
+            this.pnlActores.Controls.Add(this.lblReseña);
+            this.pnlActores.Controls.Add(this.dtpEdad);
+            this.pnlActores.Controls.Add(this.cboPais);
+            this.pnlActores.Controls.Add(this.lblEdad);
+            this.pnlActores.Controls.Add(this.lblPais);
+            this.pnlActores.Controls.Add(this.txtApellidoActor);
+            this.pnlActores.Controls.Add(this.lblApellidoActor);
+            this.pnlActores.Location = new System.Drawing.Point(10, 526);
+            this.pnlActores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlActores.Name = "pnlActores";
+            this.pnlActores.Size = new System.Drawing.Size(1176, 443);
+            this.pnlActores.TabIndex = 1;
             // 
-            // lblNombreActor
+            // btnGuardarPelicula
             // 
-            this.lblNombreActor.AutoSize = true;
-            this.lblNombreActor.Location = new System.Drawing.Point(74, 143);
-            this.lblNombreActor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombreActor.Name = "lblNombreActor";
-            this.lblNombreActor.Size = new System.Drawing.Size(65, 20);
-            this.lblNombreActor.TabIndex = 52;
-            this.lblNombreActor.Text = "Nombre";
+            this.btnGuardarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarPelicula.Location = new System.Drawing.Point(654, 481);
+            this.btnGuardarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGuardarPelicula.Name = "btnGuardarPelicula";
+            this.btnGuardarPelicula.Size = new System.Drawing.Size(112, 35);
+            this.btnGuardarPelicula.TabIndex = 48;
+            this.btnGuardarPelicula.Text = "Guardar";
+            this.btnGuardarPelicula.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarPelicula
+            // 
+            this.btnEliminarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarPelicula.Location = new System.Drawing.Point(960, 481);
+            this.btnEliminarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEliminarPelicula.Name = "btnEliminarPelicula";
+            this.btnEliminarPelicula.Size = new System.Drawing.Size(112, 35);
+            this.btnEliminarPelicula.TabIndex = 47;
+            this.btnEliminarPelicula.Text = "Eliminar";
+            this.btnEliminarPelicula.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarPelicula
+            // 
+            this.btnModificarPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarPelicula.Location = new System.Drawing.Point(812, 481);
+            this.btnModificarPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModificarPelicula.Name = "btnModificarPelicula";
+            this.btnModificarPelicula.Size = new System.Drawing.Size(112, 35);
+            this.btnModificarPelicula.TabIndex = 46;
+            this.btnModificarPelicula.Text = "Modificar";
+            this.btnModificarPelicula.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoPelicula
+            // 
+            this.btnNuevoPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoPelicula.Location = new System.Drawing.Point(504, 481);
+            this.btnNuevoPelicula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNuevoPelicula.Name = "btnNuevoPelicula";
+            this.btnNuevoPelicula.Size = new System.Drawing.Size(112, 35);
+            this.btnNuevoPelicula.TabIndex = 45;
+            this.btnNuevoPelicula.Text = "Nuevo";
+            this.btnNuevoPelicula.UseVisualStyleBackColor = true;
             // 
             // btnGuardarActor
             // 
             this.btnGuardarActor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarActor.Location = new System.Drawing.Point(644, 471);
+            this.btnGuardarActor.Location = new System.Drawing.Point(717, 979);
             this.btnGuardarActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardarActor.Name = "btnGuardarActor";
             this.btnGuardarActor.Size = new System.Drawing.Size(112, 35);
-            this.btnGuardarActor.TabIndex = 45;
+            this.btnGuardarActor.TabIndex = 60;
             this.btnGuardarActor.Text = "Guardar";
             this.btnGuardarActor.UseVisualStyleBackColor = true;
             // 
             // btnEliminarActor
             // 
             this.btnEliminarActor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarActor.Location = new System.Drawing.Point(950, 471);
+            this.btnEliminarActor.Location = new System.Drawing.Point(1023, 979);
             this.btnEliminarActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminarActor.Name = "btnEliminarActor";
             this.btnEliminarActor.Size = new System.Drawing.Size(112, 35);
-            this.btnEliminarActor.TabIndex = 44;
+            this.btnEliminarActor.TabIndex = 59;
             this.btnEliminarActor.Text = "Eliminar";
             this.btnEliminarActor.UseVisualStyleBackColor = true;
             // 
             // btnModificarActor
             // 
             this.btnModificarActor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarActor.Location = new System.Drawing.Point(802, 471);
+            this.btnModificarActor.Location = new System.Drawing.Point(875, 979);
             this.btnModificarActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificarActor.Name = "btnModificarActor";
             this.btnModificarActor.Size = new System.Drawing.Size(112, 35);
-            this.btnModificarActor.TabIndex = 43;
+            this.btnModificarActor.TabIndex = 58;
             this.btnModificarActor.Text = "Modificar";
             this.btnModificarActor.UseVisualStyleBackColor = true;
             // 
             // btnNuevoActor
             // 
             this.btnNuevoActor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoActor.Location = new System.Drawing.Point(494, 471);
+            this.btnNuevoActor.Location = new System.Drawing.Point(567, 979);
             this.btnNuevoActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNuevoActor.Name = "btnNuevoActor";
             this.btnNuevoActor.Size = new System.Drawing.Size(112, 35);
-            this.btnNuevoActor.TabIndex = 42;
+            this.btnNuevoActor.TabIndex = 57;
             this.btnNuevoActor.Text = "Nuevo";
             this.btnNuevoActor.UseVisualStyleBackColor = true;
-            // 
-            // lblReseña
-            // 
-            this.lblReseña.AutoSize = true;
-            this.lblReseña.Location = new System.Drawing.Point(76, 374);
-            this.lblReseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReseña.Name = "lblReseña";
-            this.lblReseña.Size = new System.Drawing.Size(65, 20);
-            this.lblReseña.TabIndex = 50;
-            this.lblReseña.Text = "Reseña";
-            // 
-            // dtpEdad
-            // 
-            this.dtpEdad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpEdad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEdad.Location = new System.Drawing.Point(165, 312);
-            this.dtpEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpEdad.Name = "dtpEdad";
-            this.dtpEdad.Size = new System.Drawing.Size(180, 26);
-            this.dtpEdad.TabIndex = 48;
-            // 
-            // cboPais
-            // 
-            this.cboPais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPais.FormattingEnabled = true;
-            this.cboPais.Location = new System.Drawing.Point(165, 257);
-            this.cboPais.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboPais.Name = "cboPais";
-            this.cboPais.Size = new System.Drawing.Size(180, 28);
-            this.cboPais.TabIndex = 47;
-            // 
-            // lblEdad
-            // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(94, 322);
-            this.lblEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(47, 20);
-            this.lblEdad.TabIndex = 45;
-            this.lblEdad.Text = "Edad";
-            // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(99, 262);
-            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(39, 20);
-            this.lblPais.TabIndex = 44;
-            this.lblPais.Text = "País";
-            // 
-            // txtApellidoActor
-            // 
-            this.txtApellidoActor.Location = new System.Drawing.Point(164, 202);
-            this.txtApellidoActor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtApellidoActor.Name = "txtApellidoActor";
-            this.txtApellidoActor.Size = new System.Drawing.Size(180, 26);
-            this.txtApellidoActor.TabIndex = 43;
-            // 
-            // lblApellidoActor
-            // 
-            this.lblApellidoActor.AutoSize = true;
-            this.lblApellidoActor.Location = new System.Drawing.Point(72, 206);
-            this.lblApellidoActor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblApellidoActor.Name = "lblApellidoActor";
-            this.lblApellidoActor.Size = new System.Drawing.Size(65, 20);
-            this.lblApellidoActor.TabIndex = 42;
-            this.lblApellidoActor.Text = "Apellido";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Controls.Add(this.lblPeliculas);
-            this.panel1.Location = new System.Drawing.Point(10, 37);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1176, 40);
-            this.panel1.TabIndex = 44;
-            // 
-            // cineMioDataSet
-            // 
-           // this.cineMioDataSet.DataSetName = "CineMioDataSet";
-           // this.cineMioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // peliculaBindingSource
-            // 
-            this.peliculaBindingSource.DataMember = "Pelicula";
-            //this.peliculaBindingSource.DataSource = this.cineMioDataSet;
-            // 
-            // peliculaTableAdapter
-            // 
-            //this.peliculaTableAdapter.ClearBeforeFill = true;
-            // 
-            // actoresBindingSource
-            // 
-            this.actoresBindingSource.DataMember = "Actores";
-            //this.actoresBindingSource.DataSource = this.cineMioDataSet;
-            // 
-            // actoresTableAdapter
-            // 
-            //this.actoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // txtReseña
-            // 
-            this.txtReseña.Location = new System.Drawing.Point(164, 374);
-            this.txtReseña.Multiline = true;
-            this.txtReseña.Name = "txtReseña";
-            this.txtReseña.Size = new System.Drawing.Size(181, 80);
-            this.txtReseña.TabIndex = 56;
             // 
             // FrmABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 1050);
+            this.ClientSize = new System.Drawing.Size(1234, 1050);
+            this.Controls.Add(this.btnGuardarActor);
+            this.Controls.Add(this.btnEliminarActor);
+            this.Controls.Add(this.btnGuardarPelicula);
+            this.Controls.Add(this.btnModificarActor);
+            this.Controls.Add(this.btnEliminarPelicula);
+            this.Controls.Add(this.btnNuevoActor);
+            this.Controls.Add(this.btnModificarPelicula);
+            this.Controls.Add(this.btnNuevoPelicula);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlActores);
             this.Controls.Add(this.pnlPelicula);
@@ -608,17 +577,14 @@
             this.Load += new System.EventHandler(this.FrmABM_Load);
             this.pnlPelicula.ResumeLayout(false);
             this.pnlPelicula.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).EndInit();
-            this.pnlActores.ResumeLayout(false);
-            this.pnlActores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActores)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-           //((System.ComponentModel.ISupportInitialize)(this.cineMioDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActores)).EndInit();
+            this.pnlActores.ResumeLayout(false);
+            this.pnlActores.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -627,14 +593,12 @@
 
         private System.Windows.Forms.Panel pnlPelicula;
         private System.Windows.Forms.Label lblPeliculas;
-        private System.Windows.Forms.Button btnEliminarPelicula;
-        private System.Windows.Forms.Button btnModificarPelicula;
-        private System.Windows.Forms.Button btnNuevoPelicula;
         private System.Windows.Forms.ComboBox cboDirector;
         private System.Windows.Forms.ComboBox cboSubtitulos;
         private System.Windows.Forms.ComboBox cboClasificacion;
         private System.Windows.Forms.ComboBox cboIdioma;
         private System.Windows.Forms.ComboBox cboGenero;
+        private System.Windows.Forms.TextBox txtDuracion;
         private System.Windows.Forms.TextBox txtNombrePelicula;
         private System.Windows.Forms.Label lblDirector;
         private System.Windows.Forms.Label lblSubtitulos;
@@ -643,36 +607,33 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.Label lblNombrePelicula;
-        private System.Windows.Forms.Panel pnlActores;
-        private System.Windows.Forms.Label lblReseña;
-        private System.Windows.Forms.DateTimePicker dtpEdad;
-        private System.Windows.Forms.ComboBox cboPais;
-        private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox txtApellidoActor;
+        private System.Windows.Forms.TextBox txtIdPelicula;
+        private System.Windows.Forms.Label lblIdPelicula;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvPeliculas;
         private System.Windows.Forms.Label lblApellidoActor;
+        private System.Windows.Forms.TextBox txtApellidoActor;
+        private System.Windows.Forms.Label lblPais;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.ComboBox cboPais;
+        private System.Windows.Forms.DateTimePicker dtpEdad;
+        private System.Windows.Forms.Label lblReseña;
+        private System.Windows.Forms.Label lblNombreActor;
+        private System.Windows.Forms.TextBox txtNombreActor;
+        private System.Windows.Forms.Label lblIdActores;
+        private System.Windows.Forms.TextBox txtIdActor;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblActor;
+        private System.Windows.Forms.DataGridView dgvActores;
+        private System.Windows.Forms.TextBox txtReseña;
+        private System.Windows.Forms.Panel pnlActores;
         private System.Windows.Forms.Button btnGuardarPelicula;
+        private System.Windows.Forms.Button btnEliminarPelicula;
+        private System.Windows.Forms.Button btnModificarPelicula;
+        private System.Windows.Forms.Button btnNuevoPelicula;
         private System.Windows.Forms.Button btnGuardarActor;
         private System.Windows.Forms.Button btnEliminarActor;
         private System.Windows.Forms.Button btnModificarActor;
         private System.Windows.Forms.Button btnNuevoActor;
-        private System.Windows.Forms.TextBox txtIdActor;
-        private System.Windows.Forms.Label lblIdActores;
-        private System.Windows.Forms.TextBox txtNombreActor;
-        private System.Windows.Forms.Label lblNombreActor;
-        private System.Windows.Forms.TextBox txtIdPeli;
-        private System.Windows.Forms.Label lblIdPelicula;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvPeliculas;
-        private System.Windows.Forms.DataGridView dgvActores;
-        //private CineMioDataSet cineMioDataSet;
-        private System.Windows.Forms.BindingSource peliculaBindingSource;
-        //private CineMioDataSetTableAdapters.PeliculaTableAdapter peliculaTableAdapter;
-        private System.Windows.Forms.BindingSource actoresBindingSource;
-        //private CineMioDataSetTableAdapters.ActoresTableAdapter actoresTableAdapter;
-        private System.Windows.Forms.DateTimePicker dtpDura;
-        private System.Windows.Forms.TextBox txtReseña;
     }
 }
