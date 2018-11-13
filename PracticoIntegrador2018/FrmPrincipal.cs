@@ -276,7 +276,7 @@ namespace PracticoIntegrador2018
             }
 
         }
-
+        //----------------------------------------------------------------------------------------
         private void btnConsulta7_Click(object sender, EventArgs e)//SE PARAMETRIZA EL VALOR DE COMPARACIÓN
         {
             
@@ -299,7 +299,7 @@ namespace PracticoIntegrador2018
                 }
 
         }
-
+        //----------------------------------------------------------------------------------------
         private void btnConsulta8_Click(object sender, EventArgs e)//SE PARAMETRIZA LA CANTIDAD DE AÑOS ANTERIORES DEL CUAL QUEREMOS CONOCER EL DETALLE
         {
 
@@ -327,7 +327,7 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
         }
-
+        //----------------------------------------------------------------------------------------
         private void btnConsulta9_Click(object sender, EventArgs e) //SE PARAMETRIZA LA FORMA DE PAGO
         {
 
@@ -353,7 +353,7 @@ namespace PracticoIntegrador2018
             }
 
         }
-
+        //----------------------------------------------------------------------------------------
         private void btnConsulta10_Click(object sender, EventArgs e) //SE PARAMETRIZA LA COMPARACIÓN DE FECHA DE NACIMIENTO
         {
 
@@ -379,7 +379,7 @@ namespace PracticoIntegrador2018
             }
 
         }
-
+        //----------------------------------------------------------------------------------------
         private void btnConsulta4_Click(object sender, EventArgs e) //SE PARAMETRIZA EL SEGUNDO ID Y EL HAVING
         {
             MessageBox.Show("select p.nombre, avg(e.id_entrada) 'Venta de entradas promedio'" +
@@ -412,7 +412,7 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
         }
-        //-----------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
         private void btnConsulta5_Click(object sender, EventArgs e) //SE PARAMETRIZA LAS LETRAS
         {
             MessageBox.Show("select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', "+
