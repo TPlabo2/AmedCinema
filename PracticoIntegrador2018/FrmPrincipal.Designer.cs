@@ -178,7 +178,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(517, 638);
+            this.btnConsultar.Location = new System.Drawing.Point(411, 46);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 40);
             this.btnConsultar.TabIndex = 12;
@@ -300,7 +300,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(727, 636);
+            this.btnSalir.Location = new System.Drawing.Point(621, 44);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(104, 40);
             this.btnSalir.TabIndex = 36;
@@ -311,7 +311,7 @@
             // btnABM
             // 
             this.btnABM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnABM.Location = new System.Drawing.Point(948, 638);
+            this.btnABM.Location = new System.Drawing.Point(842, 46);
             this.btnABM.Name = "btnABM";
             this.btnABM.Size = new System.Drawing.Size(104, 40);
             this.btnABM.TabIndex = 37;

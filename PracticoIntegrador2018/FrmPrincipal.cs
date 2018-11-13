@@ -281,7 +281,7 @@ namespace PracticoIntegrador2018
         {
             
                 MessageBox.Show("Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
-                    "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)");
+                    "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 consulta = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
@@ -304,25 +304,24 @@ namespace PracticoIntegrador2018
         {
 
             MessageBox.Show("Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
-                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
-                "Where year(c.fecha) = year(getdate()) - 1 and 200 < any(Select avg(precio * cantidad) " +
-                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)");
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion Where year(c.fecha) = year(getdate()) - 1" +
+                "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)", "Instrucciones",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             consulta = "Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
-                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
-                "Where year(c.fecha) = year(getdate()) - 1 and 200 < any(Select avg(precio * cantidad) " +
-                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)";
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion Where year(c.fecha) = year(getdate()) - 1" +
+                "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)";
 
             consultero = Consultero.C8;
+            //" + txtConsulta8.Text + "
 
             //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
 
             if (rbtnConsulta8.Checked == true)
             {
                 consultaParametrizada = "Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
-                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
-                "Where year(c.fecha) = year(getdate()) - " + txtConsulta8.Text + " and 200 < any(Select avg(precio * cantidad) " +
-                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)";
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion Where year(c.fecha) = year(getdate()) - " + txtConsulta8.Text + " " +
+                "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
@@ -333,7 +332,7 @@ namespace PracticoIntegrador2018
 
             MessageBox.Show("Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
                 "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
-                "and year(fecha) = year(getdate()) - 1 and   formaPago like 'Debito' and descripcion like 'Boleteria'");
+                "and year(fecha) = year(getdate()) - 1 and   formaPago like 'Debito' and descripcion like 'Boleteria'", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             consulta = "Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
                 "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
@@ -358,12 +357,12 @@ namespace PracticoIntegrador2018
         {
 
             MessageBox.Show("Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
-                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
-                "Where fecha_nacimiento > 1950 and reseña like '%óscar%'");
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas " +
+                "Where fecha_nacimiento > 1950 and reseña like '%óscar%' and i.Idioma in ('ingles') Order by d.nombre", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             consulta = "Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
-                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
-                "Where fecha_nacimiento > 1950 and reseña like '%óscar%'";
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas " +
+                "Where fecha_nacimiento > 1950 and reseña like '%óscar%' and i.Idioma in ('ingles') Order by d.nombre";
 
             consultero = Consultero.C10;
 
@@ -372,8 +371,8 @@ namespace PracticoIntegrador2018
             if (rbtnConsulta10.Checked == true)
             {
                 consultaParametrizada = "Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
-                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
-                "Where fecha_nacimiento > " + txtConsulta10.Text + " and reseña like '%óscar%'";
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas " +
+                "Where fecha_nacimiento > " + txtConsulta10.Text + " and reseña like '%óscar%' and i.Idioma in ('ingles') Order by d.nombre";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
