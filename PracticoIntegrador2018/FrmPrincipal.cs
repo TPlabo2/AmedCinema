@@ -12,7 +12,7 @@ namespace PracticoIntegrador2018
 {
     public partial class Form1 : Form
     {
-        AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");//Falta colocar cadena
+        AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
         string consulta;
         string consultaParametrizada;
  
