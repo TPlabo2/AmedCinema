@@ -433,7 +433,7 @@ namespace PracticoIntegrador2018
             }
 
         }
-        // VALIDA SI LOS CAMPOS ESTAN VACIOS
+
         private bool ValidarActor()
         {
             if (txtIdActor.Text == "")
@@ -472,7 +472,6 @@ namespace PracticoIntegrador2018
             }
 
         }
-
         private bool ValidarPelicula()
         {
             if (txtIdPeli.Text == "")
@@ -530,70 +529,6 @@ namespace PracticoIntegrador2018
 
         }
 
-
-
-        //VALIDA QUE LOS CAMPOS TENGAN NUMEROS O LETRAS
-        //validaciones
-        private void validarLetras(KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-        private void validarId(KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-        //campos de peliculas
-        private void txtIdPeli_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarId(e);
-        }
-        private void txtNombrePelicula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarLetras(e);
-        }
-        //campos de actor
-        private void txtIdActor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarId(e);
-        }
-        private void txtNombreActor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarLetras(e);
-        }
-        private void txtApellidoActor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarLetras(e);
-        }
-        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarLetras(e);
-        }
 
     }
 }

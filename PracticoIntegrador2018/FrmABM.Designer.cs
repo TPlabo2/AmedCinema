@@ -117,21 +117,20 @@
             this.pnlPelicula.Controls.Add(this.lblDuracion);
             this.pnlPelicula.Controls.Add(this.lblNombrePelicula);
             this.pnlPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPelicula.Location = new System.Drawing.Point(14, 17);
-            this.pnlPelicula.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlPelicula.Location = new System.Drawing.Point(7, 9);
             this.pnlPelicula.Name = "pnlPelicula";
-            this.pnlPelicula.Size = new System.Drawing.Size(2554, 527);
+            this.pnlPelicula.Size = new System.Drawing.Size(1277, 274);
             this.pnlPelicula.TabIndex = 0;
             this.pnlPelicula.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPelicula_Paint);
             // 
             // dgvPelis
             // 
             this.dgvPelis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPelis.Location = new System.Drawing.Point(602, 96);
-            this.dgvPelis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPelis.Location = new System.Drawing.Point(301, 50);
+            this.dgvPelis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPelis.Name = "dgvPelis";
             this.dgvPelis.RowTemplate.Height = 28;
-            this.dgvPelis.Size = new System.Drawing.Size(1946, 392);
+            this.dgvPelis.Size = new System.Drawing.Size(973, 204);
             this.dgvPelis.TabIndex = 48;
             this.dgvPelis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPelis_CellContentClick);
             // 
@@ -140,47 +139,42 @@
             this.cboPaisP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboPaisP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPaisP.FormattingEnabled = true;
-            this.cboPaisP.Location = new System.Drawing.Point(218, 485);
-            this.cboPaisP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboPaisP.Location = new System.Drawing.Point(109, 252);
             this.cboPaisP.Name = "cboPaisP";
-            this.cboPaisP.Size = new System.Drawing.Size(238, 33);
+            this.cboPaisP.Size = new System.Drawing.Size(121, 21);
             this.cboPaisP.TabIndex = 47;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 494);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(64, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 46;
             this.label1.Text = "Pais";
             // 
             // dtpDura
             // 
             this.dtpDura.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpDura.Location = new System.Drawing.Point(220, 181);
-            this.dtpDura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDura.Location = new System.Drawing.Point(110, 94);
+            this.dtpDura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDura.Name = "dtpDura";
-            this.dtpDura.Size = new System.Drawing.Size(198, 31);
+            this.dtpDura.Size = new System.Drawing.Size(101, 20);
             this.dtpDura.TabIndex = 45;
             // 
             // txtIdPeli
             // 
-            this.txtIdPeli.Location = new System.Drawing.Point(220, 90);
-            this.txtIdPeli.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdPeli.Location = new System.Drawing.Point(110, 47);
             this.txtIdPeli.Name = "txtIdPeli";
-            this.txtIdPeli.Size = new System.Drawing.Size(238, 31);
+            this.txtIdPeli.Size = new System.Drawing.Size(121, 20);
             this.txtIdPeli.TabIndex = 43;
-            this.txtIdPeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdPeli_KeyPress);
             // 
             // lblIdPelicula
             // 
             this.lblIdPelicula.AutoSize = true;
-            this.lblIdPelicula.Location = new System.Drawing.Point(68, 96);
-            this.lblIdPelicula.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblIdPelicula.Location = new System.Drawing.Point(34, 50);
             this.lblIdPelicula.Name = "lblIdPelicula";
-            this.lblIdPelicula.Size = new System.Drawing.Size(117, 25);
+            this.lblIdPelicula.Size = new System.Drawing.Size(60, 13);
             this.lblIdPelicula.TabIndex = 42;
             this.lblIdPelicula.Text = "id_Película";
             // 
@@ -189,10 +183,9 @@
             this.cboDirector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboDirector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDirector.FormattingEnabled = true;
-            this.cboDirector.Location = new System.Drawing.Point(220, 435);
-            this.cboDirector.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboDirector.Location = new System.Drawing.Point(110, 226);
             this.cboDirector.Name = "cboDirector";
-            this.cboDirector.Size = new System.Drawing.Size(238, 33);
+            this.cboDirector.Size = new System.Drawing.Size(121, 21);
             this.cboDirector.TabIndex = 35;
             // 
             // cboSubtitulos
@@ -200,10 +193,9 @@
             this.cboSubtitulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboSubtitulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSubtitulos.FormattingEnabled = true;
-            this.cboSubtitulos.Location = new System.Drawing.Point(218, 383);
-            this.cboSubtitulos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboSubtitulos.Location = new System.Drawing.Point(109, 199);
             this.cboSubtitulos.Name = "cboSubtitulos";
-            this.cboSubtitulos.Size = new System.Drawing.Size(238, 33);
+            this.cboSubtitulos.Size = new System.Drawing.Size(121, 21);
             this.cboSubtitulos.TabIndex = 34;
             // 
             // cboClasificacion
@@ -211,10 +203,9 @@
             this.cboClasificacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboClasificacion.FormattingEnabled = true;
-            this.cboClasificacion.Location = new System.Drawing.Point(220, 325);
-            this.cboClasificacion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboClasificacion.Location = new System.Drawing.Point(110, 169);
             this.cboClasificacion.Name = "cboClasificacion";
-            this.cboClasificacion.Size = new System.Drawing.Size(238, 33);
+            this.cboClasificacion.Size = new System.Drawing.Size(121, 21);
             this.cboClasificacion.TabIndex = 33;
             // 
             // cboIdioma
@@ -222,10 +213,9 @@
             this.cboIdioma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIdioma.FormattingEnabled = true;
-            this.cboIdioma.Location = new System.Drawing.Point(220, 277);
-            this.cboIdioma.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboIdioma.Location = new System.Drawing.Point(110, 144);
             this.cboIdioma.Name = "cboIdioma";
-            this.cboIdioma.Size = new System.Drawing.Size(238, 33);
+            this.cboIdioma.Size = new System.Drawing.Size(121, 21);
             this.cboIdioma.TabIndex = 32;
             // 
             // cboGenero
@@ -233,88 +223,78 @@
             this.cboGenero.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(220, 229);
-            this.cboGenero.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboGenero.Location = new System.Drawing.Point(110, 119);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(238, 33);
+            this.cboGenero.Size = new System.Drawing.Size(121, 21);
             this.cboGenero.TabIndex = 31;
             // 
             // txtNombrePelicula
             // 
-            this.txtNombrePelicula.Location = new System.Drawing.Point(220, 138);
-            this.txtNombrePelicula.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombrePelicula.Location = new System.Drawing.Point(110, 72);
             this.txtNombrePelicula.Name = "txtNombrePelicula";
-            this.txtNombrePelicula.Size = new System.Drawing.Size(238, 31);
+            this.txtNombrePelicula.Size = new System.Drawing.Size(121, 20);
             this.txtNombrePelicula.TabIndex = 28;
-            this.txtNombrePelicula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePelicula_KeyPress);
             // 
             // lblDirector
             // 
             this.lblDirector.AutoSize = true;
-            this.lblDirector.Location = new System.Drawing.Point(94, 444);
-            this.lblDirector.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDirector.Location = new System.Drawing.Point(47, 231);
             this.lblDirector.Name = "lblDirector";
-            this.lblDirector.Size = new System.Drawing.Size(87, 25);
+            this.lblDirector.Size = new System.Drawing.Size(44, 13);
             this.lblDirector.TabIndex = 27;
             this.lblDirector.Text = "Director";
             // 
             // lblSubtitulos
             // 
             this.lblSubtitulos.AutoSize = true;
-            this.lblSubtitulos.Location = new System.Drawing.Point(74, 387);
-            this.lblSubtitulos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSubtitulos.Location = new System.Drawing.Point(37, 201);
             this.lblSubtitulos.Name = "lblSubtitulos";
-            this.lblSubtitulos.Size = new System.Drawing.Size(107, 25);
+            this.lblSubtitulos.Size = new System.Drawing.Size(55, 13);
             this.lblSubtitulos.TabIndex = 26;
             this.lblSubtitulos.Text = "Subtítulos";
             // 
             // lblClasificación
             // 
             this.lblClasificación.AutoSize = true;
-            this.lblClasificación.Location = new System.Drawing.Point(50, 327);
-            this.lblClasificación.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblClasificación.Location = new System.Drawing.Point(25, 170);
             this.lblClasificación.Name = "lblClasificación";
-            this.lblClasificación.Size = new System.Drawing.Size(134, 25);
+            this.lblClasificación.Size = new System.Drawing.Size(66, 13);
             this.lblClasificación.TabIndex = 25;
             this.lblClasificación.Text = "Clasificacion";
             // 
             // lblIdioma
             // 
             this.lblIdioma.AutoSize = true;
-            this.lblIdioma.Location = new System.Drawing.Point(104, 279);
-            this.lblIdioma.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblIdioma.Location = new System.Drawing.Point(52, 145);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(75, 25);
+            this.lblIdioma.Size = new System.Drawing.Size(38, 13);
             this.lblIdioma.TabIndex = 24;
             this.lblIdioma.Text = "Idioma";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 235);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(48, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 25);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Género";
             // 
             // lblDuracion
             // 
             this.lblDuracion.AutoSize = true;
-            this.lblDuracion.Location = new System.Drawing.Point(82, 188);
-            this.lblDuracion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDuracion.Location = new System.Drawing.Point(41, 98);
             this.lblDuracion.Name = "lblDuracion";
-            this.lblDuracion.Size = new System.Drawing.Size(98, 25);
+            this.lblDuracion.Size = new System.Drawing.Size(50, 13);
             this.lblDuracion.TabIndex = 22;
             this.lblDuracion.Text = "Duración";
             // 
             // lblNombrePelicula
             // 
             this.lblNombrePelicula.AutoSize = true;
-            this.lblNombrePelicula.Location = new System.Drawing.Point(94, 142);
-            this.lblNombrePelicula.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombrePelicula.Location = new System.Drawing.Point(47, 74);
             this.lblNombrePelicula.Name = "lblNombrePelicula";
-            this.lblNombrePelicula.Size = new System.Drawing.Size(87, 25);
+            this.lblNombrePelicula.Size = new System.Drawing.Size(44, 13);
             this.lblNombrePelicula.TabIndex = 21;
             this.lblNombrePelicula.Text = "Nombre";
             // 
@@ -324,11 +304,10 @@
             this.lblPeliculas.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblPeliculas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPeliculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPeliculas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeliculas.Location = new System.Drawing.Point(1142, 6);
-            this.lblPeliculas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPeliculas.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeliculas.Location = new System.Drawing.Point(571, 3);
             this.lblPeliculas.Name = "lblPeliculas";
-            this.lblPeliculas.Size = new System.Drawing.Size(203, 39);
+            this.lblPeliculas.Size = new System.Drawing.Size(109, 22);
             this.lblPeliculas.TabIndex = 40;
             this.lblPeliculas.Text = "PELÍCULAS";
             // 
@@ -348,38 +327,36 @@
             this.pnlActores.Controls.Add(this.lblPais);
             this.pnlActores.Controls.Add(this.txtApellidoActor);
             this.pnlActores.Controls.Add(this.lblApellidoActor);
-            this.pnlActores.Location = new System.Drawing.Point(14, 631);
-            this.pnlActores.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlActores.Location = new System.Drawing.Point(7, 328);
             this.pnlActores.Name = "pnlActores";
-            this.pnlActores.Size = new System.Drawing.Size(2052, 477);
+            this.pnlActores.Size = new System.Drawing.Size(1026, 248);
             this.pnlActores.TabIndex = 1;
             // 
             // txtNacionalidad
             // 
-            this.txtNacionalidad.Location = new System.Drawing.Point(218, 244);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNacionalidad.Location = new System.Drawing.Point(109, 127);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(238, 31);
+            this.txtNacionalidad.Size = new System.Drawing.Size(121, 20);
             this.txtNacionalidad.TabIndex = 57;
-            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // txtReseña
             // 
-            this.txtReseña.Location = new System.Drawing.Point(220, 352);
-            this.txtReseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReseña.Location = new System.Drawing.Point(110, 183);
+            this.txtReseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtReseña.Multiline = true;
             this.txtReseña.Name = "txtReseña";
-            this.txtReseña.Size = new System.Drawing.Size(240, 98);
+            this.txtReseña.Size = new System.Drawing.Size(122, 53);
             this.txtReseña.TabIndex = 56;
             // 
             // dgvActores
             // 
             this.dgvActores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActores.Location = new System.Drawing.Point(558, 102);
-            this.dgvActores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvActores.Location = new System.Drawing.Point(279, 53);
+            this.dgvActores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvActores.Name = "dgvActores";
             this.dgvActores.RowTemplate.Height = 28;
-            this.dgvActores.Size = new System.Drawing.Size(1490, 350);
+            this.dgvActores.Size = new System.Drawing.Size(745, 182);
             this.dgvActores.TabIndex = 45;
             this.dgvActores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActores_CellContentClick);
             // 
@@ -387,10 +364,9 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.lblActor);
-            this.panel2.Location = new System.Drawing.Point(0, 23);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2046, 50);
+            this.panel2.Size = new System.Drawing.Size(1023, 26);
             this.panel2.TabIndex = 45;
             // 
             // lblActor
@@ -398,59 +374,51 @@
             this.lblActor.AutoSize = true;
             this.lblActor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblActor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActor.Location = new System.Drawing.Point(698, 4);
-            this.lblActor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblActor.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActor.Location = new System.Drawing.Point(349, 2);
             this.lblActor.Name = "lblActor";
-            this.lblActor.Size = new System.Drawing.Size(180, 39);
+            this.lblActor.Size = new System.Drawing.Size(94, 22);
             this.lblActor.TabIndex = 41;
             this.lblActor.Text = "ACTORES";
             // 
             // txtIdActor
             // 
-            this.txtIdActor.Location = new System.Drawing.Point(218, 102);
-            this.txtIdActor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdActor.Location = new System.Drawing.Point(109, 53);
             this.txtIdActor.Name = "txtIdActor";
-            this.txtIdActor.Size = new System.Drawing.Size(238, 31);
+            this.txtIdActor.Size = new System.Drawing.Size(121, 20);
             this.txtIdActor.TabIndex = 55;
-            this.txtIdActor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdActor_KeyPress);
             // 
             // lblIdActores
             // 
             this.lblIdActores.AutoSize = true;
-            this.lblIdActores.Location = new System.Drawing.Point(96, 108);
-            this.lblIdActores.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblIdActores.Location = new System.Drawing.Point(48, 56);
             this.lblIdActores.Name = "lblIdActores";
-            this.lblIdActores.Size = new System.Drawing.Size(91, 25);
+            this.lblIdActores.Size = new System.Drawing.Size(46, 13);
             this.lblIdActores.TabIndex = 54;
             this.lblIdActores.Text = "id_Actor";
             // 
             // txtNombreActor
             // 
-            this.txtNombreActor.Location = new System.Drawing.Point(220, 148);
-            this.txtNombreActor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombreActor.Location = new System.Drawing.Point(110, 77);
             this.txtNombreActor.Name = "txtNombreActor";
-            this.txtNombreActor.Size = new System.Drawing.Size(238, 31);
+            this.txtNombreActor.Size = new System.Drawing.Size(121, 20);
             this.txtNombreActor.TabIndex = 53;
-            this.txtNombreActor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreActor_KeyPress);
             // 
             // lblNombreActor
             // 
             this.lblNombreActor.AutoSize = true;
-            this.lblNombreActor.Location = new System.Drawing.Point(98, 154);
-            this.lblNombreActor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombreActor.Location = new System.Drawing.Point(49, 80);
             this.lblNombreActor.Name = "lblNombreActor";
-            this.lblNombreActor.Size = new System.Drawing.Size(87, 25);
+            this.lblNombreActor.Size = new System.Drawing.Size(44, 13);
             this.lblNombreActor.TabIndex = 52;
             this.lblNombreActor.Text = "Nombre";
             // 
             // lblReseña
             // 
             this.lblReseña.AutoSize = true;
-            this.lblReseña.Location = new System.Drawing.Point(100, 352);
-            this.lblReseña.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblReseña.Location = new System.Drawing.Point(50, 183);
             this.lblReseña.Name = "lblReseña";
-            this.lblReseña.Size = new System.Drawing.Size(86, 25);
+            this.lblReseña.Size = new System.Drawing.Size(44, 13);
             this.lblReseña.TabIndex = 50;
             this.lblReseña.Text = "Reseña";
             // 
@@ -458,48 +426,42 @@
             // 
             this.dtpEdad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpEdad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEdad.Location = new System.Drawing.Point(220, 285);
-            this.dtpEdad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpEdad.Location = new System.Drawing.Point(110, 148);
             this.dtpEdad.Name = "dtpEdad";
-            this.dtpEdad.Size = new System.Drawing.Size(238, 31);
+            this.dtpEdad.Size = new System.Drawing.Size(121, 20);
             this.dtpEdad.TabIndex = 48;
             // 
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(118, 292);
-            this.lblEdad.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblEdad.Location = new System.Drawing.Point(59, 152);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(62, 25);
+            this.lblEdad.Size = new System.Drawing.Size(32, 13);
             this.lblEdad.TabIndex = 45;
             this.lblEdad.Text = "Edad";
             // 
             // lblPais
             // 
             this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(132, 244);
-            this.lblPais.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPais.Location = new System.Drawing.Point(66, 127);
             this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(54, 25);
+            this.lblPais.Size = new System.Drawing.Size(29, 13);
             this.lblPais.TabIndex = 44;
             this.lblPais.Text = "País";
             // 
             // txtApellidoActor
             // 
-            this.txtApellidoActor.Location = new System.Drawing.Point(220, 192);
-            this.txtApellidoActor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtApellidoActor.Location = new System.Drawing.Point(110, 100);
             this.txtApellidoActor.Name = "txtApellidoActor";
-            this.txtApellidoActor.Size = new System.Drawing.Size(238, 31);
+            this.txtApellidoActor.Size = new System.Drawing.Size(121, 20);
             this.txtApellidoActor.TabIndex = 43;
-            this.txtApellidoActor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoActor_KeyPress);
             // 
             // lblApellidoActor
             // 
             this.lblApellidoActor.AutoSize = true;
-            this.lblApellidoActor.Location = new System.Drawing.Point(98, 198);
-            this.lblApellidoActor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblApellidoActor.Location = new System.Drawing.Point(49, 103);
             this.lblApellidoActor.Name = "lblApellidoActor";
-            this.lblApellidoActor.Size = new System.Drawing.Size(89, 25);
+            this.lblApellidoActor.Size = new System.Drawing.Size(44, 13);
             this.lblApellidoActor.TabIndex = 42;
             this.lblApellidoActor.Text = "Apellido";
             // 
@@ -507,10 +469,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Tomato;
             this.panel1.Controls.Add(this.lblPeliculas);
-            this.panel1.Location = new System.Drawing.Point(14, 46);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Location = new System.Drawing.Point(7, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2548, 50);
+            this.panel1.Size = new System.Drawing.Size(1274, 26);
             this.panel1.TabIndex = 44;
             // 
             // cineMioDataSet
@@ -538,10 +499,10 @@
             // 
             // btnNuevoPeli
             // 
-            this.btnNuevoPeli.Location = new System.Drawing.Point(600, 569);
-            this.btnNuevoPeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevoPeli.Location = new System.Drawing.Point(300, 296);
+            this.btnNuevoPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoPeli.Name = "btnNuevoPeli";
-            this.btnNuevoPeli.Size = new System.Drawing.Size(130, 52);
+            this.btnNuevoPeli.Size = new System.Drawing.Size(65, 27);
             this.btnNuevoPeli.TabIndex = 45;
             this.btnNuevoPeli.Text = "Nuevo";
             this.btnNuevoPeli.UseVisualStyleBackColor = true;
@@ -549,10 +510,10 @@
             // 
             // btnGuardarPeli
             // 
-            this.btnGuardarPeli.Location = new System.Drawing.Point(738, 569);
-            this.btnGuardarPeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarPeli.Location = new System.Drawing.Point(369, 296);
+            this.btnGuardarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarPeli.Name = "btnGuardarPeli";
-            this.btnGuardarPeli.Size = new System.Drawing.Size(130, 52);
+            this.btnGuardarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnGuardarPeli.TabIndex = 46;
             this.btnGuardarPeli.Text = "Guardar";
             this.btnGuardarPeli.UseVisualStyleBackColor = true;
@@ -560,10 +521,10 @@
             // 
             // btnModificarPeli
             // 
-            this.btnModificarPeli.Location = new System.Drawing.Point(878, 569);
-            this.btnModificarPeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarPeli.Location = new System.Drawing.Point(439, 296);
+            this.btnModificarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarPeli.Name = "btnModificarPeli";
-            this.btnModificarPeli.Size = new System.Drawing.Size(130, 52);
+            this.btnModificarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnModificarPeli.TabIndex = 47;
             this.btnModificarPeli.Text = "Modificar";
             this.btnModificarPeli.UseVisualStyleBackColor = true;
@@ -571,10 +532,10 @@
             // 
             // btnBorrarPeli
             // 
-            this.btnBorrarPeli.Location = new System.Drawing.Point(1016, 569);
-            this.btnBorrarPeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrarPeli.Location = new System.Drawing.Point(508, 296);
+            this.btnBorrarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrarPeli.Name = "btnBorrarPeli";
-            this.btnBorrarPeli.Size = new System.Drawing.Size(130, 52);
+            this.btnBorrarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnBorrarPeli.TabIndex = 48;
             this.btnBorrarPeli.Text = "Borrar";
             this.btnBorrarPeli.UseVisualStyleBackColor = true;
@@ -582,20 +543,20 @@
             // 
             // btnBorrarAct
             // 
-            this.btnBorrarAct.Location = new System.Drawing.Point(1032, 1115);
-            this.btnBorrarAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrarAct.Location = new System.Drawing.Point(516, 580);
+            this.btnBorrarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrarAct.Name = "btnBorrarAct";
-            this.btnBorrarAct.Size = new System.Drawing.Size(130, 52);
+            this.btnBorrarAct.Size = new System.Drawing.Size(65, 27);
             this.btnBorrarAct.TabIndex = 52;
             this.btnBorrarAct.Text = "Borrar";
             this.btnBorrarAct.UseVisualStyleBackColor = true;
             // 
             // btnModificarAct
             // 
-            this.btnModificarAct.Location = new System.Drawing.Point(894, 1115);
-            this.btnModificarAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarAct.Location = new System.Drawing.Point(447, 580);
+            this.btnModificarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarAct.Name = "btnModificarAct";
-            this.btnModificarAct.Size = new System.Drawing.Size(130, 52);
+            this.btnModificarAct.Size = new System.Drawing.Size(65, 27);
             this.btnModificarAct.TabIndex = 51;
             this.btnModificarAct.Text = "Modificar";
             this.btnModificarAct.UseVisualStyleBackColor = true;
@@ -603,10 +564,10 @@
             // 
             // btnGuardarAct
             // 
-            this.btnGuardarAct.Location = new System.Drawing.Point(754, 1115);
-            this.btnGuardarAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarAct.Location = new System.Drawing.Point(377, 580);
+            this.btnGuardarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarAct.Name = "btnGuardarAct";
-            this.btnGuardarAct.Size = new System.Drawing.Size(130, 52);
+            this.btnGuardarAct.Size = new System.Drawing.Size(65, 27);
             this.btnGuardarAct.TabIndex = 50;
             this.btnGuardarAct.Text = "Guardar";
             this.btnGuardarAct.UseVisualStyleBackColor = true;
@@ -614,10 +575,10 @@
             // 
             // btnNuevoAct
             // 
-            this.btnNuevoAct.Location = new System.Drawing.Point(616, 1115);
-            this.btnNuevoAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevoAct.Location = new System.Drawing.Point(308, 580);
+            this.btnNuevoAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoAct.Name = "btnNuevoAct";
-            this.btnNuevoAct.Size = new System.Drawing.Size(130, 52);
+            this.btnNuevoAct.Size = new System.Drawing.Size(65, 27);
             this.btnNuevoAct.TabIndex = 49;
             this.btnNuevoAct.Text = "Nuevo";
             this.btnNuevoAct.UseVisualStyleBackColor = true;
@@ -625,10 +586,10 @@
             // 
             // btnCancelarPeli
             // 
-            this.btnCancelarPeli.Location = new System.Drawing.Point(1154, 569);
-            this.btnCancelarPeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarPeli.Location = new System.Drawing.Point(577, 296);
+            this.btnCancelarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarPeli.Name = "btnCancelarPeli";
-            this.btnCancelarPeli.Size = new System.Drawing.Size(130, 52);
+            this.btnCancelarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnCancelarPeli.TabIndex = 53;
             this.btnCancelarPeli.Text = "Cancelar";
             this.btnCancelarPeli.UseVisualStyleBackColor = true;
@@ -636,10 +597,10 @@
             // 
             // btnAceptarMod
             // 
-            this.btnAceptarMod.Location = new System.Drawing.Point(16, 554);
-            this.btnAceptarMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptarMod.Location = new System.Drawing.Point(8, 288);
+            this.btnAceptarMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptarMod.Name = "btnAceptarMod";
-            this.btnAceptarMod.Size = new System.Drawing.Size(250, 52);
+            this.btnAceptarMod.Size = new System.Drawing.Size(125, 27);
             this.btnAceptarMod.TabIndex = 54;
             this.btnAceptarMod.Text = "Aceptar Modificacion";
             this.btnAceptarMod.UseVisualStyleBackColor = true;
@@ -647,10 +608,10 @@
             // 
             // btnModAct
             // 
-            this.btnModAct.Location = new System.Drawing.Point(70, 1117);
-            this.btnModAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModAct.Location = new System.Drawing.Point(35, 581);
+            this.btnModAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModAct.Name = "btnModAct";
-            this.btnModAct.Size = new System.Drawing.Size(286, 50);
+            this.btnModAct.Size = new System.Drawing.Size(143, 26);
             this.btnModAct.TabIndex = 55;
             this.btnModAct.Text = "Aceptar Modificacion";
             this.btnModAct.UseVisualStyleBackColor = true;
@@ -658,10 +619,10 @@
             // 
             // btnCancelarAct
             // 
-            this.btnCancelarAct.Location = new System.Drawing.Point(1170, 1115);
-            this.btnCancelarAct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarAct.Location = new System.Drawing.Point(585, 580);
+            this.btnCancelarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarAct.Name = "btnCancelarAct";
-            this.btnCancelarAct.Size = new System.Drawing.Size(130, 52);
+            this.btnCancelarAct.Size = new System.Drawing.Size(65, 27);
             this.btnCancelarAct.TabIndex = 56;
             this.btnCancelarAct.Text = "Cancelar";
             this.btnCancelarAct.UseVisualStyleBackColor = true;
@@ -669,9 +630,9 @@
             // 
             // FrmABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2566, 1173);
+            this.ClientSize = new System.Drawing.Size(1283, 610);
             this.Controls.Add(this.btnCancelarAct);
             this.Controls.Add(this.btnModAct);
             this.Controls.Add(this.btnAceptarMod);
@@ -687,7 +648,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlActores);
             this.Controls.Add(this.pnlPelicula);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM";
