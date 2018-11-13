@@ -15,7 +15,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-M8V09RS\SQLEXPRESS;Initial Catalog=Cine;User ID=santi; password=4567");
         public FrmABM()
         {
 
@@ -369,7 +369,7 @@ namespace PracticoIntegrador2018
                 String modificarAct = "UPDATE actores SET " +
                                                         "nombre='" + txtNombreActor.Text + "'," +
                                                         "apellido='" + txtApellidoActor.Text + "'," +
-                                                        "nacionalidad=" + txtNacionalidad.Text + "," +
+                                                        "nacionalidad='" + txtNacionalidad.Text + "'," +
                                                         "reseña= '" + txtReseña.Text + "'," +
                                                         "fecha_nacimiento='" + dtpEdad.Text + "'" +
                                                         "WHERE id_actor=" + idActor;
@@ -412,6 +412,12 @@ namespace PracticoIntegrador2018
         {
 
         }
+
+        private void lblPeliculas_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //---------------------------------------------------------------------------------------------------------
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
