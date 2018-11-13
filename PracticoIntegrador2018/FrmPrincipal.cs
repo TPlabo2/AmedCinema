@@ -85,11 +85,13 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
 
             }
-            dgrvConsultas.DataSource = null;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            dgrvConsultas.DataSource = null;
+            dgrvConsultas.Rows.Clear();
+            dgrvConsultas.RefreshEdit();
             if (radioBtnVacios())//Metodo que comprueba que ningun btn este seleccionado
             {
 
@@ -176,7 +178,7 @@ namespace PracticoIntegrador2018
                 }
             }
 
-            consultero = Consultero.none;
+            //consultero = Consultero.none;
         }
         //----------------------------------------------------------------------------------------
         private bool radioBtnVacios()
@@ -216,7 +218,6 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
 
-            dgrvConsultas.DataSource = null;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta6_Click(object sender, EventArgs e) //SE PARAMETRIZA LOS TRES AÑOS QUE SE BRINDAN POR LA CONSULTA
@@ -239,7 +240,6 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
 
-            dgrvConsultas.DataSource = null;
         }
         //----------------------------------------------------------------------------------------
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -268,7 +268,6 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
 
-            dgrvConsultas.DataSource = null;
         }
 
         private void btnConsulta7_Click(object sender, EventArgs e)//SE PARAMETRIZA EL VALOR DE COMPARACIÓN
@@ -291,8 +290,6 @@ namespace PracticoIntegrador2018
 
                     //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
                 }
-
-            dgrvConsultas.DataSource = null;
 
         }
 
@@ -322,8 +319,6 @@ namespace PracticoIntegrador2018
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
-
-            dgrvConsultas.DataSource = null;
         }
 
         private void btnConsulta9_Click(object sender, EventArgs e) //SE PARAMETRIZA LA FORMA DE PAGO
@@ -350,8 +345,6 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
 
-            dgrvConsultas.DataSource = null;
-
         }
 
         private void btnConsulta10_Click(object sender, EventArgs e) //SE PARAMETRIZA LA COMPARACIÓN DE FECHA DE NACIMIENTO
@@ -377,9 +370,6 @@ namespace PracticoIntegrador2018
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
-
-            dgrvConsultas.DataSource = null;
-
 
         }
     }
