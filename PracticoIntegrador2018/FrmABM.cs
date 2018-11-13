@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-M8V09RS\SQLEXPRESS;Initial Catalog=Cine;User ID=santi; password=4567");
         public FrmABM()
         {
 
@@ -458,6 +458,138 @@ namespace PracticoIntegrador2018
         private void pnlPelicula_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtIdPeli_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdPeli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             
+                    if (Char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else if (Char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else if (Char.IsSeparator(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+            
+        }
+
+        private void txtIdActor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombrePelicula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombrePelicula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtNombreActor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtApellidoActor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void btnBorrarAct_Click(object sender, EventArgs e)
