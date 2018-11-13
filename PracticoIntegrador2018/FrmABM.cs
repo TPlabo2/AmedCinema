@@ -369,7 +369,7 @@ namespace PracticoIntegrador2018
                 String modificarAct = "UPDATE actores SET " +
                                                         "nombre='" + txtNombreActor.Text + "'," +
                                                         "apellido='" + txtApellidoActor.Text + "'," +
-                                                        "nacionalidad=" + txtNacionalidad.Text + "," +
+                                                        "nacionalidad= '" + txtNacionalidad.Text + "'," +
                                                         "reseña= '" + txtReseña.Text + "'," +
                                                         "fecha_nacimiento='" + dtpEdad.Text + "'" +
                                                         "WHERE id_actor=" + idActor;
