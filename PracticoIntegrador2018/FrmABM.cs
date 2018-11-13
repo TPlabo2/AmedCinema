@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-M8V09RS\SQLEXPRESS;Initial Catalog=Cine;User ID=santi; password=4567");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=NTBEMM4;Initial Catalog=Cine;Persist Security Info=True;User ID=Emma;Password=1234");
         public FrmABM()
         {
 
@@ -28,6 +28,8 @@ namespace PracticoIntegrador2018
             btnModAct.Visible = false;
             btnAceptarMod.Visible = false;
             dtpEdad.Text = "01/01/1991";
+            dtpDura.Format = DateTimePickerFormat.Custom;
+            dtpDura.CustomFormat = "HH:mm";
             dtpDura.Text = "00:00:00";
             bloqueoPelis(false);
             bloqueoActores(false);
@@ -157,6 +159,8 @@ namespace PracticoIntegrador2018
                                                             + cboSubtitulos.SelectedValue + ","
                                                             + cboDirector.SelectedValue + ","
                                                             + cboPaisP.SelectedValue + ")";
+
+                MessageBox.Show(agregar);
 
                 datos.actualizarBD(agregar);
 
