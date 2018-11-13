@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         int pos, idPeli;
         Pelicula[] peliculas = new Pelicula[tam];
         AccesoDatos datos = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
-
+        //--------------------------------------------------------------------------------
         public FrmABM()
         {
 
@@ -35,26 +35,18 @@ namespace PracticoIntegrador2018
             cargarCombo(cboSubtitulos, "subtitulos");
             cargarCombo(cboDirector, "Directores");
             cargarCombo(cboPais, "paises");
-            //----------------------------------------------------------
+            
             datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
             datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //--------------------------------------------------------------------------------
         private void btnNuevoPelicula_Click(object sender, EventArgs e)
         {
 
 
 
         }
-
-
-
         //--------------------------------------------------------------------------------
         private void cargarCombo(ComboBox combo, string nombreTabla)
         {
@@ -66,14 +58,14 @@ namespace PracticoIntegrador2018
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
         }
-
+        //--------------------------------------------------------------------------------
         private void btnGuardarPelicula_Click(object sender, EventArgs e)
         {
             try
             {
 
                 Pelicula peli = new Pelicula();
-                // peli.Id = Convert.ToInt32(txtIdPeli.Text);
+                peli.Id = Convert.ToInt32(txtIdPeli.Text);
                 peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
                 peli.Duracion = Convert.ToDateTime(dtpDura.Value);
                 peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
@@ -83,10 +75,8 @@ namespace PracticoIntegrador2018
                 peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
 
 
-
-
                 string agregar = "Insert into Pelicula (    " +
-                                                               // "id_pelicula," +
+                                                               "id_pelicula," +
                                                                "nombre," +
                                                                "duracion," +
                                                                "id_genero," +
@@ -94,8 +84,7 @@ namespace PracticoIntegrador2018
                                                                "id_clasificacion," +
                                                                "id_subtitulos," +
                                                                "id_director)" +
-                                                " values ( " +
-                                                          //+ txtIdPeli.Text +","+ 
+                                                " values ( " +txtIdPeli.Text +","+ 
                                                           " ' " + txtNombrePelicula.Text +
                                                           "','" + dtpDura.Text + "',"
                                                             + cboGenero.SelectedValue + ","
@@ -120,6 +109,7 @@ namespace PracticoIntegrador2018
             limpiarTxtPelis();
             bloqueoPelis(true);
         }
+        //--------------------------------------------------------------------------------
         private void btnGuardarActor_Click(object sender, EventArgs e)
         {
             try
@@ -133,10 +123,9 @@ namespace PracticoIntegrador2018
                 ac.Reseña = Convert.ToString(txtReseña.Text);
 
                 string agregar = "INSERT INTO ACTORES("
-                                 //"           id_actor,"
+                                  +"id_actor,"
                                  + "nombre,nacionalidad,edad,reseña,apellido)"
-                                 + "values( " +
-                                             // +txtIdActor.Text+",'"
+                                 + "values( " +txtIdActor.Text+",'" +
                                              "'" + txtNombreActor.Text + "',"
                                              + cboPais.SelectedValue + ",'"
                                              + dtpEdad.Text + "','"
@@ -157,6 +146,7 @@ namespace PracticoIntegrador2018
             datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
+        //--------------------------------------------------------------------------------
         private void bloqueoPelis(bool x)
         {
             txtIdPeli.Enabled = x;
@@ -169,6 +159,7 @@ namespace PracticoIntegrador2018
             cboDirector.Enabled = x;
 
         }
+        //--------------------------------------------------------------------------------
         private void bloqueoActores(bool x)
         {
             txtIdActor.Enabled = x;
@@ -180,6 +171,7 @@ namespace PracticoIntegrador2018
 
 
         }
+        //--------------------------------------------------------------------------------
         private void limpiarTxtPelis()
         {
             txtIdPeli.Text = "";
@@ -192,6 +184,7 @@ namespace PracticoIntegrador2018
             cboDirector.SelectedIndex = -1;
 
         }
+        //--------------------------------------------------------------------------------
         private void limpiarTxtActores()
         {
             txtIdActor.Text = "";
@@ -201,20 +194,19 @@ namespace PracticoIntegrador2018
             dtpEdad.Text = "01/01/1990";
             txtReseña.Text = "";
         }
-
-
+        //--------------------------------------------------------------------------------
         private void btnNuevoPelicula_Click_1(object sender, EventArgs e)
         {
             limpiarTxtPelis();
             bloqueoPelis(true);
         }
-
+        //--------------------------------------------------------------------------------
         private void btnNuevoActor_Click(object sender, EventArgs e)
         {
             limpiarTxtActores();
             bloqueoActores(true);
         }
-
+        //--------------------------------------------------------------------------------
         private void dgvPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -240,13 +232,13 @@ namespace PracticoIntegrador2018
 
             }
         }
-
+        //--------------------------------------------------------------------------------
         private void btnModificarPelicula_Click(object sender, EventArgs e)
         {
 
 
         }
-
+        //--------------------------------------------------------------------------------
         private void btnEliminarPelicula_Click(object sender, EventArgs e)
         {
             string eliminarP = "Delete pelicula where id_pelicula =" + idPeli;
