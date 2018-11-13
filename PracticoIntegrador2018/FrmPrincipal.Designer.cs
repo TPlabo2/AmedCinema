@@ -49,11 +49,8 @@
             this.txtConsulta4 = new System.Windows.Forms.TextBox();
             this.txtConsulta3 = new System.Windows.Forms.TextBox();
             this.txtConsulta10 = new System.Windows.Forms.TextBox();
-            this.txtConsulta10c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta1C2 = new System.Windows.Forms.TextBox();
             this.txtConsulta9c2 = new System.Windows.Forms.TextBox();
-            this.txtConsulta8c2 = new System.Windows.Forms.TextBox();
-            this.txtConsulta7c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta5c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta4c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta3c2 = new System.Windows.Forms.TextBox();
@@ -174,6 +171,7 @@
             this.btnConsulta10.TabIndex = 10;
             this.btnConsulta10.Text = "Consulta 10";
             this.btnConsulta10.UseVisualStyleBackColor = true;
+            this.btnConsulta10.Click += new System.EventHandler(this.btnConsulta10_Click);
             // 
             // btnConsultar
             // 
@@ -262,13 +260,6 @@
             this.txtConsulta10.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta10.TabIndex = 25;
             // 
-            // txtConsulta10c2
-            // 
-            this.txtConsulta10c2.Location = new System.Drawing.Point(298, 656);
-            this.txtConsulta10c2.Name = "txtConsulta10c2";
-            this.txtConsulta10c2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta10c2.TabIndex = 35;
-            // 
             // txtConsulta1C2
             // 
             this.txtConsulta1C2.Location = new System.Drawing.Point(298, 107);
@@ -282,20 +273,6 @@
             this.txtConsulta9c2.Name = "txtConsulta9c2";
             this.txtConsulta9c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta9c2.TabIndex = 27;
-            // 
-            // txtConsulta8c2
-            // 
-            this.txtConsulta8c2.Location = new System.Drawing.Point(298, 538);
-            this.txtConsulta8c2.Name = "txtConsulta8c2";
-            this.txtConsulta8c2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta8c2.TabIndex = 28;
-            // 
-            // txtConsulta7c2
-            // 
-            this.txtConsulta7c2.Location = new System.Drawing.Point(298, 474);
-            this.txtConsulta7c2.Name = "txtConsulta7c2";
-            this.txtConsulta7c2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta7c2.TabIndex = 29;
             // 
             // txtConsulta5c2
             // 
@@ -523,12 +500,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnABM);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.txtConsulta10c2);
             this.Controls.Add(this.txtConsulta3c2);
             this.Controls.Add(this.txtConsulta4c2);
             this.Controls.Add(this.txtConsulta5c2);
-            this.Controls.Add(this.txtConsulta7c2);
-            this.Controls.Add(this.txtConsulta8c2);
             this.Controls.Add(this.txtConsulta9c2);
             this.Controls.Add(this.txtConsulta1C2);
             this.Controls.Add(this.txtConsulta10);
@@ -588,11 +562,8 @@
         private System.Windows.Forms.TextBox txtConsulta4;
         private System.Windows.Forms.TextBox txtConsulta3;
         private System.Windows.Forms.TextBox txtConsulta10;
-        private System.Windows.Forms.TextBox txtConsulta10c2;
         private System.Windows.Forms.TextBox txtConsulta1C2;
         private System.Windows.Forms.TextBox txtConsulta9c2;
-        private System.Windows.Forms.TextBox txtConsulta8c2;
-        private System.Windows.Forms.TextBox txtConsulta7c2;
         private System.Windows.Forms.TextBox txtConsulta5c2;
         private System.Windows.Forms.TextBox txtConsulta4c2;
         private System.Windows.Forms.TextBox txtConsulta3c2;

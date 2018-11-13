@@ -353,6 +353,35 @@ namespace PracticoIntegrador2018
             dgrvConsultas.DataSource = null;
 
         }
+
+        private void btnConsulta10_Click(object sender, EventArgs e) //SE PARAMETRIZA LA COMPARACIÓN DE FECHA DE NACIMIENTO
+        {
+
+            MessageBox.Show("Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
+                "Where fecha_nacimiento > 1950 and reseña like '%óscar%'");
+
+            consulta = "Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
+                "Where fecha_nacimiento > 1950 and reseña like '%óscar%'";
+
+            consultero = Consultero.C10;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta10.Checked == true)
+            {
+                consultaParametrizada = "Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
+                "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas" +
+                "Where fecha_nacimiento > " + txtConsulta10.Text + " and reseña like '%óscar%'";
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+            }
+
+            dgrvConsultas.DataSource = null;
+
+
+        }
     }
 }
 
