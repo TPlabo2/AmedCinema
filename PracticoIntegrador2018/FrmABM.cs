@@ -13,7 +13,7 @@ namespace PracticoIntegrador2018
     public partial class FrmABM : Form
     {
         const int tam = 25;
-        int pos;
+        int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
         AccesoDatos datos = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
         public FrmABM()
@@ -24,36 +24,30 @@ namespace PracticoIntegrador2018
         //--------------------------------------------------------------------------------
         private void FrmABM_Load(object sender, EventArgs e)
         {
+            btnModAct.Visible = false;
+            btnAceptarMod.Visible = false;
             dtpEdad.Text = "01/01/1991";
             dtpDura.Text = "00:00:00";
             bloqueoPelis(false);
             bloqueoActores(false);
-
-
             cargarCombo(cboGenero, "Generos");
             cargarCombo(cboIdioma, "Idiomas");
             cargarCombo(cboClasificacion, "ClasificacionesPelicula");
             cargarCombo(cboSubtitulos, "subtitulos");
             cargarCombo(cboDirector, "Directores");
-            cargarCombo(cboPais, "Paises");
-            
-            datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
+            cargarCombo(cboPaisA, "paises");
+            cargarCombo(cboPaisP, "paises");
+            //----------------------------------------------------------
+            datos.putInGrid(dgvPelis, "Select * from Pelicula");
             datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
-        //--------------------------------------------------------------------------------
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        //--------------------------------------------------------------------------------
-        private void btnNuevoPelicula_Click(object sender, EventArgs e)
-        {
+     
 
 
 
-        }
-        //--------------------------------------------------------------------------------
+        //---------METODOS-------------------------------------------------
         private void cargarCombo(ComboBox combo, string nombreTabla)
         {
             DataTable tabla = new DataTable();
@@ -64,48 +58,112 @@ namespace PracticoIntegrador2018
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
         }
-        //--------------------------------------------------------------------------------
-        private void btnGuardarPelicula_Click(object sender, EventArgs e)
+
+       
+        private void bloqueoPelis(bool x)
+        {
+            txtIdPeli.Enabled = false;
+            txtNombrePelicula.Enabled = x;
+            dtpDura.Enabled = x;
+            cboGenero.Enabled = x;
+            cboIdioma.Enabled = x;
+            cboClasificacion.Enabled = x;
+            cboSubtitulos.Enabled = x;
+            cboDirector.Enabled = x;
+            cboPaisP.Enabled = x;
+
+        }
+        private void bloqueoActores(bool x)
+        {
+            txtIdActor.Enabled = x;
+            txtNombreActor.Enabled = x;
+            txtApellidoActor.Enabled = x;
+            cboPaisA.Enabled = x;
+            dtpEdad.Enabled = x;
+            txtReseña.Enabled = x;
+            
+
+
+        }
+        private void limpiarTxtPelis()
+        {
+            txtIdPeli.Text = "";
+            txtNombrePelicula.Text = "";
+            dtpDura.Text = "00:00:00";
+            cboGenero.SelectedIndex = -1;
+            cboIdioma.SelectedIndex = -1;
+            cboClasificacion.SelectedIndex = -1;
+            cboSubtitulos.SelectedIndex = -1;
+            cboDirector.SelectedIndex = -1;
+            cboPaisP.SelectedIndex = -1;
+
+        }
+        private void limpiarTxtActores()
+        {
+            txtIdActor.Text = "";
+            txtNombreActor.Text = "";
+            txtApellidoActor.Text = "";
+            cboPaisA.SelectedIndex = -1;
+            dtpEdad.Text = "01/01/1990";
+            txtReseña.Text = "";
+        }
+
+//-------------------BOTONES PELICULA--------------------------------------------------
+            private void btnNuevoPeli_Click(object sender, EventArgs e)
+        {
+            bloqueoPelis(true);
+            txtIdPeli.Enabled = true;
+            limpiarTxtPelis();
+        }
+
+        //------------------------------
+        private void btnGuardarPeli_Click(object sender, EventArgs e)
         {
             try
             {
 
+
                 Pelicula peli = new Pelicula();
                 peli.Id = Convert.ToInt32(txtIdPeli.Text);
                 peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
-                peli.Duracion = Convert.ToDateTime(dtpDura.Text);
+                peli.Duracion = Convert.ToDateTime(dtpDura.Value);
                 peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
                 peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
                 peli.Clasificacion = Convert.ToInt32(cboClasificacion.SelectedValue);
                 peli.Subtitulos = Convert.ToInt32(cboSubtitulos.SelectedValue);
                 peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
+                peli.Pais = Convert.ToInt32(cboPaisP.SelectedValue);
 
 
 
 
                 string agregar = "Insert into Pelicula (    " +
-                                                               "id_pelicula," +
+                                                                "id_pelicula," +
                                                                "nombre," +
                                                                "duracion," +
                                                                "id_genero," +
                                                                "id_idioma," +
                                                                "id_clasificacion," +
                                                                "id_subtitulos," +
-                                                               "id_director)" +
+                                                               "id_director," +
+                                                               "id_pais)" +
                                                 " values ( " +
-                                                           txtIdPeli.Text +","+ 
+                                                                  txtIdPeli.Text + "," +
                                                           " ' " + txtNombrePelicula.Text +
                                                           "','" + dtpDura.Text + "',"
                                                             + cboGenero.SelectedValue + ","
                                                             + cboIdioma.SelectedValue + ","
                                                             + cboClasificacion.SelectedValue + ","
                                                             + cboSubtitulos.SelectedValue + ","
-                                                            + cboDirector.SelectedValue + ")";
+                                                            + cboDirector.SelectedValue + ","
+                                                            + cboPaisP.SelectedValue + ")";
 
                 datos.actualizarBD(agregar);
-                limpiarTxtPelis();
-                bloqueoPelis(true);
 
+
+
+
+                MessageBox.Show("LA PELICULA SE GUARDO CORRECTAMENTE");
 
             }
             catch (Exception x)
@@ -114,11 +172,135 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("ERROR al guardar la pelicula!!  \n " + x.Message);
             }
 
-            datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
-    
+            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            limpiarTxtPelis();
+            bloqueoPelis(false);
         }
-        //--------------------------------------------------------------------------------
-        private void btnGuardarActor_Click(object sender, EventArgs e)
+
+        //----------DE DATA GRID A TXT BOX--------------------
+        private void dgvPelis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow fila = this.dgvPelis.Rows[e.RowIndex];
+                txtIdPeli.Text = fila.Cells["id_Pelicula"].Value.ToString();
+                //SET INT CON ID DE PELICULA---------------------------------------------------- 
+                idPeli = Convert.ToInt32(fila.Cells["id_Pelicula"].Value.ToString());
+                //----------------------------------------------------
+                txtNombrePelicula.Text = fila.Cells["nombre"].Value.ToString();
+                dtpDura.Text = fila.Cells["duracion"].Value.ToString();
+                cboGenero.SelectedIndex = Convert.ToInt32(fila.Cells["id_genero"].Value.ToString()) - 1;
+                cboIdioma.SelectedIndex = Convert.ToInt32(fila.Cells["id_idioma"].Value.ToString()) - 1;
+                cboClasificacion.SelectedIndex = Convert.ToInt32(fila.Cells["id_clasificacion"].Value.ToString()) - 1;
+                cboSubtitulos.SelectedIndex = Convert.ToInt32(fila.Cells["id_subtitulos"].Value.ToString()) - 1;
+                cboDirector.SelectedIndex = Convert.ToInt32(fila.Cells["id_director"].Value.ToString()) - 1;
+                cboPaisP.SelectedIndex = Convert.ToInt32(fila.Cells["id_pais"].Value.ToString()) - 1;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("ALGO PASO AL CLIKEAR PELICULA" + x.Message);
+
+
+            }
+        }
+        //------------BOTON PREVIO A LA MODIFICACION------------------
+        private void btnModificarPeli_Click(object sender, EventArgs e)
+        {
+
+
+            if (idPeli > 0)
+            {
+               
+                btnBorrarPeli.Enabled = false;
+                btnAceptarMod.Visible = true;
+                btnGuardarPeli.Enabled = false;
+                btnNuevoPeli.Enabled = false;
+                dgvPelis.Enabled = false;
+                btnModificarPeli.Enabled = false;
+                bloqueoPelis(true);
+            }
+            else
+            {
+                MessageBox.Show("NINGUNA PELICULA ASIGNADA AL CAMBIO");
+            }
+
+        }
+        //------------CANCELAR(CAMPOS RESTABLECIDOS)------------------
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            btnBorrarPeli.Enabled = true;
+            btnNuevoPeli.Enabled = true;
+            btnModificarPeli.Enabled = true;
+            btnGuardarPeli.Enabled = true;
+            limpiarTxtPelis();
+            bloqueoPelis(false);
+            dgvPelis.Enabled = true;
+            btnAceptarMod.Visible = false;
+        }
+        //------------ELIMINAR PELICULA------------------
+        private void btnBorrarPeli_Click(object sender, EventArgs e)
+        {
+            string eliminarP = "Delete pelicula where id_pelicula =" + idPeli;
+
+            datos.actualizarBD(eliminarP);
+            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+        }
+
+        //-------------ACEPTAR LA MODIFICACION(BOTON FANTASMA :O)-----------------
+        private void btnAceptarMod_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                String modificar = "UPDATE Pelicula SET " +
+                                                        "nombre ='" + txtNombrePelicula.Text + "'," +
+                                                        "duracion='" + dtpDura.Text + "'," +
+                                                        "id_genero=" + cboGenero.SelectedValue + "," +
+                                                        "id_idioma=" + cboIdioma.SelectedValue + "," +
+                                                        "id_clasificacion=" + cboClasificacion.SelectedValue + "," +
+                                                        "id_subtitulos=" + cboSubtitulos.SelectedValue + "," +
+                                                        "id_director=" + cboDirector.SelectedValue + "," +
+                                                        "id_pais=" + cboPaisP.SelectedValue + "  " +
+                                                        "WHERE id_pelicula =" + idPeli;
+                MessageBox.Show(modificar);
+
+
+                datos.actualizarBD(modificar);
+
+                MessageBox.Show("La pelicula con el id [" + idPeli + "] HA SIDO ACTUALIZADA CORRECTAMENTE");
+                btnAceptarMod.Visible = false;
+                bloqueoPelis(false);
+                btnNuevoPeli.Enabled = true;
+                btnModificarPeli.Enabled = true;
+                btnGuardarPeli.Enabled = true;
+                btnBorrarPeli.Enabled = true;
+                dgvPelis.Enabled = true;
+
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("La PELICULA NO SE PUDO ACTUALIZAR" + x.Message);
+
+            }
+            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+        }
+        //------------------------------
+      
+
+      
+
+        //------------------------------BOTONES ACTORES-----------------------------------------------------
+     
+        private void btnNuevoAct_Click(object sender, EventArgs e)
+        {
+            limpiarTxtActores();
+            bloqueoActores(true);
+        }
+
+       
+
+        private void btnGuardarAct_Click(object sender, EventArgs e)
         {
             try
             {
@@ -126,18 +308,19 @@ namespace PracticoIntegrador2018
                 ac.Id = Convert.ToInt32(txtIdActor.Text);
                 ac.Nombre = Convert.ToString(txtNombreActor);
                 ac.Apellido = Convert.ToString(txtApellidoActor);
-                ac.Pais = Convert.ToInt32(cboPais.SelectedValue);
-                ac.FechaN = Convert.ToDateTime(dtpEdad.Text);
+                ac.Pais = Convert.ToInt32(cboPaisA.SelectedValue);
+                ac.FechaN = Convert.ToDateTime(dtpEdad.Value.Date);
                 ac.Reseña = Convert.ToString(txtReseña.Text);
 
-                string agregar = "INSERT INTO ACTORES("+
-                                 "id_actor,"
-                                 + "nombre,nacionalidad,edad,reseña,apellido)"
-                                 + "values( " +txtIdActor.Text+",'" 
-                                             + txtNombreActor.Text + "',"
-                                             + cboPais.SelectedValue + ",'"
+                string agregar = "INSERT INTO ACTORES("
+                                         
+                                 + "id_actor,nombre,nacionalidad,fecha_nacimiento,reseña,apellido)"
+                                 + "values( " 
+                                              +txtIdActor.Text+","+
+                                             "'" + txtNombreActor.Text + "',"
+                                             + cboPaisA.SelectedValue + ",'"
                                              + dtpEdad.Text + "','"
-                                              + txtReseña.Text + "','"
+                                             + txtReseña.Text + "','"
                                              + txtApellidoActor.Text + "')";
                 MessageBox.Show(agregar);
 
@@ -151,95 +334,69 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("Error al cargar actor" + x.Message);
             }
 
-            datos.putInGrid(dgvPeliculas, "Select * from Peliculas");
+            datos.putInGrid(dgvActores, "Select * from Actores");
+        }
 
-        }
-        //--------------------------------------------------------------------------------
-        private void bloqueoPelis(bool x)
-        {
-            txtIdPeli.Enabled = x;
-            txtNombrePelicula.Enabled = x;
-            dtpDura.Enabled = x;
-            cboGenero.Enabled = x;
-            cboIdioma.Enabled = x;
-            cboClasificacion.Enabled = x;
-            cboSubtitulos.Enabled = x;
-            cboDirector.Enabled = x;
+   
 
-        }
-        //--------------------------------------------------------------------------------
-        private void bloqueoActores(bool x)
-        {
-            txtIdActor.Enabled = x;
-            txtNombreActor.Enabled = x;
-            txtApellidoActor.Enabled = x;
-            cboPais.Enabled = x;
-            dtpEdad.Enabled = x;
-            txtReseña.Enabled = x;
-        }
-        //--------------------------------------------------------------------------------
-        private void limpiarTxtPelis()
-        {
-            txtIdPeli.Text = "";
-            txtNombrePelicula.Text = "";
-            dtpDura.Text = "00:00:00";
-            cboGenero.SelectedIndex = -1;
-            cboIdioma.SelectedIndex = -1;
-            cboClasificacion.SelectedIndex = -1;
-            cboSubtitulos.SelectedIndex = -1;
-            cboDirector.SelectedIndex = -1;
-
-        }
-        //--------------------------------------------------------------------------------
-        private void limpiarTxtActores()
-        {
-            txtIdActor.Text = "";
-            txtNombreActor.Text = "";
-            txtApellidoActor.Text = "";
-            cboPais.SelectedIndex = -1;
-            dtpEdad.Text = "01/01/1990";
-            txtReseña.Text = "";
-        }
-        //--------------------------------------------------------------------------------
-        private void btnNuevoPelicula_Click_1(object sender, EventArgs e)
-        {
-            bloqueoPelis(true);
-        }
-        //--------------------------------------------------------------------------------
-        private void btnNuevoActor_Click(object sender, EventArgs e)
-        {
-            bloqueoActores(true);
-        }
-        //--------------------------------------------------------------------------------
-        private void dgvPeliculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            pos = dgvPeliculas.CurrentRow.Index;
-            DataGridViewRow fila = this.dgvPeliculas.Rows[e.RowIndex];
-            MessageBox.Show(pos.ToString());
-            txtIdPeli.Text = fila.Cells["id_Pelicula"].Value.ToString();
-            txtNombreActor.Text = fila.Cells["nombre"].Value.ToString();
-            dtpDura.Text = fila.Cells["duracion"].Value.ToString();
-            cboGenero.SelectedIndex = Convert.ToInt32(fila.Cells["id_genero"].Value.ToString());
-            cboIdioma.SelectedIndex = Convert.ToInt32(fila.Cells["id_idioma"].Value.ToString());
-            cboClasificacion.SelectedIndex = Convert.ToInt32(fila.Cells["id_clasificacion"].Value.ToString());
-            cboSubtitulos.SelectedIndex = Convert.ToInt32(fila.Cells["id_subtitulos"].Value.ToString());
-            cboDirector.SelectedIndex = Convert.ToInt32(fila.Cells["id_director"].Value.ToString());
-
-        }
-        //--------------------------------------------------------------------------------
-        private void pnlActores_Paint(object sender, PaintEventArgs e)
+        //NOTA CAMBIAR LA BASE DE DATOS NACIONALIDADES DE STRING A INT O NO ANDA EL GRID 
+        private void dgvActores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-        //--------------------------------------------------------------------------------
-        private void pnlPelicula_Paint(object sender, PaintEventArgs e)
-        {
+            DataGridViewRow fila = this.dgvActores.Rows[e.RowIndex];
+            txtIdActor.Text = fila.Cells["id_actor"].Value.ToString();
+            txtNombreActor.Text= fila.Cells["nombre"].Value.ToString();
+            txtApellidoActor.Text= fila.Cells["apellido"].Value.ToString();
+            cboPaisA.SelectedIndex = Convert.ToInt32(fila.Cells["nacionalidad"].Value.ToString());
+            txtReseña.Text= fila.Cells["reseña"].Value.ToString();
+            dtpEdad.Text= fila.Cells["fecha_nacimiento"].Value.ToString();
+
 
         }
-        //--------------------------------------------------------------------------------
-        private void dgvPeliculas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+
+        private void btnModAct_Click(object sender, EventArgs e)
+        {
+            String modificarAct = "UPDATE actores SET" +
+                                                    "nombre='" + txtNombreActor.Text + "'," +
+                                                    "apellido='" + txtApellidoActor.Text + "'," +
+                                                    "nacionalidad=" + cboPaisA.SelectedValue + "," +
+                                                    "reseña= '" + txtReseña.Text + "'," +
+                                                    "fecha_nacimiento='" + dtpEdad.Text + "'" +
+                                                    "WHERE id_actor=" + idActor;
+        }
+
+        private void btnModificarAct_Click(object sender, EventArgs e)
         {
 
+            if (idPeli > 0)
+            {
+
+                btnBorrarAct.Enabled = false;
+                btnModAct.Visible = true;
+                dgvActores.Enabled = false;
+              
+                bloqueoActores(true);
+            }
+            else
+            {
+                MessageBox.Show("NINGUNA PELICULA ASIGNADA AL CAMBIO");
+            }
+
         }
+
+        //String modificar = "UPDATE Pelicula SET " +
+        //                                                "nombre ='" + txtNombrePelicula.Text + "'," +
+        //                                                "duracion='" + dtpDura.Text + "'," +
+        //                                                "id_genero=" + cboGenero.SelectedValue + "," +
+        //                                                "id_idioma=" + cboIdioma.SelectedValue + "," +
+        //                                                "id_clasificacion=" + cboClasificacion.SelectedValue + "," +
+        //                                                "id_subtitulos=" + cboSubtitulos.SelectedValue + "," +
+        //                                                "id_director=" + cboDirector.SelectedValue + "," +
+        //                                                "id_pais=" + cboPaisP.SelectedValue + "  " +
+        //                                                "WHERE id_pelicula =" + idPeli;
+
+
+
+
     }
 }

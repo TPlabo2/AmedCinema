@@ -11,7 +11,7 @@ namespace PracticoIntegrador2018
         private int id;
         private string nombre;
         private DateTime duracion;
-        private int genero, idioma, clasificacion, subtitulos, director;
+        private int genero, idioma, clasificacion, subtitulos, director,pais;
 
         public Pelicula(int id, string nombre, DateTime duracion, int genero, int idioma, int clasificacion, int subtitulos, int director)
         {
@@ -37,6 +37,7 @@ namespace PracticoIntegrador2018
         public int Subtitulos { get => subtitulos; set => subtitulos = value; }
         public int Director { get => director; set => director = value; }
         public int Id { get => id; set => id = value; }
+        public int Pais { get => pais; set => pais = value; }
 
         public string toString()
         {
