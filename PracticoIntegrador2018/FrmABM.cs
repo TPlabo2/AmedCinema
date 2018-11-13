@@ -422,6 +422,11 @@ namespace PracticoIntegrador2018
             dgvActores.Enabled = true;
         }
 
+        private void pnlPelicula_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
 
