@@ -75,6 +75,8 @@
             this.txtC1c3 = new System.Windows.Forms.TextBox();
             this.txtC1c2 = new System.Windows.Forms.TextBox();
             this.txtC1c1 = new System.Windows.Forms.TextBox();
+            this.txtConsulta2 = new System.Windows.Forms.TextBox();
+          
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -465,12 +467,12 @@
             this.rbtnConsulta10.Text = "Parametrizar10";
             this.rbtnConsulta10.UseVisualStyleBackColor = true;
             // 
-            // dtpckConsulta2
+            // txtConsulta2
             // 
-            this.dtpckConsulta2.Location = new System.Drawing.Point(141, 160);
-            this.dtpckConsulta2.Name = "dtpckConsulta2";
-            this.dtpckConsulta2.Size = new System.Drawing.Size(200, 20);
-            this.dtpckConsulta2.TabIndex = 50;
+            this.txtConsulta2.Location = new System.Drawing.Point(141, 165);
+            this.txtConsulta2.Name = "txtConsulta2";
+            this.txtConsulta2.Size = new System.Drawing.Size(100, 20);
+            this.txtConsulta2.TabIndex = 50;
             // 
             // txtC1c3
             // 
@@ -505,6 +507,7 @@
             this.Controls.Add(this.txtC1c2);
             this.Controls.Add(this.txtC1c3);
             this.Controls.Add(this.dtpckConsulta2);
+            this.Controls.Add(this.txtConsulta2);
             this.Controls.Add(this.rbtnConsulta10);
             this.Controls.Add(this.rbtnConsulta9);
             this.Controls.Add(this.rbtnConsulta8);
@@ -610,6 +613,7 @@
         private System.Windows.Forms.TextBox txtC1c3;
         private System.Windows.Forms.TextBox txtC1c2;
         private System.Windows.Forms.TextBox txtC1c1;
+        private System.Windows.Forms.TextBox txtConsulta2;
     }
 }
 
