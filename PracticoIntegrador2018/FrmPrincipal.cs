@@ -245,7 +245,7 @@ namespace PracticoIntegrador2018
 
         }
         //----------------------------------------------------------------------------------------
-        private void btnConsulta3_Click(object sender, EventArgs e)
+        private void btnConsulta3_Click(object sender, EventArgs e)//SE PARAMETRIZARA EL AÑO Y  EL COUNT DEL HAVING
         {
             MessageBox.Show("select p.nombre, count(id_entrada) 'Cantidad de entradas vendidas' from pelicula p, funciones f, Detalle_Comprobantes d, entradas e, comprobante c where e.id_detalle = d.id_detalle " +
                                         "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and year(c.fecha) = 2016 group by p.nombre having 50 > (select count(e1.id_entrada)From entradas e1)",
@@ -258,12 +258,11 @@ namespace PracticoIntegrador2018
 
             //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
 
-            if (rbtnConsulta2.Checked == true)
+            if (rbtnConsulta3.Checked == true)
             {
-
-                consultaParametrizada = "select p.nombre, count(id_entrada) 'Cantidad de entradas vendidas' from pelicula p, funciones f, Detalle_Comprobantes d, entradas e, comprobante c where e.id_detalle = d.id_detalle "+
-                                        "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and year(c.fecha) = 2016 group by p.nombre having 50 > (select count(e1.id_entrada)From entradas e1)";
-
+                consultaParametrizada = "select p.nombre, count(id_entrada) 'Cantidad de entradas vendidas' from pelicula p, funciones f, Detalle_Comprobantes d, entradas e, comprobante c where e.id_detalle = d.id_detalle " +
+                                        "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and year(c.fecha) = " + txtConsulta3.Text + " group by p.nombre having " + txtConsulta3c2.Text + " > (select count(e1.id_entrada)From entradas e1)";
+                
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
 
