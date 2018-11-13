@@ -101,6 +101,7 @@ namespace PracticoIntegrador2018
         {
             conectar();
 
+            tabla = new DataTable();
             
             this.comando = new SqlCommand(consulta, conexion);
             da.SelectCommand = comando;

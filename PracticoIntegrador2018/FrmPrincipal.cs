@@ -89,9 +89,8 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            dgrvConsultas.DataSource = null;
-            dgrvConsultas.Rows.Clear();
-            dgrvConsultas.RefreshEdit();
+            limpiarColumnas(dgrvConsultas);
+          
             if (radioBtnVacios())//Metodo que comprueba que ningun btn este seleccionado
             {
 
@@ -177,8 +176,16 @@ namespace PracticoIntegrador2018
                         break;
                 }
             }
-
-            //consultero = Consultero.none;
+            
+        }
+        //----------------------------------------------------------------------------------------
+        private void limpiarColumnas(DataGridView dgrvConsultas)
+        {
+            for (int i = 0; i < dgrvConsultas.ColumnCount; i++)
+            {
+                int v = i;
+                dgrvConsultas.Columns.RemoveAt(i);
+            }
         }
         //----------------------------------------------------------------------------------------
         private bool radioBtnVacios()
