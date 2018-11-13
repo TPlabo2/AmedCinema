@@ -164,6 +164,7 @@
             this.btnConsulta9.TabIndex = 9;
             this.btnConsulta9.Text = "Consulta 9";
             this.btnConsulta9.UseVisualStyleBackColor = true;
+            this.btnConsulta9.Click += new System.EventHandler(this.btnConsulta9_Click);
             // 
             // btnConsulta10
             // 

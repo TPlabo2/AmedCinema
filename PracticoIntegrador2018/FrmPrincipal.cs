@@ -238,6 +238,8 @@ namespace PracticoIntegrador2018
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
+
+            dgrvConsultas.DataSource = null;
         }
         //----------------------------------------------------------------------------------------
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -324,6 +326,33 @@ namespace PracticoIntegrador2018
             dgrvConsultas.DataSource = null;
         }
 
+        private void btnConsulta9_Click(object sender, EventArgs e) //SE PARAMETRIZA LA FORMA DE PAGO
+        {
+
+            MessageBox.Show("Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
+                "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
+                "and year(fecha) = year(getdate()) - 1 and   formaPago like 'Debito' and descripcion like 'Boleteria'");
+
+            consulta = "Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
+                "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
+                "and year(fecha) = year(getdate()) - 1 and   formaPago like 'Debito' and descripcion like 'Boleteria'";
+
+            consultero = Consultero.C9;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta9.Checked == true)
+            {
+                consultaParametrizada = "Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
+                "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
+                "and year(fecha) = year(getdate()) - 1 and   formaPago like " + txtConsulta9.Text + " and descripcion like " + txtConsulta9c2.Text + "";
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+            }
+
+            dgrvConsultas.DataSource = null;
+
+        }
     }
 }
 
