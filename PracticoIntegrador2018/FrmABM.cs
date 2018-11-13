@@ -15,7 +15,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int pos;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-D2E18LA;Initial Catalog=Cine;Integrated Security=True");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=GameX;Initial Catalog=CineMio;Persist Security Info=True;User ID=Emma;Password=1234");
         public FrmABM()
         {
 
@@ -35,7 +35,7 @@ namespace PracticoIntegrador2018
             cargarCombo(cboClasificacion, "ClasificacionesPelicula");
             cargarCombo(cboSubtitulos, "subtitulos");
             cargarCombo(cboDirector, "Directores");
-            cargarCombo(cboPais, "Paises");
+            cargarCombo(cboPais, "Pais");
             //----------------------------------------------------------
             datos.putInGrid(dgvPeliculas, "Select * from Pelicula");
             datos.putInGrid(dgvActores, "Select * from Actores");
@@ -154,7 +154,7 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("Error al cargar actor" + x.Message);
             }
 
-            datos.putInGrid(dgvActores, "Select * from Actores");
+            datos.putInGrid(dgvPeliculas, "Select * from Peliculas");
 
         }
         private void bloqueoPelis(bool x)
