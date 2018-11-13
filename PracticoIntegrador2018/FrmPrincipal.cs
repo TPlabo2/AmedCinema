@@ -271,14 +271,14 @@ namespace PracticoIntegrador2018
 
         private void btnConsulta7_Click(object sender, EventArgs e)//SE PARAMETRIZA EL VALOR DE COMPARACIÓN
         {
-            {
+            
                 MessageBox.Show("Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)");
 
                 consulta = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where 350 < " +
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
 
-                consultero = Consultero.C6;
+                consultero = Consultero.C7;
 
                 //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
 
@@ -289,7 +289,41 @@ namespace PracticoIntegrador2018
 
                     //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
                 }
-            }
+
+            dgrvConsultas.DataSource = null;
+
         }
+
+        private void btnConsulta8_Click(object sender, EventArgs e)//SE PARAMETRIZA LA CANTIDAD DE AÑOS ANTERIORES DEL CUAL QUEREMOS CONOCER EL DETALLE
+        {
+
+            MessageBox.Show("Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
+                "Where year(c.fecha) = year(getdate()) - 1 and 200 < any(Select avg(precio * cantidad) " +
+                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)");
+
+            consulta = "Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
+                "Where year(c.fecha) = year(getdate()) - 1 and 200 < any(Select avg(precio * cantidad) " +
+                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)";
+
+            consultero = Consultero.C8;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta8.Checked == true)
+            {
+                consultaParametrizada = "Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
+                "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion " +
+                "Where year(c.fecha) = year(getdate()) - " + txtConsulta8.Text + " and 200 < any(Select avg(precio * cantidad) " +
+                "From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante nd dc1.id_funcion = f.id_funcion)";
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+            }
+
+            dgrvConsultas.DataSource = null;
+        }
+
     }
 }
+
