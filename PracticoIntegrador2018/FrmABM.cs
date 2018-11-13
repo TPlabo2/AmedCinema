@@ -42,11 +42,6 @@ namespace PracticoIntegrador2018
             datos.putInGrid(dgvActores, "Select * from Actores");
 
         }
-
-     
-
-
-
         //---------METODOS-------------------------------------------------
         private void cargarCombo(ComboBox combo, string nombreTabla)
         {
@@ -58,8 +53,7 @@ namespace PracticoIntegrador2018
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
         }
-
-       
+        //----------------------------------------------------------------       
         private void bloqueoPelis(bool x)
         {
             txtIdPeli.Enabled = false;
@@ -73,6 +67,7 @@ namespace PracticoIntegrador2018
             cboPaisP.Enabled = x;
 
         }
+        //----------------------------------------------------------------
         private void bloqueoActores(bool x)
         {
             txtIdActor.Enabled = x;
@@ -83,9 +78,8 @@ namespace PracticoIntegrador2018
             dtpEdad.Enabled = x;
             txtReseña.Enabled = x;
             
-
-
         }
+        //---------------------------------------------------------------
         private void limpiarTxtPelis()
         {
             txtIdPeli.Text = "";
@@ -99,6 +93,7 @@ namespace PracticoIntegrador2018
             cboPaisP.SelectedIndex = -1;
 
         }
+        //---------------------------------------------------------------
         private void limpiarTxtActores()
         {
             txtIdActor.Text = "";
@@ -110,15 +105,14 @@ namespace PracticoIntegrador2018
             txtReseña.Text = "";
         }
 
-//-------------------BOTONES PELICULA--------------------------------------------------
-            private void btnNuevoPeli_Click(object sender, EventArgs e)
+        //-------------------BOTONES PELICULA--------------------------------------------------
+        private void btnNuevoPeli_Click(object sender, EventArgs e)
         {
             bloqueoPelis(true);
             txtIdPeli.Enabled = true;
             limpiarTxtPelis();
         }
-
-        //------------------------------
+        //------------------------------------------------------------------------------------
         private void btnGuardarPeli_Click(object sender, EventArgs e)
         {
             try
@@ -287,10 +281,6 @@ namespace PracticoIntegrador2018
             }
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
         }
-        //------------------------------
-      
-
-      
 
         //------------------------------BOTONES ACTORES-----------------------------------------------------
      
@@ -299,9 +289,7 @@ namespace PracticoIntegrador2018
             limpiarTxtActores();
             bloqueoActores(true);
         }
-
-       
-
+        //------------------------------------------------------------------------------------
         private void btnGuardarAct_Click(object sender, EventArgs e)
         {
             try
@@ -345,9 +333,7 @@ namespace PracticoIntegrador2018
             dgvActores.Enabled = true;
             datos.putInGrid(dgvActores, "Select * from Actores");
         }
-
-   
-
+        //---------------------------------------------------------------------------------------------------------
         //NOTA CAMBIAR LA BASE DE DATOS NACIONALIDADES DE STRING A INT O NO ANDA EL GRID 
         private void dgvActores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -375,7 +361,7 @@ namespace PracticoIntegrador2018
 
 
         }
-
+        //---------------------------------------------------------------------------------------------------------
         private void btnModAct_Click(object sender, EventArgs e)
         {
             try
@@ -408,7 +394,7 @@ namespace PracticoIntegrador2018
             btnModificarAct.Enabled = true;
             btnBorrarAct.Enabled = true;
         }
-
+        //---------------------------------------------------------------------------------------------------------
         private void btnCancelarAct_Click(object sender, EventArgs e)
         {
 
@@ -421,12 +407,12 @@ namespace PracticoIntegrador2018
             btnModAct.Visible = false;
             dgvActores.Enabled = true;
         }
-
+        //---------------------------------------------------------------------------------------------------------
         private void pnlPelicula_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        //---------------------------------------------------------------------------------------------------------
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
 
@@ -447,10 +433,6 @@ namespace PracticoIntegrador2018
             }
 
         }
-
-        
-
-
 
 
     }

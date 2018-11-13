@@ -12,7 +12,7 @@ namespace PracticoIntegrador2018
 {
     public partial class Form1 : Form
     {
-        AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 123");
+        AccesoDatos acceso = new AccesoDatos(@"Data source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;  user id = sa; password = 110254");
         string consulta;
         string consultaParametrizada;
  
@@ -412,31 +412,26 @@ namespace PracticoIntegrador2018
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
         }
-
+        //-----------------------------------------------------------------------------
         private void btnConsulta5_Click(object sender, EventArgs e) //SE PARAMETRIZA LAS LETRAS
         {
-            MessageBox.Show("select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero’, descripción, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', avg(d.precio) 'Precio promedio'" +
-                "from películas p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion join comprobante c on c.id_comprobante = d.id_comprobante" +
-                "where p.nombre like '[g-p]%' or g.descripcion in ('thriller', 'terror',’horror')" +
-                "group by p.id_pelicula, p.nombre, g.id_genero, descripción" +
-                "order by 2, 4 desc");
+            MessageBox.Show("select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', "+
+                            "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion "+
+                            " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '[g-p]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc", 
+                            "INSTRUCIONES", MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-            consulta = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero’, descripción, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', avg(d.precio) 'Precio promedio'" +
-                "from películas p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion join comprobante c on c.id_comprobante = d.id_comprobante" +
-                "where p.nombre like '[g-p]%' or g.descripcion in ('thriller', 'terror',’horror')" +
-                "group by p.id_pelicula, p.nombre, g.id_genero, descripción" +
-                "order by 2, 4 desc";
+            consulta = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', " +
+                            "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion " +
+                            " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '[g-p]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
 
             consultero = Consultero.C5;
             //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
 
             if (rbtnConsulta5.Checked == true)
             {
-                consultaParametrizada = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero’, descripción, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', avg(d.precio) 'Precio promedio'" +
-                "from películas p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion join comprobante c on c.id_comprobante = d.id_comprobante" +
-                "where p.nombre like '["+ txtConsulta5 +"-"+ txtConsulta5c2 +"]%' or g.descripcion in ('thriller', 'terror',’horror')" +
-                "group by p.id_pelicula, p.nombre, g.id_genero, descripción" +
-                "order by 2, 4 desc";
+                consultaParametrizada = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', " +
+                            "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion " +
+                            " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '["+txtConsulta5.Text+"-"+txtConsulta5c2+"]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
