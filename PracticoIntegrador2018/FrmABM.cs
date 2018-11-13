@@ -35,7 +35,7 @@ namespace PracticoIntegrador2018
             cargarCombo(cboClasificacion, "ClasificacionesPelicula");
             cargarCombo(cboSubtitulos, "subtitulos");
             cargarCombo(cboDirector, "Directores");
-            cargarCombo(cboPaisA, "paises");
+            //cargarCombo(cboPaisA, "paises");
             cargarCombo(cboPaisP, "paises");
             //----------------------------------------------------------
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
@@ -78,7 +78,8 @@ namespace PracticoIntegrador2018
             txtIdActor.Enabled = x;
             txtNombreActor.Enabled = x;
             txtApellidoActor.Enabled = x;
-            cboPaisA.Enabled = x;
+            txtNacionalidad.Enabled = x;
+           // cboPaisA.Enabled = x;
             dtpEdad.Enabled = x;
             txtReseña.Enabled = x;
             
@@ -103,7 +104,8 @@ namespace PracticoIntegrador2018
             txtIdActor.Text = "";
             txtNombreActor.Text = "";
             txtApellidoActor.Text = "";
-            cboPaisA.SelectedIndex = -1;
+            txtNacionalidad.Text = "";
+            //cboPaisA.SelectedIndex = -1;
             dtpEdad.Text = "01/01/1990";
             txtReseña.Text = "";
         }
@@ -308,17 +310,17 @@ namespace PracticoIntegrador2018
                 ac.Id = Convert.ToInt32(txtIdActor.Text);
                 ac.Nombre = Convert.ToString(txtNombreActor);
                 ac.Apellido = Convert.ToString(txtApellidoActor);
-                ac.Pais = Convert.ToInt32(cboPaisA.SelectedValue);
+                ac.Pais = Convert.ToString(txtNacionalidad.Text);
                 ac.FechaN = Convert.ToDateTime(dtpEdad.Value.Date);
                 ac.Reseña = Convert.ToString(txtReseña.Text);
 
                 string agregar = "INSERT INTO ACTORES("
-                                         
+
                                  + "id_actor,nombre,nacionalidad,fecha_nacimiento,reseña,apellido)"
-                                 + "values( " 
-                                              +txtIdActor.Text+","+
-                                             "'" + txtNombreActor.Text + "',"
-                                             + cboPaisA.SelectedValue + ",'"
+                                 + "values( "
+                                              + txtIdActor.Text + "," +
+                                             "'" + txtNombreActor.Text + "','"
+                                             + txtNacionalidad.Text + "','"
                                              + dtpEdad.Text + "','"
                                              + txtReseña.Text + "','"
                                              + txtApellidoActor.Text + "')";
@@ -333,7 +335,14 @@ namespace PracticoIntegrador2018
 
                 MessageBox.Show("Error al cargar actor" + x.Message);
             }
-
+            limpiarTxtActores();
+            bloqueoActores(false);
+            btnNuevoAct.Enabled = true;
+            btnGuardarAct.Enabled = true;
+            btnModificarAct.Enabled = true;
+            btnBorrarAct.Enabled = true;
+            btnModAct.Visible = false;
+            dgvActores.Enabled = true;
             datos.putInGrid(dgvActores, "Select * from Actores");
         }
 
@@ -343,57 +352,98 @@ namespace PracticoIntegrador2018
         private void dgvActores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            DataGridViewRow fila = this.dgvActores.Rows[e.RowIndex];
-            txtIdActor.Text = fila.Cells["id_actor"].Value.ToString();
-            txtNombreActor.Text= fila.Cells["nombre"].Value.ToString();
-            txtApellidoActor.Text= fila.Cells["apellido"].Value.ToString();
-            cboPaisA.SelectedIndex = Convert.ToInt32(fila.Cells["nacionalidad"].Value.ToString());
-            txtReseña.Text= fila.Cells["reseña"].Value.ToString();
-            dtpEdad.Text= fila.Cells["fecha_nacimiento"].Value.ToString();
+            try
+            {
+                DataGridViewRow fila = this.dgvActores.Rows[e.RowIndex];
+                txtIdActor.Text = fila.Cells["id_actor"].Value.ToString();
+                idActor = Convert.ToInt32(fila.Cells["id_actor"].Value.ToString());
+                txtNombreActor.Text = fila.Cells["nombre"].Value.ToString();
+                txtApellidoActor.Text = fila.Cells["apellido"].Value.ToString();
+                //cambiado a txt al no poder usar int para buscar en combobox
+                txtNacionalidad.Text = fila.Cells["nacionalidad"].Value.ToString();
+
+               // paisActor = fila.Cells["nacionalidad"].Value.ToString();
+                txtReseña.Text = fila.Cells["reseña"].Value.ToString();
+                dtpEdad.Text = fila.Cells["fecha_nacimiento"].Value.ToString();
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("ALGO PASO AL SELECCIONAR EL ACTOR" + x.Message);
+
+            }
 
 
         }
 
         private void btnModAct_Click(object sender, EventArgs e)
         {
-            String modificarAct = "UPDATE actores SET" +
-                                                    "nombre='" + txtNombreActor.Text + "'," +
-                                                    "apellido='" + txtApellidoActor.Text + "'," +
-                                                    "nacionalidad=" + cboPaisA.SelectedValue + "," +
-                                                    "reseña= '" + txtReseña.Text + "'," +
-                                                    "fecha_nacimiento='" + dtpEdad.Text + "'" +
-                                                    "WHERE id_actor=" + idActor;
+            try
+            {
+                String modificarAct = "UPDATE actores SET " +
+                                                        "nombre='" + txtNombreActor.Text + "'," +
+                                                        "apellido='" + txtApellidoActor.Text + "'," +
+                                                        "nacionalidad=" + txtNacionalidad.Text + "," +
+                                                        "reseña= '" + txtReseña.Text + "'," +
+                                                        "fecha_nacimiento='" + dtpEdad.Text + "'" +
+                                                        "WHERE id_actor=" + idActor;
+
+                MessageBox.Show(modificarAct);
+                datos.actualizarBD(modificarAct);
+                MessageBox.Show("EL ACTOR FUE MODIFICADO CON EXITO");
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show("ERROR AL MODIFICAR AL ACTOR " + x.Message);
+
+            }
+            datos.putInGrid(dgvActores, "Select * from Actores");
+            dgvActores.Enabled = true;
+            btnModAct.Visible = false;
+            limpiarTxtActores();
+            bloqueoActores(false);
+            btnNuevoAct.Enabled = true;
+            btnGuardarAct.Enabled = true;
+            btnModificarAct.Enabled = true;
+            btnBorrarAct.Enabled = true;
+        }
+
+        private void btnCancelarAct_Click(object sender, EventArgs e)
+        {
+
+            limpiarTxtActores();
+            bloqueoActores(false);
+            btnNuevoAct.Enabled = true;
+            btnGuardarAct.Enabled = true;
+            btnModificarAct.Enabled = true;
+            btnBorrarAct.Enabled = true;
+            btnModAct.Visible = false;
+            dgvActores.Enabled = true;
         }
 
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
 
-            if (idPeli > 0)
+            if (idActor > 0)
             {
-
+                dgvActores.Enabled = false;
+                btnGuardarAct.Enabled = false;
+                btnNuevoAct.Enabled = false;
                 btnBorrarAct.Enabled = false;
                 btnModAct.Visible = true;
-                dgvActores.Enabled = false;
-              
                 bloqueoActores(true);
+                txtIdActor.Enabled = false;
+                btnModificarAct.Enabled = false;
             }
             else
             {
-                MessageBox.Show("NINGUNA PELICULA ASIGNADA AL CAMBIO");
+                MessageBox.Show("NINGUN ACTOR ASIGNADO AL CAMBIO");
             }
 
         }
 
-        //String modificar = "UPDATE Pelicula SET " +
-        //                                                "nombre ='" + txtNombrePelicula.Text + "'," +
-        //                                                "duracion='" + dtpDura.Text + "'," +
-        //                                                "id_genero=" + cboGenero.SelectedValue + "," +
-        //                                                "id_idioma=" + cboIdioma.SelectedValue + "," +
-        //                                                "id_clasificacion=" + cboClasificacion.SelectedValue + "," +
-        //                                                "id_subtitulos=" + cboSubtitulos.SelectedValue + "," +
-        //                                                "id_director=" + cboDirector.SelectedValue + "," +
-        //                                                "id_pais=" + cboPaisP.SelectedValue + "  " +
-        //                                                "WHERE id_pelicula =" + idPeli;
+        
 
 
 
