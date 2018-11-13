@@ -127,7 +127,7 @@
             // 
             this.dgvPelis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPelis.Location = new System.Drawing.Point(279, 66);
-            this.dgvPelis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPelis.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPelis.Name = "dgvPelis";
             this.dgvPelis.RowTemplate.Height = 28;
             this.dgvPelis.Size = new System.Drawing.Size(973, 204);
@@ -157,9 +157,9 @@
             // 
             this.dtpDura.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpDura.Location = new System.Drawing.Point(110, 110);
-            this.dtpDura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDura.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDura.Name = "dtpDura";
-            this.dtpDura.Size = new System.Drawing.Size(101, 20);
+            this.dtpDura.Size = new System.Drawing.Size(62, 20);
             this.dtpDura.TabIndex = 2;
             // 
             // txtIdPeli
@@ -339,7 +339,7 @@
             // txtNacionalidad
             // 
             this.txtNacionalidad.Location = new System.Drawing.Point(110, 134);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(123, 20);
             this.txtNacionalidad.TabIndex = 3;
@@ -348,7 +348,7 @@
             // txtReseña
             // 
             this.txtReseña.Location = new System.Drawing.Point(111, 194);
-            this.txtReseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtReseña.Multiline = true;
             this.txtReseña.Name = "txtReseña";
             this.txtReseña.Size = new System.Drawing.Size(122, 53);
@@ -358,7 +358,7 @@
             // 
             this.dgvActores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActores.Location = new System.Drawing.Point(279, 64);
-            this.dgvActores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvActores.Margin = new System.Windows.Forms.Padding(2);
             this.dgvActores.Name = "dgvActores";
             this.dgvActores.RowTemplate.Height = 28;
             this.dgvActores.Size = new System.Drawing.Size(973, 194);
@@ -508,7 +508,7 @@
             // btnNuevoPeli
             // 
             this.btnNuevoPeli.Location = new System.Drawing.Point(300, 329);
-            this.btnNuevoPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevoPeli.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoPeli.Name = "btnNuevoPeli";
             this.btnNuevoPeli.Size = new System.Drawing.Size(65, 27);
             this.btnNuevoPeli.TabIndex = 0;
@@ -519,7 +519,7 @@
             // btnGuardarPeli
             // 
             this.btnGuardarPeli.Location = new System.Drawing.Point(369, 329);
-            this.btnGuardarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarPeli.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarPeli.Name = "btnGuardarPeli";
             this.btnGuardarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnGuardarPeli.TabIndex = 1;
@@ -530,7 +530,7 @@
             // btnModificarPeli
             // 
             this.btnModificarPeli.Location = new System.Drawing.Point(439, 329);
-            this.btnModificarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarPeli.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarPeli.Name = "btnModificarPeli";
             this.btnModificarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnModificarPeli.TabIndex = 2;
@@ -541,7 +541,7 @@
             // btnBorrarPeli
             // 
             this.btnBorrarPeli.Location = new System.Drawing.Point(508, 329);
-            this.btnBorrarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrarPeli.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarPeli.Name = "btnBorrarPeli";
             this.btnBorrarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnBorrarPeli.TabIndex = 4;
@@ -552,7 +552,7 @@
             // btnBorrarAct
             // 
             this.btnBorrarAct.Location = new System.Drawing.Point(492, 639);
-            this.btnBorrarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrarAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrarAct.Name = "btnBorrarAct";
             this.btnBorrarAct.Size = new System.Drawing.Size(65, 27);
             this.btnBorrarAct.TabIndex = 10;
@@ -563,7 +563,7 @@
             // btnModificarAct
             // 
             this.btnModificarAct.Location = new System.Drawing.Point(423, 639);
-            this.btnModificarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarAct.Name = "btnModificarAct";
             this.btnModificarAct.Size = new System.Drawing.Size(65, 27);
             this.btnModificarAct.TabIndex = 8;
@@ -574,7 +574,7 @@
             // btnGuardarAct
             // 
             this.btnGuardarAct.Location = new System.Drawing.Point(353, 639);
-            this.btnGuardarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarAct.Name = "btnGuardarAct";
             this.btnGuardarAct.Size = new System.Drawing.Size(65, 27);
             this.btnGuardarAct.TabIndex = 7;
@@ -585,7 +585,7 @@
             // btnNuevoAct
             // 
             this.btnNuevoAct.Location = new System.Drawing.Point(284, 639);
-            this.btnNuevoAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevoAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoAct.Name = "btnNuevoAct";
             this.btnNuevoAct.Size = new System.Drawing.Size(65, 27);
             this.btnNuevoAct.TabIndex = 6;
@@ -596,7 +596,7 @@
             // btnCancelarPeli
             // 
             this.btnCancelarPeli.Location = new System.Drawing.Point(577, 329);
-            this.btnCancelarPeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarPeli.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarPeli.Name = "btnCancelarPeli";
             this.btnCancelarPeli.Size = new System.Drawing.Size(65, 27);
             this.btnCancelarPeli.TabIndex = 5;
@@ -607,7 +607,7 @@
             // btnAceptarMod
             // 
             this.btnAceptarMod.Location = new System.Drawing.Point(11, 329);
-            this.btnAceptarMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptarMod.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarMod.Name = "btnAceptarMod";
             this.btnAceptarMod.Size = new System.Drawing.Size(125, 27);
             this.btnAceptarMod.TabIndex = 3;
@@ -618,7 +618,7 @@
             // btnModAct
             // 
             this.btnModAct.Location = new System.Drawing.Point(11, 640);
-            this.btnModAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnModAct.Name = "btnModAct";
             this.btnModAct.Size = new System.Drawing.Size(143, 26);
             this.btnModAct.TabIndex = 9;
@@ -629,7 +629,7 @@
             // btnCancelarAct
             // 
             this.btnCancelarAct.Location = new System.Drawing.Point(561, 639);
-            this.btnCancelarAct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarAct.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarAct.Name = "btnCancelarAct";
             this.btnCancelarAct.Size = new System.Drawing.Size(65, 27);
             this.btnCancelarAct.TabIndex = 11;
