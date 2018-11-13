@@ -178,7 +178,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(32, 728);
+            this.btnConsultar.Location = new System.Drawing.Point(517, 638);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 40);
             this.btnConsultar.TabIndex = 12;
@@ -300,7 +300,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(155, 728);
+            this.btnSalir.Location = new System.Drawing.Point(727, 636);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(104, 40);
             this.btnSalir.TabIndex = 36;
@@ -311,7 +311,7 @@
             // btnABM
             // 
             this.btnABM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnABM.Location = new System.Drawing.Point(463, 728);
+            this.btnABM.Location = new System.Drawing.Point(948, 638);
             this.btnABM.Name = "btnABM";
             this.btnABM.Size = new System.Drawing.Size(104, 40);
             this.btnABM.TabIndex = 37;
@@ -335,7 +335,7 @@
             this.dgrvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrvConsultas.Location = new System.Drawing.Point(463, 111);
             this.dgrvConsultas.Name = "dgrvConsultas";
-            this.dgrvConsultas.Size = new System.Drawing.Size(674, 568);
+            this.dgrvConsultas.Size = new System.Drawing.Size(674, 415);
             this.dgrvConsultas.TabIndex = 39;
             // 
             // rbtnConsulta1
@@ -483,7 +483,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1181, 800);
+            this.ClientSize = new System.Drawing.Size(1173, 749);
             this.Controls.Add(this.txtC1c1);
             this.Controls.Add(this.txtC1c2);
             this.Controls.Add(this.txtC1c3);
