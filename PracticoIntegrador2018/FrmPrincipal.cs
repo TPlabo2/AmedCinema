@@ -15,7 +15,6 @@ namespace PracticoIntegrador2018
         AccesoDatos acceso = new AccesoDatos(@"Data Source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;User ID=sa; password=110254");
         string consulta;
         string consultaParametrizada;
-        int deprueba;
 
         //Enumeracion para verificar que consulta se debe ejecutar
         public enum Consultero {
@@ -31,9 +30,31 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
-            //deshabilitarTextBox();
+            ocultarTextBox();
             HideRadioButon();
             ocultarBotonesConsultas();
+            //ocultarLabels();
+        }
+        //----------------------------------------------------------------------------------------
+        private void ocultarTextBox()
+        {
+            txtConsulta1.Hide();
+          txtConsulta1C2.Hide();
+            txtConsulta2.Hide();
+            txtConsulta3.Hide();
+          txtConsulta3c2.Hide();
+            txtConsulta4.Hide();
+          txtConsulta4c2.Hide();
+            txtConsulta5.Hide();
+          txtConsulta5c2.Hide();
+                 txtC1c1.Hide();
+                 txtC1c2.Hide();
+                 txtC1c3.Hide();
+            txtConsulta7.Hide();
+            txtConsulta8.Hide();
+            txtConsulta9.Hide();
+          txtConsulta9c2.Hide();
+           txtConsulta10.Hide();
         }
         //----------------------------------------------------------------------------------------
         private void deshabilitarTextBox()
@@ -111,6 +132,7 @@ namespace PracticoIntegrador2018
                 HideRadioButon();
 
             }
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -205,9 +227,13 @@ namespace PracticoIntegrador2018
                         MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         break;
                 }
-                ocultarBotonesConsultas();
             }
-            
+                ocultarBotonesConsultas();
+                btnConsultar.Enabled = false;
+                ocultarTextBox();
+                ocultarBotonesConsultas();
+                deshabilitarTextBox();
+
         }
         //----------------------------------------------------------------------------------------
         private void limpiartTxtBox()
@@ -305,7 +331,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta6_Click(object sender, EventArgs e) //SE PARAMETRIZA LOS TRES AÑOS QUE SE BRINDAN POR LA CONSULTA
@@ -331,7 +357,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta3_Click(object sender, EventArgs e)//SE PARAMETRIZARA EL AÑO Y  EL COUNT DEL HAVING
@@ -357,7 +383,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta7_Click(object sender, EventArgs e)//SE PARAMETRIZA EL VALOR DE COMPARACIÓN
@@ -381,8 +407,8 @@ namespace PracticoIntegrador2018
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
 
                 HideRadioButon();
-            }
-
+                }
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta8_Click(object sender, EventArgs e)//SE PARAMETRIZA LA CANTIDAD DE AÑOS ANTERIORES DEL CUAL QUEREMOS CONOCER EL DETALLE
@@ -412,6 +438,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta9_Click(object sender, EventArgs e) //SE PARAMETRIZA LA FORMA DE PAGO Y DESCRIPCION DE FORMA DE COMPRA
@@ -440,7 +467,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta10_Click(object sender, EventArgs e) //SE PARAMETRIZA LA COMPARACIÓN DE FECHA DE NACIMIENTO
@@ -468,7 +495,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta4_Click(object sender, EventArgs e) //SE PARAMETRIZA EL RANGO DE CANTIDADES EN LA CONDICION DE WHERE
@@ -495,6 +522,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta5_Click(object sender, EventArgs e) //SE PARAMETRIZA LAS LETRAS
@@ -523,7 +551,7 @@ namespace PracticoIntegrador2018
 
                 HideRadioButon();
             }
-
+            btnConsultar.Enabled = true;
         }
         //----------------------------------------------------------------------------------------
         private void HideRadioButon()
@@ -556,8 +584,9 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void btnSI_Click(object sender, EventArgs e)
         {
-            showRadioButon();
             ocultarBotonesConsultas();
+            showRadioButon();
+            limpiartTxtBox();
             limpiarRadioButon();
             //btnConsultar.Enabled = false;
         }
@@ -579,14 +608,36 @@ namespace PracticoIntegrador2018
         private void btnNo_Click(object sender, EventArgs e)
         {
             HideRadioButon();
-            deshabilitarTextBox();
+            ocultarTextBox();
             mostrarBotonesConsultas();
+        }
+        //----------------------------------------------------------------------------------------
+        private void mostrarTextBox()
+        {
+            txtConsulta1.Show();
+          txtConsulta1C2.Show();
+            txtConsulta2.Show();
+            txtConsulta3.Show();
+          txtConsulta3c2.Show();
+            txtConsulta4.Show();
+          txtConsulta4c2.Show();
+            txtConsulta5.Show();
+          txtConsulta5c2.Show();
+                 txtC1c1.Show();
+                 txtC1c2.Show();
+                 txtC1c3.Show();
+            txtConsulta7.Show();
+            txtConsulta8.Show();
+            txtConsulta9.Show();
+          txtConsulta9c2.Show();
+           txtConsulta10.Show();
         }
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta1_CheckedChanged(object sender, EventArgs e)
         {
             txtConsulta1.Enabled = true;
-            txtConsulta1C2.Enabled = true; 
+            txtConsulta1C2.Enabled = true;
+            mostrarTextBox();
 
             if ( txtConsulta1.Text != null  && txtConsulta1C2.Text  != null)
             {
@@ -597,6 +648,7 @@ namespace PracticoIntegrador2018
         private void rbtnConsulta2_CheckedChanged(object sender, EventArgs e)
         {
             txtConsulta2.Enabled = true;
+            mostrarTextBox();
 
             if (txtConsulta2.Text != null)
             {
@@ -604,7 +656,102 @@ namespace PracticoIntegrador2018
             }
         }
         //----------------------------------------------------------------------------------------
+        private void rbtnConsulta3_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta3.Enabled = true;
+            txtConsulta3c2.Enabled = true;
+            mostrarTextBox();
 
+            if (txtConsulta3.Text != null && txtConsulta3c2.Text != null)
+            {
+                btnConsulta3.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta4_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta4.Enabled = true;
+            txtConsulta4c2.Enabled = true;
+            mostrarTextBox();
+
+
+            if (txtConsulta4.Text != null && txtConsulta4c2.Text != null)
+            {
+                btnConsulta4.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta5_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta5.Enabled = true;
+            txtConsulta5c2.Enabled = true;
+            mostrarTextBox();
+
+
+            if (txtConsulta5.Text != null && txtConsulta5c2.Text != null)
+            {
+                btnConsulta5.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta6_CheckedChanged(object sender, EventArgs e)
+        {
+            txtC1c1.Enabled = true;
+            txtC1c2.Enabled = true;
+            txtC1c3.Enabled = true;
+            mostrarTextBox();
+
+            if (txtC1c1.Text != null && txtC1c2.Text != null && txtC1c3.Text != null)
+            {
+                btnConsulta6.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta7_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta7.Enabled = true;
+            mostrarTextBox();
+
+            if (txtConsulta7.Text != null)
+            {
+                btnConsulta7.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta8_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta8.Enabled = true;
+            mostrarTextBox();
+
+            if (txtConsulta8.Text != null)
+            {
+                btnConsulta8.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta9_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta9.Enabled = true;
+            txtConsulta9c2.Enabled = true;
+            mostrarTextBox();
+
+            if (txtConsulta9.Text != null && txtConsulta9c2.Text != null)
+            {
+                btnConsulta9.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta10_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta10.Enabled = true;
+            mostrarTextBox();
+
+            if (txtConsulta10.Text != null)
+            {
+                btnConsulta10.Show();
+            }
+        }
+        //----------------------------------------------------------------------------------------
     }
 }
 

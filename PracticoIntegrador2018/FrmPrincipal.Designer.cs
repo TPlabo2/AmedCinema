@@ -374,6 +374,7 @@
             this.rbtnConsulta3.TabStop = true;
             this.rbtnConsulta3.Text = "Parametrizar 3";
             this.rbtnConsulta3.UseVisualStyleBackColor = true;
+            this.rbtnConsulta3.CheckedChanged += new System.EventHandler(this.rbtnConsulta3_CheckedChanged);
             // 
             // rbtnConsulta4
             // 
@@ -385,6 +386,7 @@
             this.rbtnConsulta4.TabStop = true;
             this.rbtnConsulta4.Text = "Parametrizar 4";
             this.rbtnConsulta4.UseVisualStyleBackColor = true;
+            this.rbtnConsulta4.CheckedChanged += new System.EventHandler(this.rbtnConsulta4_CheckedChanged);
             // 
             // rbtnConsulta5
             // 
@@ -396,6 +398,7 @@
             this.rbtnConsulta5.TabStop = true;
             this.rbtnConsulta5.Text = "Parametrizar 5";
             this.rbtnConsulta5.UseVisualStyleBackColor = true;
+            this.rbtnConsulta5.CheckedChanged += new System.EventHandler(this.rbtnConsulta5_CheckedChanged);
             // 
             // rbtnConsulta6
             // 
@@ -407,6 +410,7 @@
             this.rbtnConsulta6.TabStop = true;
             this.rbtnConsulta6.Text = "Parametrizar 6";
             this.rbtnConsulta6.UseVisualStyleBackColor = true;
+            this.rbtnConsulta6.CheckedChanged += new System.EventHandler(this.rbtnConsulta6_CheckedChanged);
             // 
             // rbtnConsulta7
             // 
@@ -418,6 +422,7 @@
             this.rbtnConsulta7.TabStop = true;
             this.rbtnConsulta7.Text = "Parametrizar 7";
             this.rbtnConsulta7.UseVisualStyleBackColor = true;
+            this.rbtnConsulta7.CheckedChanged += new System.EventHandler(this.rbtnConsulta7_CheckedChanged);
             // 
             // rbtnConsulta8
             // 
@@ -429,6 +434,7 @@
             this.rbtnConsulta8.TabStop = true;
             this.rbtnConsulta8.Text = "Parametrizar 8";
             this.rbtnConsulta8.UseVisualStyleBackColor = true;
+            this.rbtnConsulta8.CheckedChanged += new System.EventHandler(this.rbtnConsulta8_CheckedChanged);
             // 
             // rbtnConsulta9
             // 
@@ -440,6 +446,7 @@
             this.rbtnConsulta9.TabStop = true;
             this.rbtnConsulta9.Text = "Parametrizar 9";
             this.rbtnConsulta9.UseVisualStyleBackColor = true;
+            this.rbtnConsulta9.CheckedChanged += new System.EventHandler(this.rbtnConsulta9_CheckedChanged);
             // 
             // rbtnConsulta10
             // 
@@ -451,6 +458,7 @@
             this.rbtnConsulta10.TabStop = true;
             this.rbtnConsulta10.Text = "Parametrizar 10";
             this.rbtnConsulta10.UseVisualStyleBackColor = true;
+            this.rbtnConsulta10.CheckedChanged += new System.EventHandler(this.rbtnConsulta10_CheckedChanged);
             // 
             // txtC1c3
             // 
