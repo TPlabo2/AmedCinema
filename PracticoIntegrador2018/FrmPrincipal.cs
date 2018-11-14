@@ -33,6 +33,7 @@ namespace PracticoIntegrador2018
         {
             //deshabilitarTextBox();
             HideRadioButon();
+            ocultarBotonesConsultas();
         }
         //----------------------------------------------------------------------------------------
         private void deshabilitarTextBox()
@@ -96,7 +97,7 @@ namespace PracticoIntegrador2018
                             "between '2000/1/1' and '2018/1/1' Order By 3 desc";
             consultero = Consultero.C1;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if ( rbtnConsulta1.Checked == true)
             {
@@ -204,6 +205,7 @@ namespace PracticoIntegrador2018
                         MessageBox.Show("No selecciono ninguna consulta", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         break;
                 }
+                ocultarBotonesConsultas();
             }
             
         }
@@ -277,7 +279,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C2;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta2.Checked == true)
             {
@@ -287,7 +289,7 @@ namespace PracticoIntegrador2018
                             "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
                             "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
 
         }
@@ -302,7 +304,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C6;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta6.Checked == true)
             {
@@ -313,7 +315,7 @@ namespace PracticoIntegrador2018
                 consultaParametrizada = "Select year(c.fecha)'Fecha', sum(cantidad)'Cantidad total', avg(precio)'Precio Promedio', sum(precio * cantidad)'Importe total' From comprobante c join detalle_comprobantes d " +
                 "on c.id_comprobante = d.id_comprobante Where year(fecha) in (" + txtC1c1.Text + ", " + txtC1c2.Text + ", " + txtC1c3.Text + ") Group by year(c.fecha) having sum(precio * cantidad) < 2500 order by 4 desc";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
 
         }
@@ -329,7 +331,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C3;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta3.Checked == true)
             {
@@ -338,8 +340,8 @@ namespace PracticoIntegrador2018
 
                 consultaParametrizada = "select p.nombre, count(id_entrada) 'Cantidad de entradas vendidas' from pelicula p, funciones f, Detalle_Comprobantes d, entradas e, comprobante c where e.id_detalle = d.id_detalle " +
                                         "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and year(c.fecha) = " + txtConsulta3.Text + " group by p.nombre having " + txtConsulta3c2.Text + " > (select count(e1.id_entrada)From entradas e1)";
-                
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+
+                HideRadioButon();
             }
 
         }
@@ -355,7 +357,7 @@ namespace PracticoIntegrador2018
 
                 consultero = Consultero.C7;
 
-                //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+                ocultarBotonesConsultas();
 
                 if (rbtnConsulta7.Checked == true)
                 {
@@ -364,8 +366,8 @@ namespace PracticoIntegrador2018
                     consultaParametrizada = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where " + txtConsulta7.Text + " < " +
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
 
-                    //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
-                }
+                HideRadioButon();
+            }
 
         }
         //----------------------------------------------------------------------------------------
@@ -382,9 +384,9 @@ namespace PracticoIntegrador2018
                 "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)";
 
             consultero = Consultero.C8;
-            //" + txtConsulta8.Text + "
+            
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta8.Checked == true)
             {
@@ -394,7 +396,7 @@ namespace PracticoIntegrador2018
                 "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion Where year(c.fecha) = year(getdate()) - " + txtConsulta8.Text + " " +
                 "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
         }
         //----------------------------------------------------------------------------------------
@@ -411,7 +413,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C9;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta9.Checked == true)
             {
@@ -422,7 +424,7 @@ namespace PracticoIntegrador2018
                 "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
                 "and year(fecha) = year(getdate()) - 1 and   formaPago like " + txtConsulta9.Text + " and descripcion like " + txtConsulta9c2.Text + "";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
 
         }
@@ -440,7 +442,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C10;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta10.Checked == true)
             {
@@ -450,7 +452,7 @@ namespace PracticoIntegrador2018
                 "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas " +
                 "Where fecha_nacimiento > " + txtConsulta10.Text + " and reseña like '%óscar%' and i.Idioma in ('ingles') Order by d.nombre";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
 
         }
@@ -467,7 +469,7 @@ namespace PracticoIntegrador2018
 
             consultero = Consultero.C4;
 
-            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta4.Checked == true)
             {
@@ -477,7 +479,7 @@ namespace PracticoIntegrador2018
                             "funciones f on f.id_funcion = dc.id_funcion where cantidad between "+txtConsulta4.Text+" and "+txtConsulta4c2.Text+" group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " +
                             "from detalle_comprobantes where id_funcion = f.id_funcion)";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
         }
         //----------------------------------------------------------------------------------------
@@ -493,7 +495,8 @@ namespace PracticoIntegrador2018
                             " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '[g-p]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
 
             consultero = Consultero.C5;
-            //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+
+            ocultarBotonesConsultas();
 
             if (rbtnConsulta5.Checked == true)
             {
@@ -504,7 +507,7 @@ namespace PracticoIntegrador2018
                             "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion " +
                             " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '["+txtConsulta5.Text+"-"+txtConsulta5c2+"]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
 
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
             }
 
         }
@@ -562,6 +565,7 @@ namespace PracticoIntegrador2018
         {
             HideRadioButon();
             deshabilitarTextBox();
+            mostrarBotonesConsultas();
         }
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta1_CheckedChanged(object sender, EventArgs e)
