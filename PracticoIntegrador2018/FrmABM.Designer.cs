@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmABM));
             this.pnlPelicula = new System.Windows.Forms.Panel();
             this.dgvPelis = new System.Windows.Forms.DataGridView();
             this.cboPaisP = new System.Windows.Forms.ComboBox();
@@ -645,7 +646,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 677);
+            this.ClientSize = new System.Drawing.Size(1291, 678);
             this.Controls.Add(this.btnCancelarAct);
             this.Controls.Add(this.btnModAct);
             this.Controls.Add(this.btnAceptarMod);
@@ -661,6 +662,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlActores);
             this.Controls.Add(this.pnlPelicula);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM";
