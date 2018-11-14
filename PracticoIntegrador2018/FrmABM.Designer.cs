@@ -665,7 +665,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABM";
+            this.Text = "AmedCinema";
             this.Load += new System.EventHandler(this.FrmABM_Load);
             this.pnlPelicula.ResumeLayout(false);
             this.pnlPelicula.PerformLayout();

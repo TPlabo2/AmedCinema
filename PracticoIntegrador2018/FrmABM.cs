@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-M8V09RS\SQLEXPRESS;Initial Catalog=Cine;User ID=santi; password=4567");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;User ID=sa; password=110254");
         public FrmABM()
         {
 
