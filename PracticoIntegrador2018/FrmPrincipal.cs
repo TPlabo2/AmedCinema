@@ -31,7 +31,28 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
-            //cargarCombo(cboConsulta2, "paises");
+            deshabilitarTextBox();
+        }
+        //----------------------------------------------------------------------------------------
+        private void deshabilitarTextBox()
+        {
+            txtConsulta1.Enabled = false;
+            txtConsulta1C2.Enabled = false;
+            txtConsulta2.Enabled = false;
+            txtConsulta3.Enabled = false;
+            txtConsulta3c2.Enabled = false;
+            txtConsulta4.Enabled = false;
+            txtConsulta4c2.Enabled = false;
+            txtConsulta5.Enabled = false;
+            txtConsulta5c2.Enabled = false;
+            txtC1c1.Enabled = false;
+            txtC1c2.Enabled = false;
+            txtC1c3.Enabled = false;
+            txtConsulta7.Enabled = false;
+            txtConsulta8.Enabled = false;
+            txtConsulta9.Enabled = false;
+            txtConsulta9c2.Enabled = false;
+            txtConsulta10.Enabled = false;
         }
         //----------------------------------------------------------------------------------------
         private void btnSalir_Click(object sender, EventArgs e)
@@ -78,6 +99,9 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta1.Checked == true)
             {
+                txtConsulta1.Enabled = true;
+                txtConsulta1C2.Enabled = true;
+
                 consultaParametrizada =  "Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
                             "'["+txtConsulta1.Text+"-"+txtConsulta1C2.Text+"]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
                             "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
@@ -91,6 +115,7 @@ namespace PracticoIntegrador2018
         {
             limpiarColumnas(dgrvConsultas);
             //limpiarRadioBtn();
+            //limpiartTxtBox();
             if (radioBtnVacios())//Metodo que comprueba que ningun btn este seleccionado
             {
 
@@ -216,8 +241,9 @@ namespace PracticoIntegrador2018
             //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
 
             if (rbtnConsulta2.Checked == true)
-            { 
-   
+            {
+                txtConsulta2.Enabled = true;
+
                 consultaParametrizada = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('"+txtConsulta2.Text+"') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
                             "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
                             "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
@@ -241,6 +267,10 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta6.Checked == true)
             {
+                txtC1c1.Enabled = true;
+                txtC1c2.Enabled = true;
+                txtC1c3.Enabled = true;
+
                 consultaParametrizada = "Select year(c.fecha)'Fecha', sum(cantidad)'Cantidad total', avg(precio)'Precio Promedio', sum(precio * cantidad)'Importe total' From comprobante c join detalle_comprobantes d " +
                 "on c.id_comprobante = d.id_comprobante Where year(fecha) in (" + txtC1c1.Text + ", " + txtC1c2.Text + ", " + txtC1c3.Text + ") Group by year(c.fecha) having sum(precio * cantidad) < 2500 order by 4 desc";
 
@@ -269,6 +299,9 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta3.Checked == true)
             {
+                txtConsulta3c2.Enabled = true;
+                txtConsulta3.Enabled = true;
+
                 consultaParametrizada = "select p.nombre, count(id_entrada) 'Cantidad de entradas vendidas' from pelicula p, funciones f, Detalle_Comprobantes d, entradas e, comprobante c where e.id_detalle = d.id_detalle " +
                                         "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and year(c.fecha) = " + txtConsulta3.Text + " group by p.nombre having " + txtConsulta3c2.Text + " > (select count(e1.id_entrada)From entradas e1)";
                 
@@ -292,6 +325,8 @@ namespace PracticoIntegrador2018
 
                 if (rbtnConsulta7.Checked == true)
                 {
+                    txtConsulta7.Enabled = true;
+
                     consultaParametrizada = "Select id_Comprobante 'ID COMPROBANTE', fecha 'FECHA' From comprobante c where " + txtConsulta7.Text + " < " +
                     "(Select sum(cantidad * precio) From Detalle_Comprobantes dc Where dc.id_comprobante = c.id_comprobante)";
 
@@ -319,6 +354,8 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta8.Checked == true)
             {
+                txtConsulta8.Enabled = true;
+
                 consultaParametrizada = "Select c.id_comprobante 'Nro comprobante', f.rangoHorario 'Horario de la funcion',f.id_pelicula 'Nro de pelicula' " +
                 "From Comprobante c join Detalle_Comprobantes dc on c.id_comprobante = dc.id_comprobante join Funciones f on f.id_funcion = dc.id_funcion Where year(c.fecha) = year(getdate()) - " + txtConsulta8.Text + " " +
                 "and 200 < any(Select avg(precio * cantidad) From detalle_comprobantes dc1 Where dc1.id_comprobante = c.id_comprobante and dc1.id_funcion = f.id_funcion)";
@@ -344,6 +381,9 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta9.Checked == true)
             {
+                txtConsulta9.Enabled = true;
+                txtConsulta9c2.Enabled = true;
+
                 consultaParametrizada = "Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobante c, formaDePagos fp, formaCompras Fc " +
                 "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
                 "and year(fecha) = year(getdate()) - 1 and   formaPago like " + txtConsulta9.Text + " and descripcion like " + txtConsulta9c2.Text + "";
@@ -370,6 +410,8 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta10.Checked == true)
             {
+                txtConsulta10.Enabled = true;
+
                 consultaParametrizada = "Select d.nombre 'Nombre Director', p.nombre 'Pais Director', d.fecha_nacimiento 'Fecha Nacimiento', pe.nombre 'Nombre Pelicula',i.Idioma 'Idioma' " +
                 "From pelicula pe join directores d on pe.id_director = d.id_director join paises p on pe.id_pais = p.id_pais join idiomas i on pe.id_idioma = i.id_idiomas " +
                 "Where fecha_nacimiento > " + txtConsulta10.Text + " and reseña like '%óscar%' and i.Idioma in ('ingles') Order by d.nombre";
@@ -395,8 +437,10 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta4.Checked == true)
             {
+                txtConsulta4c2.Enabled = true;
+                txtConsulta4.Enabled = true;
                 consultaParametrizada = "select f.id_funcion, avg(cantidad * dc.precio)'Importe promedio', min(fecha)'1er venta' from comprobante c join detalle_comprobantes dc on c.id_comprobante = dc.id_comprobante  join " +
-                            "funciones f on f.id_funcion = dc.id_funcion where cantidad between "+txtConsulta4.Text+" and "+txtConsulta4c2.Text+"group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " +
+                            "funciones f on f.id_funcion = dc.id_funcion where cantidad between "+txtConsulta4.Text+" and "+txtConsulta4c2.Text+" group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " +
                             "from detalle_comprobantes where id_funcion = f.id_funcion)";
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
@@ -419,6 +463,8 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta5.Checked == true)
             {
+                txtConsulta4c2.Enabled = true;
+                txtConsulta4.Enabled = true;
                 consultaParametrizada = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', " +
                             "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion " +
                             " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '["+txtConsulta5.Text+"-"+txtConsulta5c2+"]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
@@ -427,11 +473,25 @@ namespace PracticoIntegrador2018
             }
 
         }
-
+        //----------------------------------------------------------------------------------------
         private void rbtnConsulta3_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        //----------------------------------------------------------------------------------------
+        private bool CheckParametrization()
+        {
+            if (chkSI.Checked == true)
+            {
+                //habilitarRadiobtn();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
 
