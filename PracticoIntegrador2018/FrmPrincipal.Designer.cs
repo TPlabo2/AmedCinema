@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnConsulta1 = new System.Windows.Forms.Button();
             this.btnConsulta2 = new System.Windows.Forms.Button();
             this.btnConsulta3 = new System.Windows.Forms.Button();
@@ -694,6 +695,7 @@
             this.Controls.Add(this.btnConsulta2);
             this.Controls.Add(this.btnConsulta1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
