@@ -362,6 +362,7 @@
             this.rbtnConsulta2.TabStop = true;
             this.rbtnConsulta2.Text = "Parametrizar 2";
             this.rbtnConsulta2.UseVisualStyleBackColor = true;
+            this.rbtnConsulta2.CheckedChanged += new System.EventHandler(this.rbtnConsulta2_CheckedChanged);
             // 
             // rbtnConsulta3
             // 

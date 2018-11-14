@@ -231,6 +231,20 @@ namespace PracticoIntegrador2018
             txtConsulta10.Text = null;
         }
         //----------------------------------------------------------------------------------------
+        private void limpiarRadioButon()
+        {
+            rbtnConsulta1.Checked = false;
+            rbtnConsulta2.Checked = false;
+            rbtnConsulta3.Checked = false;
+            rbtnConsulta4.Checked = false;
+            rbtnConsulta5.Checked = false;
+            rbtnConsulta6.Checked = false;
+            rbtnConsulta7.Checked = false;
+            rbtnConsulta8.Checked = false;
+            rbtnConsulta9.Checked = false;
+            rbtnConsulta10.Checked = false;
+        }
+        //----------------------------------------------------------------------------------------
         private void mostrarBotonesConsultas()
         {
             btnConsulta1.Show();
@@ -544,6 +558,7 @@ namespace PracticoIntegrador2018
         {
             showRadioButon();
             ocultarBotonesConsultas();
+            limpiarRadioButon();
             //btnConsultar.Enabled = false;
         }
         //----------------------------------------------------------------------------------------
@@ -577,6 +592,16 @@ namespace PracticoIntegrador2018
             {
                 btnConsulta1.Show();
             } 
+        }
+        //----------------------------------------------------------------------------------------
+        private void rbtnConsulta2_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta2.Enabled = true;
+
+            if (txtConsulta2.Text != null)
+            {
+                btnConsulta2.Show();
+            }
         }
         //----------------------------------------------------------------------------------------
 
