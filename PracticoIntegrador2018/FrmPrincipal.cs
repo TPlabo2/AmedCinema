@@ -33,7 +33,30 @@ namespace PracticoIntegrador2018
             ocultarTextBox();
             HideRadioButon();
             ocultarBotonesConsultas();
-            //ocultarLabels();
+            ocultarLabels();
+        }
+        //----------------------------------------------------------------------------------------
+        private void ocultarLabels()
+        {
+             label2.Hide();
+             label4.Hide();
+             label5.Hide();
+             label6.Hide();
+             label7.Hide();
+             label8.Hide();
+             label9.Hide();
+            label10.Hide();
+            label11.Hide();
+            label12.Hide();
+            label13.Hide();
+            label14.Hide();
+            label15.Hide();
+            label16.Hide();
+            label17.Hide();
+            label19.Hide();
+            label21.Hide();
+            label18.Hide();
+
         }
         //----------------------------------------------------------------------------------------
         private void ocultarTextBox()
@@ -106,16 +129,15 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void BtnConsulta1_Click_1(object sender, EventArgs e)//SE PARAMETRIZAN LOS NOMBRES DEL PRIMER SELECT
         {
-            MessageBox.Show("Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
-                           "'[C-H]%' and edad between 30 and 50 UNION Select id_director, Nombre, " +
-                           "Nacionalidad from Directores where nombre not like '[J-Q]%' and edad " +
-                           "between 50 and 60 Order By 3 desc ..........se puede parametrizar el " +
-                           "rango de edad", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            consulta = "Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
-                            "'[C-H]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
+            MessageBox.Show("Select id_actor, Nombre, Apellido, Nacionalidad from actores where nombre like " +
+                            "'[C-H]%' and fecha_nacimiento between '1950/1/1' and '1970/12/31' UNION Select id_director, Nombre, Apellido," +
                             "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
-                            "between '2000/1/1' and '2018/1/1' Order By 3 desc";
+                            "between '1930/1/1' and '1980/1/1' Order By 3 desc", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            consulta = "Select id_actor, Nombre, apellido, Nacionalidad from actores where nombre like " +
+                            "'[C-H]%' and fecha_nacimiento between '1950/1/1' and '1970/12/31' UNION Select id_director, Nombre, Apellido," +
+                            "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
+                            "between '1930/1/1' and '1980/1/1' Order By 3 desc";
             consultero = Consultero.C1;
 
             ocultarBotonesConsultas();
@@ -125,10 +147,10 @@ namespace PracticoIntegrador2018
                 txtConsulta1.Enabled = true;
                 txtConsulta1C2.Enabled = true;
 
-                consultaParametrizada =  "Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
-                            "'["+txtConsulta1.Text+"-"+txtConsulta1C2.Text+"]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
+                consultaParametrizada =  "Select id_actor, Nombre, Apellido, Nacionalidad from actores where nombre like " +
+                            "'["+txtConsulta1.Text+"-"+txtConsulta1C2.Text+"]%' and fecha_nacimiento between '1950/1/1' and '1970/1/1' UNION Select id_director, Nombre, Apellido," +
                             "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
-                            "between '2000/1/1' and '2018/1/1' Order By 3 desc";
+                            "between '1930/1/1' and '1980/1/1' Order By 3 desc";
                 HideRadioButon();
 
             }
@@ -309,11 +331,11 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void btnConsulta2_Click(object sender, EventArgs e)//SE PARAMETRIZA LA NACIONALIDAD DE LA PRIMER CONSULTA
         {
-            MessageBox.Show("Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+            MessageBox.Show("Select id_actor, nombre,nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento < '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
                             "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
                             "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2",
                             "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            consulta = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+            consulta = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('Argentina') and nombre not like '[A - F]%' and fecha_nacimiento < '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
                             "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
                             "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
 
@@ -325,7 +347,7 @@ namespace PracticoIntegrador2018
             {
                 txtConsulta2.Enabled = true;
 
-                consultaParametrizada = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('"+txtConsulta2.Text+"') and nombre not like '[A - F]%' and fecha_nacimiento > '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
+                consultaParametrizada = "Select id_actor, nombre, nacionalidad From actores a Where a.nacionalidad in ('"+txtConsulta2.Text+"') and nombre not like '[A - F]%' and fecha_nacimiento < '1990/1/1' UNION Select id_pelicula, nombre, idioma " +
                             "From pelicula p join idiomas i  on p.id_idioma = i.id_idiomas join clasificacionesPelicula C on c.id_clasificacion = p.id_clasificacion join generos g  on  g.id_genero = p.id_genero " +
                             "Where i.idioma in ('Ingles') and C.clasificacion like '+16'  and g.descripcion like 'Terror' or g.descripcion like 'Accion' Order by 2";
 
@@ -588,7 +610,30 @@ namespace PracticoIntegrador2018
             showRadioButon();
             limpiartTxtBox();
             limpiarRadioButon();
+            //mostrarLabels();
             //btnConsultar.Enabled = false;
+        }
+        //----------------------------------------------------------------------------------------
+        private void mostrarLabels()
+        {
+            label2.Show();
+            label4.Show();
+            label5.Show();
+            label6.Show();
+            label7.Show();
+            label8.Show();
+            label9.Show();
+            label10.Show();
+            label11.Show();
+            label12.Show();
+            label13.Show();
+            label14.Show();
+            label15.Show();
+            label16.Show();
+            label17.Show();
+            label19.Show();
+            label21.Show();
+            label18.Show();
         }
         //----------------------------------------------------------------------------------------
         private void ocultarBotonesConsultas()
@@ -635,6 +680,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta1_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta1.Enabled = true;
             txtConsulta1C2.Enabled = true;
             mostrarTextBox();
@@ -647,6 +693,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta2_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta2.Enabled = true;
             mostrarTextBox();
 
@@ -658,6 +705,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta3_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta3.Enabled = true;
             txtConsulta3c2.Enabled = true;
             mostrarTextBox();
@@ -670,6 +718,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta4_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta4.Enabled = true;
             txtConsulta4c2.Enabled = true;
             mostrarTextBox();
@@ -683,6 +732,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta5_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta5.Enabled = true;
             txtConsulta5c2.Enabled = true;
             mostrarTextBox();
@@ -696,6 +746,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta6_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtC1c1.Enabled = true;
             txtC1c2.Enabled = true;
             txtC1c3.Enabled = true;
@@ -709,6 +760,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta7_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta7.Enabled = true;
             mostrarTextBox();
 
@@ -720,6 +772,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta8_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta8.Enabled = true;
             mostrarTextBox();
 
@@ -731,6 +784,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta9_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta9.Enabled = true;
             txtConsulta9c2.Enabled = true;
             mostrarTextBox();
@@ -743,6 +797,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void rbtnConsulta10_CheckedChanged(object sender, EventArgs e)
         {
+            mostrarLabels();
             txtConsulta10.Enabled = true;
             mostrarTextBox();
 

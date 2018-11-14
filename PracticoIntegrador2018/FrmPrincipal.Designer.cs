@@ -92,6 +92,8 @@
             this.dgrvConsultas = new System.Windows.Forms.DataGridView();
             this.btnNo = new System.Windows.Forms.Button();
             this.btnSI = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
@@ -572,7 +574,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(377, 437);
+            this.label13.Location = new System.Drawing.Point(371, 454);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 66;
@@ -688,6 +690,24 @@
             this.btnSI.UseVisualStyleBackColor = true;
             this.btnSI.Click += new System.EventHandler(this.btnSI_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(145, 332);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Cantidad desde";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(304, 332);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(78, 13);
+            this.label21.TabIndex = 78;
+            this.label21.Text = "Cantidad hasta";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,6 +715,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1046, 777);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSI);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.label20);
@@ -839,6 +861,8 @@
         private System.Windows.Forms.DataGridView dgrvConsultas;
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Button btnSI;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label21;
     }
 }
 
