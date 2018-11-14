@@ -430,6 +430,11 @@ namespace PracticoIntegrador2018
             }
 
         }
+
+        private void rbtnConsulta3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

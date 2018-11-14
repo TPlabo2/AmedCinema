@@ -313,7 +313,7 @@
             this.lblPeliculas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPeliculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPeliculas.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeliculas.Location = new System.Drawing.Point(571, 4);
+            this.lblPeliculas.Location = new System.Drawing.Point(590, 4);
             this.lblPeliculas.Name = "lblPeliculas";
             this.lblPeliculas.Size = new System.Drawing.Size(109, 22);
             this.lblPeliculas.TabIndex = 40;
@@ -385,7 +385,7 @@
             this.lblActor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblActor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblActor.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActor.Location = new System.Drawing.Point(586, 4);
+            this.lblActor.Location = new System.Drawing.Point(591, 4);
             this.lblActor.Name = "lblActor";
             this.lblActor.Size = new System.Drawing.Size(94, 22);
             this.lblActor.TabIndex = 41;
