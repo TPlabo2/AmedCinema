@@ -301,6 +301,16 @@ namespace PracticoIntegrador2018
             
             try
             {
+
+                //---- Valido que todos los campos esten cargados
+                bool ok = ValidarCargaPelicula();
+
+                if (!ok)
+                {
+                    return;
+                }
+
+
                 String modificar = "UPDATE Pelicula SET " +
                                                         "nombre ='" + txtNombrePelicula.Text + "'," +
                                                         "duracion='" + dtpDura.Text + "'," +
@@ -436,6 +446,15 @@ namespace PracticoIntegrador2018
         {
             try
             {
+
+                //---- Valido que todos los campos esten cargados
+                bool ok = ValidarCargaActores();
+
+                if (!ok)
+                {
+                    return;
+                }
+
                 String modificarAct = "UPDATE actores SET " +
                                                         "nombre='" + txtNombreActor.Text + "'," +
                                                         "apellido='" + txtApellidoActor.Text + "'," +
@@ -727,7 +746,7 @@ namespace PracticoIntegrador2018
                 txtIdPeli.Focus();
                 return false;
             }
-            if (txtNombrePelicula.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            if (txtNombrePelicula.Text == "" || txtNombrePelicula.Text == "ej : El Padrino" || txtNombrePelicula.Text.Length < 1)
             {
                 MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNombrePelicula.Focus();
