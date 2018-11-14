@@ -104,7 +104,7 @@
             this.btnConsulta1.TabIndex = 1;
             this.btnConsulta1.Text = "Consulta 1";
             this.btnConsulta1.UseVisualStyleBackColor = true;
-            this.btnConsulta1.Click += new System.EventHandler(this.btnConsulta1_Click_1);
+            this.btnConsulta1.Click += new System.EventHandler(this.BtnConsulta1_Click_1);
             // 
             // btnConsulta2
             // 
@@ -350,6 +350,7 @@
             this.rbtnConsulta1.TabStop = true;
             this.rbtnConsulta1.Text = "Parametrizar 1";
             this.rbtnConsulta1.UseVisualStyleBackColor = true;
+            this.rbtnConsulta1.CheckedChanged += new System.EventHandler(this.rbtnConsulta1_CheckedChanged);
             // 
             // rbtnConsulta2
             // 

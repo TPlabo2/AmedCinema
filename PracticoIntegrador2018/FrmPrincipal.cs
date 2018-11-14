@@ -31,7 +31,7 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
-            deshabilitarTextBox();
+            //deshabilitarTextBox();
             HideRadioButon();
         }
         //----------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ namespace PracticoIntegrador2018
 
         }
         //----------------------------------------------------------------------------------------
-        private void btnConsulta1_Click_1(object sender, EventArgs e)//SE PARAMETRIZAN LOS NOMBRES DEL PRIMER SELECT
+        private void BtnConsulta1_Click_1(object sender, EventArgs e)//SE PARAMETRIZAN LOS NOMBRES DEL PRIMER SELECT
         {
             MessageBox.Show("Select id_actor, Nombre, Nacionalidad from actores where nombre like " +
                            "'[C-H]%' and edad between 30 and 50 UNION Select id_director, Nombre, " +
@@ -115,8 +115,11 @@ namespace PracticoIntegrador2018
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             limpiarColumnas(dgrvConsultas);
-            //limpiarRadioBtn();
-            //limpiartTxtBox();
+            HideRadioButon();
+            mostrarBotonesConsultas();
+            deshabilitarTextBox();
+            limpiartTxtBox();
+            
             if (radioBtnVacios())//Metodo que comprueba que ningun btn este seleccionado
             {
 
@@ -203,6 +206,41 @@ namespace PracticoIntegrador2018
                 }
             }
             
+        }
+        //----------------------------------------------------------------------------------------
+        private void limpiartTxtBox()
+        {
+            txtConsulta1.Text = null;
+            txtConsulta1C2.Text = null;
+            txtConsulta2.Text = null;
+            txtConsulta3.Text = null;
+            txtConsulta3c2.Text = null;
+            txtConsulta4.Text = null;
+            txtConsulta4c2.Text = null;
+            txtConsulta5.Text = null;
+            txtConsulta5c2.Text = null;
+            txtC1c1.Text = null;
+            txtC1c2.Text = null;
+            txtC1c3.Text = null;
+            txtConsulta7.Text = null;
+            txtConsulta8.Text = null;
+            txtConsulta9.Text = null;
+            txtConsulta9c2.Text = null;
+            txtConsulta10.Text = null;
+        }
+        //----------------------------------------------------------------------------------------
+        private void mostrarBotonesConsultas()
+        {
+            btnConsulta1.Show();
+            btnConsulta2.Show();
+            btnConsulta3.Show();
+            btnConsulta4.Show();
+            btnConsulta5.Show();
+            btnConsulta6.Show();
+            btnConsulta7.Show();
+            btnConsulta8.Show();
+            btnConsulta9.Show();
+            btnConsulta10.Show();
         }
         //----------------------------------------------------------------------------------------
         private void limpiarColumnas(DataGridView dgrvConsultas)
@@ -502,14 +540,42 @@ namespace PracticoIntegrador2018
         private void btnSI_Click(object sender, EventArgs e)
         {
             showRadioButon();
-            //ocultarBotones();
+            ocultarBotonesConsultas();
+            //btnConsultar.Enabled = false;
+        }
+        //----------------------------------------------------------------------------------------
+        private void ocultarBotonesConsultas()
+        {
+            btnConsulta1.Hide();
+            btnConsulta2.Hide();
+            btnConsulta3.Hide();
+            btnConsulta4.Hide();
+            btnConsulta5.Hide();
+            btnConsulta6.Hide();
+            btnConsulta7.Hide();
+            btnConsulta8.Hide();
+            btnConsulta9.Hide();
+            btnConsulta10.Hide();
         }
         //----------------------------------------------------------------------------------------
         private void btnNo_Click(object sender, EventArgs e)
         {
             HideRadioButon();
+            deshabilitarTextBox();
         }
         //----------------------------------------------------------------------------------------
+        private void rbtnConsulta1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConsulta1.Enabled = true;
+            txtConsulta1C2.Enabled = true; 
+
+            if ( txtConsulta1.Text != null  && txtConsulta1C2.Text  != null)
+            {
+                btnConsulta1.Show();
+            } 
+        }
+        //----------------------------------------------------------------------------------------
+
     }
 }
 
