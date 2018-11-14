@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;User ID=sa; password=110254");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=NTBEMM4;Initial Catalog=Cine;Persist Security Info=True;User ID=Emma;Password=1234");
         int idA, idP;
 
         public FrmABM()
@@ -120,6 +120,7 @@ namespace PracticoIntegrador2018
             btnBorrarPeli.Enabled = false;
             btnNuevoPeli.Enabled = false;
             btnModificarPeli.Enabled = false;
+            txtIdPeli.Text = idP.ToString();
         }
         //------------------------------------------------------------------------------------
         private void btnGuardarPeli_Click(object sender, EventArgs e)
@@ -345,6 +346,7 @@ namespace PracticoIntegrador2018
             btnNuevoAct.Enabled = false;
             btnModificarAct.Enabled = false;
             btnBorrarAct.Enabled = false;
+            txtIdActor.Text = idA.ToString();
         }
         //------------------------------------------------------------------------------------
         private void btnGuardarAct_Click(object sender, EventArgs e)
