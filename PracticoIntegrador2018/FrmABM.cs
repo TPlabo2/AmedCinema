@@ -17,6 +17,8 @@ namespace PracticoIntegrador2018
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
         AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;User ID=sa; password=110254");
+        int idA, idP;
+
         public FrmABM()
         {
 
@@ -43,7 +45,8 @@ namespace PracticoIntegrador2018
             //----------------------------------------------------------
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
             datos.putInGrid(dgvActores, "Select * from Actores");
-
+            idP = Convert.ToInt32(buscarID(dgvPelis, "id_pelicula") + 1);
+            idA = Convert.ToInt32(buscarID(dgvActores, "id_actor") + 1);
         }
         //---------METODOS-------------------------------------------------
         private void cargarCombo(ComboBox combo, string nombreTabla)
@@ -121,80 +124,76 @@ namespace PracticoIntegrador2018
         //------------------------------------------------------------------------------------
         private void btnGuardarPeli_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                //---- Valido que todos los campos esten cargados
-                bool ok = ValidarCargaPelicula();
-
-                if (!ok)
+                try
                 {
-                    return;
+                    //---- Valido que todos los campos esten cargados
+                    bool ok = ValidarCargaPelicula();
+
+                    if (!ok)
+                    {
+                        return;
+                    }
+
+
+                    Pelicula peli = new Pelicula();
+                    peli.Id = Convert.ToInt32(txtIdPeli.Text);
+                    peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
+                    peli.Duracion = Convert.ToDateTime(dtpDura.Value);
+                    peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
+                    peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
+                    peli.Clasificacion = Convert.ToInt32(cboClasificacion.SelectedValue);
+                    peli.Subtitulos = Convert.ToInt32(cboSubtitulos.SelectedValue);
+                    peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
+                    peli.Pais = Convert.ToInt32(cboPaisP.SelectedValue);
+
+                    if (peli.Id >= Convert.ToInt32(idP))
+                    {
+                        string agregar = "Insert into Pelicula (    " +
+                                                                        "id_pelicula," +
+                                                                       "nombre," +
+                                                                       "duracion," +
+                                                                       "id_genero," +
+                                                                       "id_idioma," +
+                                                                       "id_clasificacion," +
+                                                                       "id_subtitulos," +
+                                                                       "id_director," +
+                                                                       "id_pais)" +
+                                                        " values ( " +
+                                                                          txtIdPeli.Text + "," +
+                                                                  " ' " + txtNombrePelicula.Text +
+                                                                  "','" + dtpDura.Text + "',"
+                                                                    + cboGenero.SelectedValue + ","
+                                                                    + cboIdioma.SelectedValue + ","
+                                                                    + cboClasificacion.SelectedValue + ","
+                                                                    + cboSubtitulos.SelectedValue + ","
+                                                                    + cboDirector.SelectedValue + ","
+                                                                    + cboPaisP.SelectedValue + ")";
+
+                        MessageBox.Show(agregar);
+
+                        datos.actualizarBD(agregar);
+                        idP++;
+                         MessageBox.Show("LA PELICULA SE GUARDO CORRECTAMENTE");
+                    }
+                    else {
+                    MessageBox.Show("ESE ID NO ES VALIDO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-        
-
-                Pelicula peli = new Pelicula();
-                peli.Id = Convert.ToInt32(txtIdPeli.Text);
-                peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
-                peli.Duracion = Convert.ToDateTime(dtpDura.Value);
-                peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
-                peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
-                peli.Clasificacion = Convert.ToInt32(cboClasificacion.SelectedValue);
-                peli.Subtitulos = Convert.ToInt32(cboSubtitulos.SelectedValue);
-                peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
-                peli.Pais = Convert.ToInt32(cboPaisP.SelectedValue);
 
 
+                catch (Exception x)
+                {
 
-
-                string agregar = "Insert into Pelicula (    " +
-                                                                "id_pelicula," +
-                                                               "nombre," +
-                                                               "duracion," +
-                                                               "id_genero," +
-                                                               "id_idioma," +
-                                                               "id_clasificacion," +
-                                                               "id_subtitulos," +
-                                                               "id_director," +
-                                                               "id_pais)" +
-                                                " values ( " +
-                                                                  txtIdPeli.Text + "," +
-                                                          " ' " + txtNombrePelicula.Text +
-                                                          "','" + dtpDura.Text + "',"
-                                                            + cboGenero.SelectedValue + ","
-                                                            + cboIdioma.SelectedValue + ","
-                                                            + cboClasificacion.SelectedValue + ","
-                                                            + cboSubtitulos.SelectedValue + ","
-                                                            + cboDirector.SelectedValue + ","
-                                                            + cboPaisP.SelectedValue + ")";
-
-                MessageBox.Show(agregar);
-
-                datos.actualizarBD(agregar);
-
-
-
-
-                MessageBox.Show("LA PELICULA SE GUARDO CORRECTAMENTE");
-
-              
-
-            }
-            catch (Exception x)
-            {
-
-                MessageBox.Show("ERROR al guardar la pelicula!!  \n " + x.Message);
-            }
-
+                    MessageBox.Show("ERROR al guardar la pelicula!!  \n " + x.Message);
+                }
+                
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
             limpiarTxtPelis();
             bloqueoPelis(false);
             btnBorrarPeli.Enabled = true;
             btnNuevoPeli.Enabled = true;
             btnModificarPeli.Enabled = true;
-
         }
-
         //----------DE DATA GRID A TXT BOX--------------------
         private void dgvPelis_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -294,14 +293,11 @@ namespace PracticoIntegrador2018
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
             limpiarTxtPelis();
         }
-
         //-------------ACEPTAR LA MODIFICACION(BOTON FANTASMA :O)-----------------
         private void btnAceptarMod_Click(object sender, EventArgs e)
         {
-            
             try
             {
-
                 //---- Valido que todos los campos esten cargados
                 bool ok = ValidarCargaPelicula();
 
@@ -309,7 +305,6 @@ namespace PracticoIntegrador2018
                 {
                     return;
                 }
-
 
                 String modificar = "UPDATE Pelicula SET " +
                                                         "nombre ='" + txtNombrePelicula.Text + "'," +
@@ -323,7 +318,6 @@ namespace PracticoIntegrador2018
                                                         "WHERE id_pelicula =" + idPeli;
                 MessageBox.Show(modificar);
 
-
                 datos.actualizarBD(modificar);
 
                 MessageBox.Show("La pelicula con el id [" + idPeli + "] HA SIDO ACTUALIZADA CORRECTAMENTE");
@@ -335,7 +329,6 @@ namespace PracticoIntegrador2018
                 btnBorrarPeli.Enabled = true;
                 dgvPelis.Enabled = true;
 
-
             }
             catch (Exception x)
             {
@@ -344,9 +337,7 @@ namespace PracticoIntegrador2018
             }
             datos.putInGrid(dgvPelis, "Select * from Pelicula");
         }
-
         //------------------------------BOTONES ACTORES-----------------------------------------------------
-     
         private void btnNuevoAct_Click(object sender, EventArgs e)
         {
             limpiarTxtActores();
@@ -377,20 +368,28 @@ namespace PracticoIntegrador2018
                 ac.FechaN = Convert.ToDateTime(dtpEdad.Value.Date);
                 ac.Reseña = Convert.ToString(txtReseña.Text);
 
-                string agregar = "INSERT INTO ACTORES("
+                if (ac.Id >= Convert.ToInt32(idA))
+                {
+                    string agregar = "INSERT INTO ACTORES("
 
-                                 + "id_actor,nombre,nacionalidad,fecha_nacimiento,reseña,apellido)"
-                                 + "values( "
-                                              + txtIdActor.Text + "," +
-                                             "'" + txtNombreActor.Text + "','"
-                                             + txtNacionalidad.Text + "','"
-                                             + dtpEdad.Text + "','"
-                                             + txtReseña.Text + "','"
-                                             + txtApellidoActor.Text + "')";
-                MessageBox.Show(agregar);
+                                     + "id_actor,nombre,nacionalidad,fecha_nacimiento,reseña,apellido)"
+                                     + "values( "
+                                                  + txtIdActor.Text + "," +
+                                                 "'" + txtNombreActor.Text + "','"
+                                                 + txtNacionalidad.Text + "','"
+                                                 + dtpEdad.Text + "','"
+                                                 + txtReseña.Text + "','"
+                                                 + txtApellidoActor.Text + "')";
+                    MessageBox.Show(agregar);
 
-                datos.actualizarBD(agregar);
+                    datos.actualizarBD(agregar);
+                    MessageBox.Show("ACTOR AGREGADO CORRECTAMENTE");
+                    idA++;
 
+                }
+                else {
+                    MessageBox.Show("ESE ID NO ES VALIDO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch (Exception x)
@@ -410,7 +409,6 @@ namespace PracticoIntegrador2018
             btnNuevoAct.Enabled = true;
             btnModificarAct.Enabled = true;
             btnBorrarAct.Enabled = true;
-            
         }
         //---------------------------------------------------------------------------------------------------------
         //NOTA CAMBIAR LA BASE DE DATOS NACIONALIDADES DE STRING A INT O NO ANDA EL GRID 
@@ -446,7 +444,6 @@ namespace PracticoIntegrador2018
         {
             try
             {
-
                 //---- Valido que todos los campos esten cargados
                 bool ok = ValidarCargaActores();
 
@@ -501,12 +498,12 @@ namespace PracticoIntegrador2018
         {
 
         }
-
+        //---------------------------------------------------------------
         private void txtIdPeli_TextChanged(object sender, EventArgs e)
         {
            
         }
-
+        //---------------------------------------------------------------
         private void txtIdPeli_KeyPress(object sender, KeyPressEventArgs e)
         {
              
@@ -528,7 +525,7 @@ namespace PracticoIntegrador2018
                     }
             
         }
-
+        //---------------------------------------------------------------
         private void txtIdActor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -548,12 +545,12 @@ namespace PracticoIntegrador2018
                 e.Handled = true;
             }
         }
-
+        //---------------------------------------------------------------
         private void txtNombrePelicula_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        //---------------------------------------------------------------
         private void txtNombrePelicula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -573,7 +570,7 @@ namespace PracticoIntegrador2018
                 e.Handled = false;
             }
         }
-
+        //---------------------------------------------------------------
         private void txtNombreActor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -593,7 +590,7 @@ namespace PracticoIntegrador2018
                 e.Handled = false;
             }
         }
-
+        //---------------------------------------------------------------
         private void txtApellidoActor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -613,7 +610,7 @@ namespace PracticoIntegrador2018
                 e.Handled = false;
             }
         }
-
+        //---------------------------------------------------------------
         private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -633,7 +630,7 @@ namespace PracticoIntegrador2018
                 e.Handled = false;
             }
         }
-
+        //---------------------------------------------------------------
         private void btnBorrarAct_Click(object sender, EventArgs e)
         {
 
@@ -671,8 +668,6 @@ namespace PracticoIntegrador2018
             datos.putInGrid(dgvActores, "Select * from Actores");
             limpiarTxtActores();
         }
-
-
         //---------------------------------------------------------------------------------------------------------
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
@@ -694,8 +689,6 @@ namespace PracticoIntegrador2018
             }
 
         }
-
-
         //---- Valido que todos los campos esten cargados en Actor
         private bool ValidarCargaActores()
         {
@@ -735,8 +728,6 @@ namespace PracticoIntegrador2018
 
             return true;
         }
-
-
         //---- Valido que todos los campos esten cargados en Pelicula
         private bool ValidarCargaPelicula()
         {
@@ -791,8 +782,36 @@ namespace PracticoIntegrador2018
 
             return true;
         }
+        //----------------------------------------------------------------------------
+        private int buscarID(DataGridView datagrid, string idaBuscar)
+        {
+            List<int> ids = new List<int>();
 
+            int registros = datagrid.Rows.Count;
 
+            for (int i = 0; i < registros; i++)
+            {
+                try
+                {
+                    ids.Add(Convert.ToInt32(datagrid.Rows[i].Cells[idaBuscar].Value.ToString()));
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("--------------------------------" + e.Message);
+                }
+
+            }
+            foreach (var id in ids)
+            {
+                Console.WriteLine(id);
+            }
+
+            int capturaid = ids.Last();
+            Console.WriteLine(capturaid);
+
+            return capturaid;
+        }
 
     }
 }
