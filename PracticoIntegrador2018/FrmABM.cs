@@ -16,7 +16,7 @@ namespace PracticoIntegrador2018
         const int tam = 25;
         int idPeli,idActor;
         Pelicula[] peliculas = new Pelicula[tam];
-        AccesoDatos datos = new AccesoDatos(@"Data Source=NTBEMM4;Initial Catalog=Cine;Persist Security Info=True;User ID=Emma;Password=1234");
+        AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-M8V09RS\SQLEXPRESS;Initial Catalog=Cine;User ID=santi; password=4567");
         public FrmABM()
         {
 
@@ -124,6 +124,14 @@ namespace PracticoIntegrador2018
             try
             {
 
+                //---- Valido que todos los campos esten cargados
+                bool ok = ValidarCargaPelicula();
+
+                if (!ok)
+                {
+                    return;
+                }
+        
 
                 Pelicula peli = new Pelicula();
                 peli.Id = Convert.ToInt32(txtIdPeli.Text);
@@ -169,6 +177,8 @@ namespace PracticoIntegrador2018
 
                 MessageBox.Show("LA PELICULA SE GUARDO CORRECTAMENTE");
 
+              
+
             }
             catch (Exception x)
             {
@@ -182,6 +192,7 @@ namespace PracticoIntegrador2018
             btnBorrarPeli.Enabled = true;
             btnNuevoPeli.Enabled = true;
             btnModificarPeli.Enabled = true;
+
         }
 
         //----------DE DATA GRID A TXT BOX--------------------
@@ -214,7 +225,6 @@ namespace PracticoIntegrador2018
         //------------BOTON PREVIO A LA MODIFICACION------------------
         private void btnModificarPeli_Click(object sender, EventArgs e)
         {
-
 
             if (idPeli > 0)
             {
@@ -340,6 +350,15 @@ namespace PracticoIntegrador2018
         {
             try
             {
+
+                //---- Valido que todos los campos esten cargados
+                bool ok = ValidarCargaActores();
+
+                if (!ok)
+                {
+                    return;
+                }
+
                 Actores ac = new Actores();
                 ac.Id = Convert.ToInt32(txtIdActor.Text);
                 ac.Nombre = Convert.ToString(txtNombreActor);
@@ -466,7 +485,7 @@ namespace PracticoIntegrador2018
 
         private void txtIdPeli_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txtIdPeli_KeyPress(object sender, KeyPressEventArgs e)
@@ -634,6 +653,7 @@ namespace PracticoIntegrador2018
             limpiarTxtActores();
         }
 
+
         //---------------------------------------------------------------------------------------------------------
         private void btnModificarAct_Click(object sender, EventArgs e)
         {
@@ -655,6 +675,104 @@ namespace PracticoIntegrador2018
             }
 
         }
+
+
+        //---- Valido que todos los campos esten cargados en Actor
+        private bool ValidarCargaActores()
+        {
+            if (txtIdActor.Text == "" || txtIdPeli.Text == "ej : 123456")
+            {
+                MessageBox.Show("No ingreso un id para Actor..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdActor.Focus();
+                return false;
+            }
+            if (txtNombreActor.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            {
+                MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombreActor.Focus();
+                return false;
+            }
+
+            if (txtApellidoActor.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            {
+                MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtApellidoActor.Focus();
+                return false;
+            }
+
+            if (txtNacionalidad.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            {
+                MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNacionalidad.Focus();
+                return false;
+            }
+
+            if (txtReseña.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            {
+                MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtReseña.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+
+        //---- Valido que todos los campos esten cargados en Pelicula
+        private bool ValidarCargaPelicula()
+        {
+            if (txtIdPeli.Text == "" || txtIdPeli.Text == "ej : 123456")
+            {
+                MessageBox.Show("No ingreso un id para Película..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdPeli.Focus();
+                return false;
+            }
+            if (txtNombrePelicula.Text == "" || txtNombrePelicula.Text == "ej : El Padrino")
+            {
+                MessageBox.Show("No ingreso Nombre..", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombrePelicula.Focus();
+                return false;
+            }
+
+            if (cboGenero.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso un Genero", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboIdioma.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso un Idioma", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboClasificacion.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso una Clasificación", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboSubtitulos.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso un Subtitulo", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboDirector.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso un Director", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboPaisP.SelectedItem == null)
+            {
+                MessageBox.Show("No ingreso un País", "ERROR DE CARGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
 
 
     }

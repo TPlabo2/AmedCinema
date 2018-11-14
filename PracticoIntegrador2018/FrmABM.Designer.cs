@@ -125,7 +125,10 @@
             // 
             // dgvPelis
             // 
+            this.dgvPelis.AllowUserToAddRows = false;
+            this.dgvPelis.AllowUserToDeleteRows = false;
             this.dgvPelis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPelis.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPelis.Location = new System.Drawing.Point(279, 66);
             this.dgvPelis.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPelis.Name = "dgvPelis";
@@ -357,6 +360,7 @@
             // dgvActores
             // 
             this.dgvActores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvActores.Location = new System.Drawing.Point(279, 64);
             this.dgvActores.Margin = new System.Windows.Forms.Padding(2);
             this.dgvActores.Name = "dgvActores";
