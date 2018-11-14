@@ -89,9 +89,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.chkSI = new System.Windows.Forms.CheckBox();
-            this.chkNO = new System.Windows.Forms.CheckBox();
             this.dgrvConsultas = new System.Windows.Forms.DataGridView();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.btnSI = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
@@ -372,7 +372,6 @@
             this.rbtnConsulta3.TabStop = true;
             this.rbtnConsulta3.Text = "Parametrizar 3";
             this.rbtnConsulta3.UseVisualStyleBackColor = true;
-            this.rbtnConsulta3.CheckedChanged += new System.EventHandler(this.rbtnConsulta3_CheckedChanged);
             // 
             // rbtnConsulta4
             // 
@@ -471,7 +470,6 @@
             this.txtC1c1.Name = "txtC1c1";
             this.txtC1c1.Size = new System.Drawing.Size(77, 20);
             this.txtC1c1.TabIndex = 54;
-            this.txtC1c1.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtConsulta2
             // 
@@ -648,26 +646,6 @@
             this.label20.TabIndex = 74;
             this.label20.Text = "Va a parametrizar?";
             // 
-            // chkSI
-            // 
-            this.chkSI.AutoSize = true;
-            this.chkSI.Location = new System.Drawing.Point(204, 56);
-            this.chkSI.Name = "chkSI";
-            this.chkSI.Size = new System.Drawing.Size(36, 17);
-            this.chkSI.TabIndex = 75;
-            this.chkSI.Text = "SI";
-            this.chkSI.UseVisualStyleBackColor = true;
-            // 
-            // chkNO
-            // 
-            this.chkNO.AutoSize = true;
-            this.chkNO.Location = new System.Drawing.Point(204, 79);
-            this.chkNO.Name = "chkNO";
-            this.chkNO.Size = new System.Drawing.Size(42, 17);
-            this.chkNO.TabIndex = 76;
-            this.chkNO.Text = "NO";
-            this.chkNO.UseVisualStyleBackColor = true;
-            // 
             // dgrvConsultas
             // 
             this.dgrvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -678,6 +656,28 @@
             this.dgrvConsultas.Size = new System.Drawing.Size(562, 568);
             this.dgrvConsultas.TabIndex = 39;
             // 
+            // btnNo
+            // 
+            this.btnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.Location = new System.Drawing.Point(281, 53);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(61, 33);
+            this.btnNo.TabIndex = 75;
+            this.btnNo.Text = "NO";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
+            // 
+            // btnSI
+            // 
+            this.btnSI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSI.Location = new System.Drawing.Point(214, 51);
+            this.btnSI.Name = "btnSI";
+            this.btnSI.Size = new System.Drawing.Size(61, 35);
+            this.btnSI.TabIndex = 76;
+            this.btnSI.Text = "SI";
+            this.btnSI.UseVisualStyleBackColor = true;
+            this.btnSI.Click += new System.EventHandler(this.btnSI_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,8 +685,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1046, 777);
-            this.Controls.Add(this.chkNO);
-            this.Controls.Add(this.chkSI);
+            this.Controls.Add(this.btnSI);
+            this.Controls.Add(this.btnNo);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label18);
@@ -826,9 +826,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckBox chkSI;
-        private System.Windows.Forms.CheckBox chkNO;
         private System.Windows.Forms.DataGridView dgrvConsultas;
+        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.Button btnSI;
     }
 }
 

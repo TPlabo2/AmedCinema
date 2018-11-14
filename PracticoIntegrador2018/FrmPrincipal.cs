@@ -32,6 +32,7 @@ namespace PracticoIntegrador2018
         private void Form1_Load(object sender, EventArgs e)
         {
             deshabilitarTextBox();
+            HideRadioButon();
         }
         //----------------------------------------------------------------------------------------
         private void deshabilitarTextBox()
@@ -97,7 +98,7 @@ namespace PracticoIntegrador2018
 
             //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
 
-            if (rbtnConsulta1.Checked == true)
+            if ( rbtnConsulta1.Checked == true)
             {
                 txtConsulta1.Enabled = true;
                 txtConsulta1C2.Enabled = true;
@@ -106,7 +107,7 @@ namespace PracticoIntegrador2018
                             "'["+txtConsulta1.Text+"-"+txtConsulta1C2.Text+"]%' and fecha_nacimiento between '2000/1/1' and '2018/1/1' UNION Select id_director, Nombre, " +
                             "Nacionalidad from Directores where nombre not like '[J-Q]%' and fecha_nacimiento " +
                             "between '2000/1/1' and '2018/1/1' Order By 3 desc";
-                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+                HideRadioButon();
 
             }
         }
@@ -276,11 +277,6 @@ namespace PracticoIntegrador2018
 
                 //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
             }
-
-        }
-        //----------------------------------------------------------------------------------------
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
 
         }
         //----------------------------------------------------------------------------------------
@@ -465,6 +461,7 @@ namespace PracticoIntegrador2018
             {
                 txtConsulta4c2.Enabled = true;
                 txtConsulta4.Enabled = true;
+
                 consultaParametrizada = "select p.id_pelicula 'Código de Película', p.nombre 'Película', g.id_genero 'Código de Genero', nombre, sum(cantidad * d.precio) 'Importe', sum(cantidad)'Cantidad total', " +
                             "avg(d.precio) 'Precio promedio' from pelicula p join generos g on p.id_genero = g.id_genero join funciones f on f.id_pelicula = p.id_pelicula join detalle_comprobantes d on d.id_funcion = f.id_funcion " +
                             " join comprobante c on c.id_comprobante = d.id_comprobante where p.nombre like '["+txtConsulta5.Text+"-"+txtConsulta5c2+"]%' or g.descripcion in ('thriller', 'terror', 'horror') group by p.id_pelicula, p.nombre, g.id_genero, nombre order by 2, 4 desc";
@@ -474,24 +471,45 @@ namespace PracticoIntegrador2018
 
         }
         //----------------------------------------------------------------------------------------
-        private void rbtnConsulta3_CheckedChanged(object sender, EventArgs e)
+        private void HideRadioButon()
         {
-
+            rbtnConsulta1.Hide();
+            rbtnConsulta2.Hide();
+            rbtnConsulta3.Hide();
+            rbtnConsulta4.Hide();
+            rbtnConsulta5.Hide();
+            rbtnConsulta6.Hide();
+            rbtnConsulta7.Hide();
+            rbtnConsulta8.Hide();
+            rbtnConsulta9.Hide();
+            rbtnConsulta10.Hide();
+        }                 
+        //----------------------------------------------------------------------------------------
+        private void showRadioButon()
+        {
+            rbtnConsulta1.Show();
+            rbtnConsulta2.Show();
+            rbtnConsulta3.Show();
+            rbtnConsulta4.Show();
+            rbtnConsulta5.Show();
+            rbtnConsulta6.Show();
+            rbtnConsulta7.Show();
+            rbtnConsulta8.Show();
+            rbtnConsulta9.Show();
+            rbtnConsulta10.Show();
         }
         //----------------------------------------------------------------------------------------
-        private bool CheckParametrization()
+        private void btnSI_Click(object sender, EventArgs e)
         {
-            if (chkSI.Checked == true)
-            {
-                //habilitarRadiobtn();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            showRadioButon();
+            //ocultarBotones();
         }
-
+        //----------------------------------------------------------------------------------------
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            HideRadioButon();
+        }
+        //----------------------------------------------------------------------------------------
     }
 }
 
