@@ -574,18 +574,18 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(267, 387);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(50, 13);
             this.label10.TabIndex = 65;
-            this.label10.Text = "en año 2";
+            this.label10.Text = "En año 2";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(376, 387);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 66;
-            this.label13.Text = "en año 3";
+            this.label13.Text = "En año 3";
             // 
             // label14
             // 
@@ -619,9 +619,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(314, 570);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 13);
+            this.label17.Size = new System.Drawing.Size(89, 13);
             this.label17.TabIndex = 70;
-            this.label17.Text = "forma de compra";
+            this.label17.Text = "Forma de compra";
             // 
             // label18
             // 
