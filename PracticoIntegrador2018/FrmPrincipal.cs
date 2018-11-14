@@ -379,31 +379,28 @@ namespace PracticoIntegrador2018
 
         }
         //----------------------------------------------------------------------------------------
-        private void btnConsulta4_Click(object sender, EventArgs e) //SE PARAMETRIZA EL SEGUNDO ID Y EL HAVING
+        private void btnConsulta4_Click(object sender, EventArgs e) //SE PARAMETRIZA EL RANGO DE CANTIDADES EN LA CONDICION DE WHERE
         {
-         //   MessageBox.Show("Select p.nombre, avg(e.id_entrada) 'Venta de entradas promedio' From pelicula p, funciones f, detalle_comprobanteS d, entradas e, comprobante c    Where e.id_detalle = d.id_detalle " +
-         //       "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and p.id_pelicula not in (1, 4) group by p.nombre " +
-         //       "having avg(e.id_entrada) < (Select count(id_entrada) / count(p1.id_pelicula) From entradas e1, pelicula p1)", "Instrucciones", MessageBoxButtons.OK,MessageBoxIcon.Information);
-         //
-         //   consulta = "Select p.nombre, avg(e.id_entrada) 'Venta de entradas promedio' From pelicula p, funciones f, detalle_comprobanteS d, entradas e, comprobante c    Where e.id_detalle = d.id_detalle " +
-         //       "and d.id_funcion = f.id_funcion and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and p.id_pelicula not in (1, 4) group by p.nombre " +
-         //       "having avg(e.id_entrada) < (Select count(id_entrada) / count(p1.id_pelicula) From entradas e1, pelicula p1)";
-         //
-         //   consultero = Consultero.C4;
-         //
-         //   //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
-         //
-         //   if (rbtnConsulta4.Checked == true)
-         //   {
-         //       consultaParametrizada = "select p.nombre, avg(e.id_entrada) 'Venta de entradas promedio'" +
-         //       "from peliculas p, funciones f, detalle_comprobante d, entradas e" +
-         //       "where e.id_detalle = d.id_detalle and d.id_funcion = f.id_funciond and f.id_pelicula = p.id_pelicula and d.id_comprobante = c.id_comprobante and p.id_pelicula not in (1,"+ txtConsulta4c2 +" )" +
-         //       "group by p.nombre" +
-         //       "having"+ txtConsulta4 +" < (select count(e1.id_entrada) / count(p1.id_pelicula))" +
-         //       "from entradas e1, peliculas p1)";
-         //
-         //       //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
-         //   }
+            MessageBox.Show("select id_funcion, avg(cantidad * dc.precio)'Importe promedio', min(fecha)'1er venta' from comprobante c join detalle_comprobantes dc on c.id_comprobante = dc.id_comprobante  join " +
+                            "funciones f on f.id_funcion = dc.id_funcion where cantidad between 1 and 1000 group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " + 
+                            "from detalle_comprobantes where id_funcion = f.id_funcion)", "Instrucciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            consulta = "select f.id_funcion, avg(cantidad * dc.precio)'Importe promedio', min(fecha)'1er venta' from comprobante c join detalle_comprobantes dc on c.id_comprobante = dc.id_comprobante  join " +
+                            "funciones f on f.id_funcion = dc.id_funcion where cantidad between 1 and 1000 group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " +
+                            "from detalle_comprobantes where id_funcion = f.id_funcion)";
+
+            consultero = Consultero.C4;
+
+            //deshabilitarBtn();//Metodo que inhabilita los botones de las consultas
+
+            if (rbtnConsulta4.Checked == true)
+            {
+                consultaParametrizada = "select f.id_funcion, avg(cantidad * dc.precio)'Importe promedio', min(fecha)'1er venta' from comprobante c join detalle_comprobantes dc on c.id_comprobante = dc.id_comprobante  join " +
+                            "funciones f on f.id_funcion = dc.id_funcion where cantidad between "+txtConsulta4.Text+" and "+txtConsulta4c2.Text+"group by fecha, f.id_funcion having sum(cantidad * dc.precio) > (select avg(cantidad * precio) " +
+                            "from detalle_comprobantes where id_funcion = f.id_funcion)";
+
+                //deshabilitarRadioBtn();//Metodo que deshabilita los radiobtn una vez ingresados los paramtros
+            }
         }
         //----------------------------------------------------------------------------------------
         private void btnConsulta5_Click(object sender, EventArgs e) //SE PARAMETRIZA LAS LETRAS
