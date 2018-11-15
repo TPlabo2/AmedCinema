@@ -42,7 +42,6 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtConsulta1 = new System.Windows.Forms.TextBox();
-            this.txtConsulta9 = new System.Windows.Forms.TextBox();
             this.txtConsulta8 = new System.Windows.Forms.TextBox();
             this.txtConsulta7 = new System.Windows.Forms.TextBox();
             this.txtConsulta5 = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.btnSI = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.txtConsulta9 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
@@ -225,13 +225,7 @@
             this.txtConsulta1.Name = "txtConsulta1";
             this.txtConsulta1.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta1.TabIndex = 15;
-            // 
-            // txtConsulta9
-            // 
-            this.txtConsulta9.Location = new System.Drawing.Point(145, 660);
-            this.txtConsulta9.Name = "txtConsulta9";
-            this.txtConsulta9.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta9.TabIndex = 17;
+            this.txtConsulta1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta1_KeyPress);
             // 
             // txtConsulta8
             // 
@@ -239,6 +233,7 @@
             this.txtConsulta8.Name = "txtConsulta8";
             this.txtConsulta8.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta8.TabIndex = 18;
+            this.txtConsulta8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta8_KeyPress);
             // 
             // txtConsulta7
             // 
@@ -246,6 +241,7 @@
             this.txtConsulta7.Name = "txtConsulta7";
             this.txtConsulta7.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta7.TabIndex = 19;
+            this.txtConsulta7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta7_KeyPress);
             // 
             // txtConsulta5
             // 
@@ -253,6 +249,7 @@
             this.txtConsulta5.Name = "txtConsulta5";
             this.txtConsulta5.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta5.TabIndex = 21;
+            this.txtConsulta5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta5_KeyPress);
             // 
             // txtConsulta4
             // 
@@ -260,6 +257,7 @@
             this.txtConsulta4.Name = "txtConsulta4";
             this.txtConsulta4.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta4.TabIndex = 22;
+            this.txtConsulta4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta4_KeyPress);
             // 
             // txtConsulta3
             // 
@@ -267,6 +265,7 @@
             this.txtConsulta3.Name = "txtConsulta3";
             this.txtConsulta3.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta3.TabIndex = 23;
+            this.txtConsulta3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta3_KeyPress);
             // 
             // txtConsulta10
             // 
@@ -274,6 +273,7 @@
             this.txtConsulta10.Name = "txtConsulta10";
             this.txtConsulta10.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta10.TabIndex = 25;
+            this.txtConsulta10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta10_KeyPress);
             // 
             // txtConsulta1C2
             // 
@@ -281,6 +281,7 @@
             this.txtConsulta1C2.Name = "txtConsulta1C2";
             this.txtConsulta1C2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta1C2.TabIndex = 26;
+            this.txtConsulta1C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta1C2_KeyPress);
             // 
             // txtConsulta9c2
             // 
@@ -288,6 +289,7 @@
             this.txtConsulta9c2.Name = "txtConsulta9c2";
             this.txtConsulta9c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta9c2.TabIndex = 27;
+            this.txtConsulta9c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta9c2_KeyPress);
             // 
             // txtConsulta5c2
             // 
@@ -295,6 +297,7 @@
             this.txtConsulta5c2.Name = "txtConsulta5c2";
             this.txtConsulta5c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta5c2.TabIndex = 31;
+            this.txtConsulta5c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta5c2_KeyPress);
             // 
             // txtConsulta4c2
             // 
@@ -302,6 +305,7 @@
             this.txtConsulta4c2.Name = "txtConsulta4c2";
             this.txtConsulta4c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta4c2.TabIndex = 32;
+            this.txtConsulta4c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta4c2_KeyPress);
             // 
             // txtConsulta3c2
             // 
@@ -309,6 +313,7 @@
             this.txtConsulta3c2.Name = "txtConsulta3c2";
             this.txtConsulta3c2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta3c2.TabIndex = 33;
+            this.txtConsulta3c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta3c2_KeyPress);
             // 
             // btnSalir
             // 
@@ -468,6 +473,7 @@
             this.txtC1c3.Name = "txtC1c3";
             this.txtC1c3.Size = new System.Drawing.Size(77, 20);
             this.txtC1c3.TabIndex = 52;
+            this.txtC1c3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1c3_KeyPress);
             // 
             // txtC1c2
             // 
@@ -475,6 +481,7 @@
             this.txtC1c2.Name = "txtC1c2";
             this.txtC1c2.Size = new System.Drawing.Size(77, 20);
             this.txtC1c2.TabIndex = 53;
+            this.txtC1c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1c2_KeyPress);
             // 
             // txtC1c1
             // 
@@ -482,6 +489,7 @@
             this.txtC1c1.Name = "txtC1c1";
             this.txtC1c1.Size = new System.Drawing.Size(77, 20);
             this.txtC1c1.TabIndex = 54;
+            this.txtC1c1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1c1_KeyPress);
             // 
             // txtConsulta2
             // 
@@ -489,6 +497,7 @@
             this.txtConsulta2.Name = "txtConsulta2";
             this.txtConsulta2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta2.TabIndex = 50;
+            this.txtConsulta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta2_KeyPress);
             // 
             // label4
             // 
@@ -708,6 +717,14 @@
             this.label21.TabIndex = 78;
             this.label21.Text = "Cantidad hasta";
             // 
+            // txtConsulta9
+            // 
+            this.txtConsulta9.Location = new System.Drawing.Point(145, 660);
+            this.txtConsulta9.Name = "txtConsulta9";
+            this.txtConsulta9.Size = new System.Drawing.Size(100, 20);
+            this.txtConsulta9.TabIndex = 17;
+            this.txtConsulta9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta9_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -811,7 +828,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConsulta1;
-        private System.Windows.Forms.TextBox txtConsulta9;
         private System.Windows.Forms.TextBox txtConsulta8;
         private System.Windows.Forms.TextBox txtConsulta7;
         private System.Windows.Forms.TextBox txtConsulta5;
@@ -863,6 +879,7 @@
         private System.Windows.Forms.Button btnSI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtConsulta9;
     }
 }
 
