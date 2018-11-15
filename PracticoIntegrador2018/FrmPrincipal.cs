@@ -30,6 +30,8 @@ namespace PracticoIntegrador2018
         //----------------------------------------------------------------------------------------
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargarCombo(cboFormaCompra, "formaCompras");
+            cargarCombo(cboFormaPago, "formaDePagos");
             ocultarTextBox();
             HideRadioButon();
             ocultarBotonesConsultas();
@@ -75,8 +77,8 @@ namespace PracticoIntegrador2018
                  txtC1c3.Hide();
             txtConsulta7.Hide();
             txtConsulta8.Hide();
-            txtConsulta9.Hide();
-          txtConsulta9c2.Hide();
+            cboFormaCompra.Hide();
+            cboFormaPago.Hide();
            txtConsulta10.Hide();
         }
         //----------------------------------------------------------------------------------------
@@ -96,8 +98,8 @@ namespace PracticoIntegrador2018
             txtC1c3.Enabled = false;
             txtConsulta7.Enabled = false;
             txtConsulta8.Enabled = false;
-            txtConsulta9.Enabled = false;
-            txtConsulta9c2.Enabled = false;
+            cboFormaPago.Enabled = false;
+            cboFormaCompra.Enabled = false;
             txtConsulta10.Enabled = false;
         }
         //----------------------------------------------------------------------------------------
@@ -274,8 +276,8 @@ namespace PracticoIntegrador2018
             txtC1c3.Text = null;
             txtConsulta7.Text = null;
             txtConsulta8.Text = null;
-            txtConsulta9.Text = null;
-            txtConsulta9c2.Text = null;
+            //cboFormaCompra.Items.Clear();
+            //cboFormaPago.Items.Clear();
             txtConsulta10.Text = null;
         }
         //----------------------------------------------------------------------------------------
@@ -483,12 +485,12 @@ namespace PracticoIntegrador2018
 
             if (rbtnConsulta9.Checked == true)
             {
-                txtConsulta9.Enabled = true;
-                txtConsulta9c2.Enabled = true;
+                cboFormaPago.Enabled = true;
+                cboFormaCompra.Enabled = true;
 
                 consultaParametrizada = "Select sum (cantidad*precio)'Cantidad Ganada' from detalle_comprobantes dc, comprobantes c, formaDePagos fp, formaCompras Fc " +
                 "where fp.id_formadePago = c.id_formaPago and fc.id_formaCompra = c.id_formaCompra and c.id_comprobante = dc.id_comprobante " +
-                "and year(fecha) = year(getdate()) - 1 and   formaPago like " + txtConsulta9.Text + " and descripcion like " + txtConsulta9c2.Text + "";
+                "and year(fecha) = year(getdate()) - 1 and   formaPago like " + cboFormaPago.Text + " and descripcion like " + cboFormaCompra.Text + "";
 
                 HideRadioButon();
             }
@@ -676,8 +678,8 @@ namespace PracticoIntegrador2018
                  txtC1c3.Show();
             txtConsulta7.Show();
             txtConsulta8.Show();
-            txtConsulta9.Show();
-          txtConsulta9c2.Show();
+            cboFormaCompra.Show();
+            cboFormaPago.Show();
            txtConsulta10.Show();
         }
         //----------------------------------------------------------------------------------------
@@ -788,11 +790,11 @@ namespace PracticoIntegrador2018
         private void rbtnConsulta9_CheckedChanged(object sender, EventArgs e)
         {
             mostrarLabels();
-            txtConsulta9.Enabled = true;
-            txtConsulta9c2.Enabled = true;
+            cboFormaCompra.Enabled = true;
+            cboFormaPago.Enabled = true;
             mostrarTextBox();
 
-            if (txtConsulta9.Text != null && txtConsulta9c2.Text != null)
+            if (cboFormaCompra.Text != null && cboFormaPago.Text != null)
             {
                 btnConsulta9.Show();
             }
@@ -1073,46 +1075,6 @@ namespace PracticoIntegrador2018
         private void txtConsulta8_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-        //----------------------------------------------------------------------------------------
-        private void txtConsulta9_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-        //----------------------------------------------------------------------------------------
-        private void txtConsulta9c2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
             {
                 e.Handled = false;
             }

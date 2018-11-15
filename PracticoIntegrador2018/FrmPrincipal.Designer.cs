@@ -49,7 +49,6 @@
             this.txtConsulta3 = new System.Windows.Forms.TextBox();
             this.txtConsulta10 = new System.Windows.Forms.TextBox();
             this.txtConsulta1C2 = new System.Windows.Forms.TextBox();
-            this.txtConsulta9c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta5c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta4c2 = new System.Windows.Forms.TextBox();
             this.txtConsulta3c2 = new System.Windows.Forms.TextBox();
@@ -93,7 +92,8 @@
             this.btnSI = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtConsulta9 = new System.Windows.Forms.TextBox();
+            this.cboFormaPago = new System.Windows.Forms.ComboBox();
+            this.cboFormaCompra = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvConsultas)).BeginInit();
             this.SuspendLayout();
@@ -282,14 +282,6 @@
             this.txtConsulta1C2.Size = new System.Drawing.Size(100, 20);
             this.txtConsulta1C2.TabIndex = 26;
             this.txtConsulta1C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta1C2_KeyPress);
-            // 
-            // txtConsulta9c2
-            // 
-            this.txtConsulta9c2.Location = new System.Drawing.Point(304, 660);
-            this.txtConsulta9c2.Name = "txtConsulta9c2";
-            this.txtConsulta9c2.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta9c2.TabIndex = 27;
-            this.txtConsulta9c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta9c2_KeyPress);
             // 
             // txtConsulta5c2
             // 
@@ -717,13 +709,21 @@
             this.label21.TabIndex = 78;
             this.label21.Text = "Cantidad hasta";
             // 
-            // txtConsulta9
+            // cboFormaPago
             // 
-            this.txtConsulta9.Location = new System.Drawing.Point(145, 660);
-            this.txtConsulta9.Name = "txtConsulta9";
-            this.txtConsulta9.Size = new System.Drawing.Size(100, 20);
-            this.txtConsulta9.TabIndex = 17;
-            this.txtConsulta9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta9_KeyPress);
+            this.cboFormaPago.FormattingEnabled = true;
+            this.cboFormaPago.Location = new System.Drawing.Point(142, 658);
+            this.cboFormaPago.Name = "cboFormaPago";
+            this.cboFormaPago.Size = new System.Drawing.Size(121, 21);
+            this.cboFormaPago.TabIndex = 79;
+            // 
+            // cboFormaCompra
+            // 
+            this.cboFormaCompra.FormattingEnabled = true;
+            this.cboFormaCompra.Location = new System.Drawing.Point(318, 658);
+            this.cboFormaCompra.Name = "cboFormaCompra";
+            this.cboFormaCompra.Size = new System.Drawing.Size(121, 21);
+            this.cboFormaCompra.TabIndex = 80;
             // 
             // Form1
             // 
@@ -732,6 +732,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1046, 777);
+            this.Controls.Add(this.cboFormaCompra);
+            this.Controls.Add(this.cboFormaPago);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSI);
@@ -774,7 +776,6 @@
             this.Controls.Add(this.txtConsulta3c2);
             this.Controls.Add(this.txtConsulta4c2);
             this.Controls.Add(this.txtConsulta5c2);
-            this.Controls.Add(this.txtConsulta9c2);
             this.Controls.Add(this.txtConsulta1C2);
             this.Controls.Add(this.txtConsulta10);
             this.Controls.Add(this.txtConsulta3);
@@ -782,7 +783,6 @@
             this.Controls.Add(this.txtConsulta5);
             this.Controls.Add(this.txtConsulta7);
             this.Controls.Add(this.txtConsulta8);
-            this.Controls.Add(this.txtConsulta9);
             this.Controls.Add(this.txtConsulta1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultar);
@@ -835,7 +835,6 @@
         private System.Windows.Forms.TextBox txtConsulta3;
         private System.Windows.Forms.TextBox txtConsulta10;
         private System.Windows.Forms.TextBox txtConsulta1C2;
-        private System.Windows.Forms.TextBox txtConsulta9c2;
         private System.Windows.Forms.TextBox txtConsulta5c2;
         private System.Windows.Forms.TextBox txtConsulta4c2;
         private System.Windows.Forms.TextBox txtConsulta3c2;
@@ -879,7 +878,8 @@
         private System.Windows.Forms.Button btnSI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtConsulta9;
+        private System.Windows.Forms.ComboBox cboFormaPago;
+        private System.Windows.Forms.ComboBox cboFormaCompra;
     }
 }
 
