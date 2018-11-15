@@ -522,18 +522,18 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(145, 271);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 58;
-            this.label7.Text = "Año comprobante";
+            this.label7.Text = "Id_Detalle 1";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(304, 271);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 13);
+            this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 59;
-            this.label8.Text = "Cantidad de entradas";
+            this.label8.Text = "Id_Detalle2";
             // 
             // label12
             // 
