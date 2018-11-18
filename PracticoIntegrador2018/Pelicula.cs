@@ -10,14 +10,13 @@ namespace PracticoIntegrador2018
     {
         private int id;
         private string nombre;
-        private DateTime duracion;
         private int genero, idioma, clasificacion, subtitulos, director,pais;
+        private string tiempo;
 
         public Pelicula(int id, string nombre, DateTime duracion, int genero, int idioma, int clasificacion, int subtitulos, int director)
         {
             this.id = id;
             this.nombre = nombre;
-            this.duracion = duracion;
             this.genero = genero;
             this.idioma = idioma;
             this.clasificacion = clasificacion;
@@ -30,7 +29,6 @@ namespace PracticoIntegrador2018
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
-        public DateTime Duracion { get => duracion; set => duracion = value; }
         public int Genero { get => genero; set => genero = value; }
         public int Idioma { get => idioma; set => idioma = value; }
         public int Clasificacion { get => clasificacion; set => clasificacion = value; }
@@ -38,6 +36,7 @@ namespace PracticoIntegrador2018
         public int Director { get => director; set => director = value; }
         public int Id { get => id; set => id = value; }
         public int Pais { get => pais; set => pais = value; }
+        public string Tiempo { get => tiempo; set => tiempo = value; }
 
         public string toString()
         {

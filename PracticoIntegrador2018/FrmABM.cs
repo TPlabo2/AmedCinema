@@ -15,7 +15,10 @@ namespace PracticoIntegrador2018
         string nombreAct,nombrePeli;
         const int tam = 25;
         int idPeli,idActor;
+        int c = 0;
+
         Pelicula[] peliculas = new Pelicula[tam];
+        Actores[] actores = new Actores[tam];
         AccesoDatos datos = new AccesoDatos(@"Data Source=DESKTOP-FRANCO\SQLEXPRESS;Initial Catalog=Cine;User ID=sa;Password=110254");
         int idA, idP;
 
@@ -37,13 +40,13 @@ namespace PracticoIntegrador2018
             bloqueoActores(false);
             cargarCombo(cboGenero, "Generos");
             cargarCombo(cboIdioma, "Idiomas");
-            cargarCombo(cboClasificacion, "ClasificacionesPelicula");
+            cargarCombo(cboClasificacion, "ClasificacionesPeliculas");
             cargarCombo(cboSubtitulos, "subtitulos");
             cargarCombo(cboDirector, "Directores");
             //cargarCombo(cboPaisA, "paises");
             cargarCombo(cboPaisP, "paises");
             //----------------------------------------------------------
-            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            datos.putInGrid(dgvPelis, "Select * from Peliculas");
             datos.putInGrid(dgvActores, "Select * from Actores");
             idP = Convert.ToInt32(buscarID(dgvPelis, "id_pelicula") + 1);
             idA = Convert.ToInt32(buscarID(dgvActores, "id_actor") + 1);
@@ -110,7 +113,6 @@ namespace PracticoIntegrador2018
             dtpEdad.Text = "01/01/1990";
             txtReseña.Text = "";
         }
-
         //-------------------BOTONES PELICULA--------------------------------------------------
         private void btnNuevoPeli_Click(object sender, EventArgs e)
         {
@@ -139,7 +141,7 @@ namespace PracticoIntegrador2018
                     Pelicula peli = new Pelicula();
                     peli.Id = Convert.ToInt32(txtIdPeli.Text);
                     peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
-                    peli.Duracion = Convert.ToDateTime(dtpDura.Value);
+                    peli.Tiempo = dtpDura.Value.ToString();
                     peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
                     peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
                     peli.Clasificacion = Convert.ToInt32(cboClasificacion.SelectedValue);
@@ -147,28 +149,30 @@ namespace PracticoIntegrador2018
                     peli.Director = Convert.ToInt32(cboDirector.SelectedValue);
                     peli.Pais = Convert.ToInt32(cboPaisP.SelectedValue);
 
+                    peliculas[c] = peli;
+
                     if (peli.Id >= Convert.ToInt32(idP))
                     {
-                        string agregar = "Insert into Pelicula (    " +
-                                                                        "id_pelicula," +
-                                                                       "nombre," +
-                                                                       "duracion," +
-                                                                       "id_genero," +
-                                                                       "id_idioma," +
-                                                                       "id_clasificacion," +
-                                                                       "id_subtitulos," +
-                                                                       "id_director," +
-                                                                       "id_pais)" +
-                                                        " values ( " +
-                                                                          txtIdPeli.Text + "," +
-                                                                  " ' " + txtNombrePelicula.Text +
-                                                                  "','" + dtpDura.Text + "',"
-                                                                    + cboGenero.SelectedValue + ","
-                                                                    + cboIdioma.SelectedValue + ","
-                                                                    + cboClasificacion.SelectedValue + ","
-                                                                    + cboSubtitulos.SelectedValue + ","
-                                                                    + cboDirector.SelectedValue + ","
-                                                                    + cboPaisP.SelectedValue + ")";
+                        string agregar = "Insert into Peliculas (    " +
+                                         "id_pelicula," +
+                                         "nombre," +
+                                         "duracion," +
+                                         "id_genero," +
+                                         "id_idioma," +
+                                         "id_clasificacion," +
+                                         "id_subtitulos," +
+                                         "id_director," +
+                                         "id_pais)" +
+                                         " values ( "
+                                         +peli.Id + "," 
+                                         + " ' " + peli.Nombre
+                                         +"','" + peli.Tiempo + "',"
+                                         + peli.Genero + ","
+                                         + peli.Idioma + ","
+                                         + peli.Clasificacion+ ","
+                                         + peli.Subtitulos + ","
+                                         + peli.Director + ","
+                                         + peli.Pais + ")";
 
                         MessageBox.Show(agregar);
 
@@ -188,12 +192,13 @@ namespace PracticoIntegrador2018
                     MessageBox.Show("ERROR al guardar la pelicula!!  \n " + x.Message);
                 }
                 
-            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            datos.putInGrid(dgvPelis, "Select * from Peliculas");
             limpiarTxtPelis();
             bloqueoPelis(false);
             btnBorrarPeli.Enabled = true;
             btnNuevoPeli.Enabled = true;
             btnModificarPeli.Enabled = true;
+            c++;
         }
         //----------DE DATA GRID A TXT BOX--------------------
         private void dgvPelis_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -291,7 +296,7 @@ namespace PracticoIntegrador2018
                 }
             }
 
-            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            datos.putInGrid(dgvPelis, "Select * from Peliculas");
             limpiarTxtPelis();
         }
         //-------------ACEPTAR LA MODIFICACION(BOTON FANTASMA :O)-----------------
@@ -307,7 +312,7 @@ namespace PracticoIntegrador2018
                     return;
                 }
 
-                String modificar = "UPDATE Pelicula SET " +
+                String modificar = "UPDATE Peliculas SET " +
                                                         "nombre ='" + txtNombrePelicula.Text + "'," +
                                                         "duracion='" + dtpDura.Text + "'," +
                                                         "id_genero=" + cboGenero.SelectedValue + "," +
@@ -336,7 +341,7 @@ namespace PracticoIntegrador2018
                 MessageBox.Show("La PELICULA NO SE PUDO ACTUALIZAR" + x.Message);
 
             }
-            datos.putInGrid(dgvPelis, "Select * from Pelicula");
+            datos.putInGrid(dgvPelis, "Select * from Peliculas");
         }
         //------------------------------BOTONES ACTORES-----------------------------------------------------
         private void btnNuevoAct_Click(object sender, EventArgs e)

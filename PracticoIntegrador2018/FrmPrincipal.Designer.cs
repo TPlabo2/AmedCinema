@@ -664,6 +664,7 @@
             this.dgrvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrvConsultas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgrvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrvConsultas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgrvConsultas.Location = new System.Drawing.Point(472, 80);
             this.dgrvConsultas.Name = "dgrvConsultas";
             this.dgrvConsultas.Size = new System.Drawing.Size(562, 568);
