@@ -15,7 +15,8 @@ namespace PracticoIntegrador2018
         string nombreAct,nombrePeli;
         const int tam = 25;
         int idPeli,idActor;
-        int c = 0;
+        int c = 0;//Contador de peliculas
+        int a = 0;//Contador de actores
 
         Pelicula[] peliculas = new Pelicula[tam];
         Actores[] actores = new Actores[tam];
@@ -140,7 +141,7 @@ namespace PracticoIntegrador2018
 
                     Pelicula peli = new Pelicula();
                     peli.Id = Convert.ToInt32(txtIdPeli.Text);
-                    peli.Nombre = Convert.ToString(txtNombrePelicula.Text);
+                    peli.Nombre = txtNombrePelicula.Text;
                     peli.Tiempo = dtpDura.Value.ToString();
                     peli.Genero = Convert.ToInt32(cboGenero.SelectedValue);
                     peli.Idioma = Convert.ToInt32(cboIdioma.SelectedValue);
@@ -264,7 +265,7 @@ namespace PracticoIntegrador2018
         private void btnBorrarPeli_Click(object sender, EventArgs e)
         {
             DialogResult comprobar = MessageBox.Show("Seguro que desea borrar la pelicula  [" + nombrePeli + "] ?", "BORRANDO PELICULA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            string eliminarP = "Delete pelicula where id_pelicula =" + idPeli;
+            string eliminarP = "Delete peliculas where id_pelicula =" + idPeli;
             if (idPeli > 0)
             {
                 if (comprobar == DialogResult.Yes)
@@ -290,7 +291,7 @@ namespace PracticoIntegrador2018
                 }
                 else
                 {
-                    MessageBox.Show("Ninguna pelocula fue seleccionada");
+                    MessageBox.Show("Ninguna pelicula fue seleccionada");
 
 
                 }
@@ -369,11 +370,13 @@ namespace PracticoIntegrador2018
 
                 Actores ac = new Actores();
                 ac.Id = Convert.ToInt32(txtIdActor.Text);
-                ac.Nombre = Convert.ToString(txtNombreActor);
-                ac.Apellido = Convert.ToString(txtApellidoActor);
-                ac.Pais = Convert.ToString(txtNacionalidad.Text);
-                ac.FechaN = Convert.ToDateTime(dtpEdad.Value.Date);
-                ac.Reseña = Convert.ToString(txtReseña.Text);
+                ac.Nombre = txtNombreActor.Text;
+                ac.Apellido =txtApellidoActor.Text;
+                ac.Pais = txtNacionalidad.Text;
+                ac.FechaN = dtpEdad.Text;
+                ac.Reseña = txtReseña.Text;
+
+                actores[a] = ac;
 
                 if (ac.Id >= Convert.ToInt32(idA))
                 {
@@ -381,12 +384,12 @@ namespace PracticoIntegrador2018
 
                                      + "id_actor,nombre,nacionalidad,fecha_nacimiento,reseña,apellido)"
                                      + "values( "
-                                                  + txtIdActor.Text + "," +
-                                                 "'" + txtNombreActor.Text + "','"
-                                                 + txtNacionalidad.Text + "','"
-                                                 + dtpEdad.Text + "','"
-                                                 + txtReseña.Text + "','"
-                                                 + txtApellidoActor.Text + "')";
+                                     + ac.Id+ "," + "'" 
+                                     + ac.Nombre + "','"
+                                     + ac.Pais+ "','"
+                                     + ac.FechaN + "','"
+                                     + ac.Reseña + "','"
+                                     + ac.Apellido + "')";
                     MessageBox.Show(agregar);
 
                     datos.actualizarBD(agregar);

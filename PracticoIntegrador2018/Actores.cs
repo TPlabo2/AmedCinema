@@ -13,9 +13,9 @@ namespace PracticoIntegrador2018
         private string apellido;
         private string reseña;
         private string pais;
-        private DateTime edad;
+        private string edad;
 
-        public Actores(int id, string nombre, string apellido,string reseña, string pais, DateTime edad)
+        public Actores(int id, string nombre, string apellido,string reseña, string pais, string edad)
         {
             this.Id = id;
             this.nombre = nombre;
@@ -31,8 +31,8 @@ namespace PracticoIntegrador2018
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Reseña { get => reseña; set => reseña = value; }
-        public String Pais { get => pais; set => pais = value; }
-        public DateTime FechaN { get => edad; set => edad = value; }
+        public string Pais { get => pais; set => pais = value; }
+        public string FechaN { get => edad; set => edad = value; }
         public int Id { get => id; set => id = value; }
         public string Apellido { get => apellido; set => apellido = value; }
 
